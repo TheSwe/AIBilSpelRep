@@ -1051,7 +1051,7 @@ Transform:
   m_GameObject: {fileID: 6634126820811895893}
   serializedVersion: 2
   m_LocalRotation: {x: 7.1054274e-15, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.9699993, y: 2.23, z: -2.75}
+  m_LocalPosition: {x: 2.9699993, y: 2.16, z: -2.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1194,6 +1194,7 @@ GameObject:
   - component: {fileID: 4108431631191107529}
   - component: {fileID: 6634126820811895895}
   - component: {fileID: 6634126820811895894}
+  - component: {fileID: 6634126820811895896}
   m_Layer: 0
   m_Name: Fiatt_131
   m_TagString: Untagged
@@ -1220,73 +1221,17 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.8235898, y: 1.4394859, z: 4.3765388}
-  m_Center: {x: 0.020938635, y: -0.19830471, z: -0.03751731}
+  m_Size: {x: 1.8235898, y: 1.181545, z: 4.3765388}
+  m_Center: {x: 0.020938635, y: -0.06933427, z: -0.03751731}
 --- !u!54 &6634126820811895895
 Rigidbody:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 424135508}
-    m_Modifications:
-    - target: {fileID: 1688818203800753611, guid: 3a9bd845a7f2db14b9f9d3062f3158c0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1688818203800753611, guid: 3a9bd845a7f2db14b9f9d3062f3158c0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1688818203800753611, guid: 3a9bd845a7f2db14b9f9d3062f3158c0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1688818203800753611, guid: 3a9bd845a7f2db14b9f9d3062f3158c0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1688818203800753611, guid: 3a9bd845a7f2db14b9f9d3062f3158c0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1688818203800753611, guid: 3a9bd845a7f2db14b9f9d3062f3158c0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1688818203800753611, guid: 3a9bd845a7f2db14b9f9d3062f3158c0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1688818203800753611, guid: 3a9bd845a7f2db14b9f9d3062f3158c0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1688818203800753611, guid: 3a9bd845a7f2db14b9f9d3062f3158c0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1688818203800753611, guid: 3a9bd845a7f2db14b9f9d3062f3158c0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7672403035756253858, guid: 3a9bd845a7f2db14b9f9d3062f3158c0, type: 3}
-      propertyPath: m_Name
-      value: wheel_FR_Collider
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3a9bd845a7f2db14b9f9d3062f3158c0, type: 3}
---- !u!4 &1820431627 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1688818203800753611, guid: 3a9bd845a7f2db14b9f9d3062f3158c0, type: 3}
-  m_PrefabInstance: {fileID: 279671319}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6634126820811895893}
   serializedVersion: 4
-  m_Mass: 300
+  m_Mass: 200
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1305,6 +1250,29 @@ Transform:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6634126820811895896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6634126820811895893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec4a73803f746b64a8a776a72eb389a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motorForce: 1000
+  breakForce: 100
+  maxSteerAngle: 0
+  wheel_FR_Collider: {fileID: 1241333028}
+  wheel_FL_Collider: {fileID: 146351111}
+  wheel_RR_Collider: {fileID: 1916018632}
+  wheel_RL_Collider: {fileID: 1478500990}
+  wheel_FL_Mesh_3: {fileID: 8532886164134245684}
+  wheel_FR_Mesh_3: {fileID: 7829127566807044922}
+  wheel_RL_Mesh_3: {fileID: 2888218809534528114}
+  wheel_RR_Mesh_3: {fileID: 6696316613932367875}
 --- !u!4 &6696316613932367875
 Transform:
   m_ObjectHideFlags: 0
