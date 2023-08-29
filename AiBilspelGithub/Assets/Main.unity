@@ -123,6 +123,82 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &22085677
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000081460335
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+      propertyPath: m_Name
+      value: Rally Car Models
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: -3876603582146201930, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+    - {fileID: -612741034609089877, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+    - {fileID: -1004778593125534372, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+    - {fileID: 8676328121782438711, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+    - {fileID: -6508287008470747582, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+    - {fileID: -1213152386181418223, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+    - {fileID: -6606226831118231656, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+    - {fileID: -3472053048713521410, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+    - {fileID: -8558045697855307173, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+    - {fileID: -143897432358978251, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+    - {fileID: -6104028866293405148, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+    - {fileID: -9200454443545152599, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+    - {fileID: -6579490368869255408, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+    - {fileID: 554993889219701306, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+    - {fileID: -8663633689676266673, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+    - {fileID: 4608812522978979456, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+    - {fileID: 3503518469984924561, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+    - {fileID: 1921414657695439853, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+    - {fileID: -1323123969428372031, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,3 +391,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 963194228}
   - {fileID: 705507995}
+  - {fileID: 22085677}
