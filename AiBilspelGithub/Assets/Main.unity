@@ -1231,7 +1231,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6634126820811895893}
   serializedVersion: 4
-  m_Mass: 200
+  m_Mass: 2500
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1262,9 +1262,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec4a73803f746b64a8a776a72eb389a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motorForce: 1000
-  breakForce: 100
-  maxSteerAngle: 0
+  motorForce: 3000
+  breakForce: 1000
+  maxSteerAngle: 45
   wheel_FR_Collider: {fileID: 1241333028}
   wheel_FL_Collider: {fileID: 146351111}
   wheel_RR_Collider: {fileID: 1916018632}
