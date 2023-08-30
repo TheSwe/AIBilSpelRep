@@ -50,7 +50,7 @@ public class CarController : MonoBehaviour
         wheel_FL_Collider.motorTorque = verticalInput * motorForce;
         wheel_FR_Collider.motorTorque = verticalInput * motorForce;
         currentbreakForce = isBreaking ? breakForce : 0f;
-        ApplyBreaking();       
+        ApplyBreaking();
     }
 
     private void ApplyBreaking()
