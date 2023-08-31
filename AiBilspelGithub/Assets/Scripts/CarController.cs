@@ -42,7 +42,8 @@ public class CarController : MonoBehaviour
         horizontalInput = Input.GetAxis(HORIZONTAL);
         verticalInput = Input.GetAxis(VERTICAL);
         isBreaking = Input.GetKey(KeyCode.Space);
-        Debug.Log(horizontalInput);
+        //Debug.Log(horizontalInput);
+        //Let the car modify horizontal and vertical input to steer car(-1 < steering < 1)
     }
 
     private void HandleMotor()
