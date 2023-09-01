@@ -1579,6 +1579,7 @@ GameObject:
   - component: {fileID: 6634126820811895895}
   - component: {fileID: 6634126820811895894}
   - component: {fileID: 6634126820811895897}
+  - component: {fileID: 6634126820811895899}
   - component: {fileID: 6634126820811895896}
   - component: {fileID: 6634126820811895898}
   m_Layer: 0
@@ -1673,6 +1674,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distAhead: 0
   distAhead30deg: 0
+  distAhead60deg: 0
+  distAheadm30deg: 0
+  distAheadm60deg: 0
+  lineRenderer: {fileID: 6634126820811895898}
 --- !u!120 &6634126820811895898
 LineRenderer:
   serializedVersion: 2
@@ -1681,7 +1686,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6634126820811895893}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1777,6 +1782,20 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &6634126820811895899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6634126820811895893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe84b905ac524942b84dcb8fce86555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  currentSpeed: 0
 --- !u!4 &6696316613932367875
 Transform:
   m_ObjectHideFlags: 0
