@@ -51,14 +51,12 @@ public class AgentScript : Agent
             EndEpisode();
         }
 
-        /*
-        if (other.TryGetComponent<CheckPoint>(out CheckPoint checkpoint))
+        
+        if (other.TryGetComponent<CheckpointSingle>(out CheckpointSingle checkpoint))
         {
-            SetReward(-1f);
-            EndEpisode();
+            AddReward(+2f);
         }
-
-        - create checkpoint object with CheckPoint script attached for tag
+        /*
         - checkpoint change color on coll
         */
 
