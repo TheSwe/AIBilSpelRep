@@ -39,11 +39,11 @@ public class CarController : MonoBehaviour
 
     private void GetInput()
     {
-        horizontalInput = AgentScript.steering;
-        verticalInput = AgentScript.gas;
+        horizontalInput = gameObject.GetComponent<AgentScript>().steering;
+        verticalInput = gameObject.GetComponent<AgentScript>().gas;
         isBreaking = Input.GetKey(KeyCode.Space);
-        //Debug.Log(horizontalInput);
         //Let the car modify horizontal and vertical input to steer car(-1 < steering < 1)
+        Debug.Log(horizontalInput);
     }
 
     private void HandleMotor()

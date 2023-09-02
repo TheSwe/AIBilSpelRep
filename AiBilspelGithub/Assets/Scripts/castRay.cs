@@ -7,11 +7,11 @@ using UnityEngine.UIElements;
 
 public class castRay : MonoBehaviour
 {
-    public static float distAhead;
-    public static float distAhead30deg;
-    public static float distAhead60deg;
-    public static float distAheadm30deg;
-    public static float distAheadm60deg;
+    internal float distAhead;
+    internal float distAhead30deg;
+    internal float distAhead60deg;
+    internal float distAheadm30deg;
+    internal float distAheadm60deg;
     [SerializeField] LineRenderer lineRenderer;
     //[SerializeField] LineRenderer lineRenderer2;
 
@@ -33,14 +33,14 @@ public class castRay : MonoBehaviour
         Quaternion rotationm60deg = Quaternion.Euler(0, -60, 0);
         Vector3 rotatedVectorm60Deg = rotationm60deg * transform.forward;
 
-        if (Physics.Raycast(transform.localPosition, transform.forward, out hit, 100.0f))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 100.0f))
         {
-            //lineRenderer.enabled = true;
-            //lineRenderer.SetPosition(0, transform.position);
-            //lineRenderer.SetPosition(1, hit.point);
+            lineRenderer.enabled = true;
+            lineRenderer.SetPosition(0, transform.position);
+            lineRenderer.SetPosition(1, hit.point);
             distAhead = hit.distance - adjustForCarSize;
         }
-        if (Physics.Raycast(transform.localPosition, rotatedVector30Deg, out hit, 100.0f))
+        if (Physics.Raycast(transform.position, rotatedVector30Deg, out hit, 100.0f))
         {
             //lineRenderer2.enabled = true;
             //lineRenderer2.SetPosition(0, transform.position);
@@ -68,7 +68,6 @@ public class castRay : MonoBehaviour
             //lineRenderer.SetPosition(1, hit.point);
             distAheadm60deg = hit.distance - adjustForCarSize;
         }
-        Debug.Log(distAhead);
 
 
     }
