@@ -44,6 +44,7 @@ public class AgentScript : Agent
         if (other.TryGetComponent<Wall>(out Wall wall))
         {
             SetReward(-5f);
+            // make it distance to next cp, in someway, list of cps? Make each checkpoint only be taken once
             float distance_reward = 1 - (Mathf.InverseLerp(0f,150f,Vector3.Distance(GameObject.Find("Goal").transform.position, transform.localPosition)));
             AddReward(distance_reward);
             Debug.Log(GetCumulativeReward());
