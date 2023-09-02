@@ -19,10 +19,10 @@ public class AgentScript : Agent
         switch (actions.DiscreteActions[0])
         {
             case 0:
-                steering = -1;
+                steering = 0;
                 break;
             case 1:
-                steering = 0;
+                steering = -1;
                 break;
             case 2:
                 steering = 1;
@@ -32,10 +32,10 @@ public class AgentScript : Agent
         switch (actions.DiscreteActions[1])
         {
             case 0:
-                gas = -1;
+                gas = 0;
                 break;
             case 1:
-                gas = 0;
+                gas = -1;
                 break;
             case 2:
                 gas = 1;
@@ -104,7 +104,7 @@ public class AgentScript : Agent
         // add random start loc along start line to avoid over fit
         TrackCheckpoints resetCp = objectToAccess.GetComponent<TrackCheckpoints>();
         resetCp.ResetCheckpoints();
-        Vector3 ZeroY = new(18.7f+Random.Range(-5f,5f), 22.2f, 1.9f+ Random.Range(-5f, 5f));
+        Vector3 ZeroY = new(18.7f+Random.Range(-5f,5f), 22.2f, 0f+ Random.Range(-1f, 1f)); // randomness to spawn pos
         transform.SetLocalPositionAndRotation(ZeroY, Quaternion.identity);
         SetReward(0f);
     }

@@ -12,6 +12,10 @@ public class CheckpointSingle : MonoBehaviour
             //trackCheckpoints.PlayerThroughCheckpoint(this);
             Debug.Log("Passed cp");
             this.GetComponent<BoxCollider>().enabled = false;
+            Quaternion cprot = this.transform.rotation;
+            Quaternion carrot = player.transform.rotation;
+            Debug.Log(carrot);
+            // add most points when carrot - cprot is closer to 0
         }
     }
 

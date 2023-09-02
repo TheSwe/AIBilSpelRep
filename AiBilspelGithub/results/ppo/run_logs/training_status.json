@@ -2,22 +2,22 @@
     "stupidDriveCar": {
         "checkpoints": [
             {
-                "steps": 6430,
-                "file_path": "results\\ppo\\stupidDriveCar\\stupidDriveCar-6430.onnx",
+                "steps": 27029,
+                "file_path": "results\\ppo\\stupidDriveCar\\stupidDriveCar-27029.onnx",
                 "reward": null,
-                "creation_time": 1693677487.4161534,
+                "creation_time": 1693679240.6171858,
                 "auxillary_file_paths": [
-                    "results\\ppo\\stupidDriveCar\\stupidDriveCar-6430.pt"
+                    "results\\ppo\\stupidDriveCar\\stupidDriveCar-27029.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 6430,
+            "steps": 27029,
             "file_path": "results\\ppo\\stupidDriveCar.onnx",
             "reward": null,
-            "creation_time": 1693677487.4161534,
+            "creation_time": 1693679240.6171858,
             "auxillary_file_paths": [
-                "results\\ppo\\stupidDriveCar\\stupidDriveCar-6430.pt"
+                "results\\ppo\\stupidDriveCar\\stupidDriveCar-27029.pt"
             ]
         }
     },
