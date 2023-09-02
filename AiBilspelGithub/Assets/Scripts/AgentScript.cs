@@ -11,24 +11,56 @@ public class AgentScript : Agent
 {
     public float steering;
     public float gas;
+    public Transform target;
     public GameObject objectToAccess;
 
     public override void OnActionReceived(ActionBuffers actions)
     {
-        steering = actions.ContinuousActions[0];
-        gas = actions.ContinuousActions[1];
+        switch (actions.DiscreteActions[0])
+        {
+            case 0:
+                steering = -1;
+                break;
+            case 1:
+                steering = 0;
+                break;
+            case 2:
+                steering = 1;
+                break;
+        }
+        //steering = actions.DiscreteActions[0];
+        switch (actions.DiscreteActions[1])
+        {
+            case 0:
+                gas = -1;
+                break;
+            case 1:
+                gas = 0;
+                break;
+            case 2:
+                gas = 1;
+                break;
+        }
+        //gas = actions.DiscreteActions[1];
         
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
         //Make these local to each instance
+        /*
         sensor.AddObservation(gameObject.GetComponent<castRay>().distAhead);
         sensor.AddObservation(gameObject.GetComponent<castRay>().distAhead30deg);
         sensor.AddObservation(gameObject.GetComponent<castRay>().distAhead60deg);
         sensor.AddObservation(gameObject.GetComponent<castRay>().distAheadm30deg);
         sensor.AddObservation(gameObject.GetComponent<castRay>().distAheadm60deg);
         sensor.AddObservation(gameObject.GetComponent<carSpeed>().currentSpeed);
+        sensor.AddObservation(target.localPosition);
+
+        - Useless due to new sensor
+
+        */ 
+
         sensor.AddObservation(transform.localPosition); //tillfällig
         
     }
@@ -69,9 +101,10 @@ public class AgentScript : Agent
     public override void OnEpisodeBegin()
     {
         // The cars start position, y is -2
+        // add random start loc along start line to avoid over fit
         TrackCheckpoints resetCp = objectToAccess.GetComponent<TrackCheckpoints>();
         resetCp.ResetCheckpoints();
-        Vector3 ZeroY = new(0, -2, 0);
+        Vector3 ZeroY = new(18.7f+Random.Range(-5f,5f), 22.2f, 1.9f+ Random.Range(-5f, 5f));
         transform.SetLocalPositionAndRotation(ZeroY, Quaternion.identity);
         SetReward(0f);
     }
