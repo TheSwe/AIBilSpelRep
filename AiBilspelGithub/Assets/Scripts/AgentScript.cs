@@ -38,14 +38,18 @@ public class AgentScript : Agent
         // add checkpoints with time based reward
         if(other.TryGetComponent<Goal>(out Goal goal))
         {
-            SetReward(+1f);
+            SetReward(+5f);
             EndEpisode();
         }
         if (other.TryGetComponent<Wall>(out Wall wall))
         {
-            SetReward(-1f);
+            SetReward(-5f);
+            float distance_reward = 1 - (Mathf.InverseLerp(0f,150f,Vector3.Distance(GameObject.Find("Goal").transform.position, transform.localPosition)));
+            AddReward(distance_reward);
+            Debug.Log(GetCumulativeReward());
             EndEpisode();
         }
+
         /*
         if (other.TryGetComponent<CheckPoint>(out CheckPoint checkpoint))
         {
@@ -61,7 +65,9 @@ public class AgentScript : Agent
 
     public override void OnEpisodeBegin()
     {
-        transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+        // The cars start position, y is -2
+        Vector3 ZeroY = new(0, -2, 0);
+        transform.SetLocalPositionAndRotation(ZeroY, Quaternion.identity);
     }
 
     //Addreward with cps

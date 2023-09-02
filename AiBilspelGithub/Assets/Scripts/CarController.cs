@@ -43,7 +43,6 @@ public class CarController : MonoBehaviour
         verticalInput = gameObject.GetComponent<AgentScript>().gas;
         isBreaking = Input.GetKey(KeyCode.Space);
         //Let the car modify horizontal and vertical input to steer car(-1 < steering < 1)
-        Debug.Log(horizontalInput);
     }
 
     private void HandleMotor()
