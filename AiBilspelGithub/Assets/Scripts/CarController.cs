@@ -8,8 +8,8 @@ public class CarController : MonoBehaviour
     private const string HORIZONTAL = "Horizontal";
     private const string VERTICAL = "Vertical";
 
-    private float horizontalInput;
-    private float verticalInput;
+    public static float horizontalInput;
+    public static float verticalInput;
     private float currentSteerAngle;
     private float currentbreakForce;
     private bool isBreaking;
@@ -39,8 +39,8 @@ public class CarController : MonoBehaviour
 
     private void GetInput()
     {
-        horizontalInput = Input.GetAxis(HORIZONTAL);
-        verticalInput = Input.GetAxis(VERTICAL);
+        horizontalInput = AgentScript.steering;
+        verticalInput = AgentScript.gas;
         isBreaking = Input.GetKey(KeyCode.Space);
         //Debug.Log(horizontalInput);
         //Let the car modify horizontal and vertical input to steer car(-1 < steering < 1)

@@ -7,7 +7,7 @@ using UnityEngine;
 public class carSpeed : MonoBehaviour
 {
     public Rigidbody rb;
-    [SerializeField] public float currentSpeed;
+    [SerializeField] public static float currentSpeed;
     
     void Start()
     {
