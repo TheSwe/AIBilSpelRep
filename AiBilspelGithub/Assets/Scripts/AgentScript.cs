@@ -11,6 +11,8 @@ public class AgentScript : Agent
 {
     public float steering;
     public float gas;
+    public GameObject objectToAccess;
+
     public override void OnActionReceived(ActionBuffers actions)
     {
         steering = actions.ContinuousActions[0];
@@ -38,12 +40,18 @@ public class AgentScript : Agent
         // add checkpoints with time based reward
         if(other.TryGetComponent<Goal>(out Goal goal))
         {
-            SetReward(+5f);
+            AddReward(+100f);
+            Debug.Log(GetCumulativeReward());
             EndEpisode();
+        }
+        if (other.TryGetComponent<CheckpointSingle>(out CheckpointSingle checkpointSingle))
+        {
+            AddReward(+10f);
+            Debug.Log("reward added");
         }
         if (other.TryGetComponent<Wall>(out Wall wall))
         {
-            SetReward(-5f);
+            AddReward(-20f);
             // make it distance to next cp, in someway, list of cps? Make each checkpoint only be taken once
             float distance_reward = 1 - (Mathf.InverseLerp(0f,150f,Vector3.Distance(GameObject.Find("Goal").transform.position, transform.localPosition)));
             AddReward(distance_reward);
@@ -52,10 +60,6 @@ public class AgentScript : Agent
         }
 
         
-        if (other.TryGetComponent<CheckpointSingle>(out CheckpointSingle checkpoint))
-        {
-            AddReward(+2f);
-        }
         /*
         - checkpoint change color on coll
         */
@@ -65,8 +69,11 @@ public class AgentScript : Agent
     public override void OnEpisodeBegin()
     {
         // The cars start position, y is -2
+        TrackCheckpoints resetCp = objectToAccess.GetComponent<TrackCheckpoints>();
+        resetCp.ResetCheckpoints();
         Vector3 ZeroY = new(0, -2, 0);
         transform.SetLocalPositionAndRotation(ZeroY, Quaternion.identity);
+        SetReward(0f);
     }
 
     //Addreward with cps
