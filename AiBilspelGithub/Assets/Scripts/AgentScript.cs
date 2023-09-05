@@ -85,8 +85,8 @@ public class AgentScript : Agent
         {
             AddReward(-20f);
             // make it distance to next cp, in someway, list of cps? Make each checkpoint only be taken once
-            float distance_reward = 1 - (Mathf.InverseLerp(0f,150f,Vector3.Distance(GameObject.Find("Goal").transform.position, transform.localPosition)));
-            AddReward(distance_reward);
+            //float distance_reward = 1 - (Mathf.InverseLerp(0f,150f,Vector3.Distance(GameObject.Find("Goal").transform.position, transform.localPosition)));
+            //AddReward(distance_reward);
             Debug.Log(GetCumulativeReward());
             EndEpisode();
         }
@@ -104,8 +104,8 @@ public class AgentScript : Agent
         // add random start loc along start line to avoid over fit
         TrackCheckpoints resetCp = objectToAccess.GetComponent<TrackCheckpoints>();
         resetCp.ResetCheckpoints();
-        Vector3 ZeroY = new(-39.1f+Random.Range(-5f,5f), 22.2f, -17.1f+ Random.Range(-1f, 1f)); // randomness to spawn pos
-        transform.SetLocalPositionAndRotation(ZeroY, Quaternion.identity);
+        Vector3 ZeroY = new(40.7f+Random.Range(-5f,5f), 22.2f, 18.4f+ Random.Range(-1f, 1f)); // randomness to spawn pos
+        transform.SetLocalPositionAndRotation(ZeroY, Quaternion.Euler(0, -90, 0));
         SetReward(0f);
     }
 
