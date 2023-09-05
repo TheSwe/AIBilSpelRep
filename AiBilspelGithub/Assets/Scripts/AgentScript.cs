@@ -104,7 +104,7 @@ public class AgentScript : Agent
         // add random start loc along start line to avoid over fit
         TrackCheckpoints resetCp = objectToAccess.GetComponent<TrackCheckpoints>();
         resetCp.ResetCheckpoints();
-        Vector3 ZeroY = new(18.7f+Random.Range(-5f,5f), 22.2f, 0f+ Random.Range(-1f, 1f)); // randomness to spawn pos
+        Vector3 ZeroY = new(-39.1f+Random.Range(-5f,5f), 22.2f, -17.1f+ Random.Range(-1f, 1f)); // randomness to spawn pos
         transform.SetLocalPositionAndRotation(ZeroY, Quaternion.identity);
         SetReward(0f);
     }
