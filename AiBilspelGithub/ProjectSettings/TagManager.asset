@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Turn90
+  - Turn45
+  - Turn135
+  - Turn-45
+  - Turn-90
+  - Turn-135
+  - Turn0
   layers:
   - Default
   - TransparentFX

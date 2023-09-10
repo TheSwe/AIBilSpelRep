@@ -1,9 +1,10 @@
-using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
 using UnityEngine;
-using UnityEngine.UIElements;
+using System.Numerics;
+using JetBrains.Annotations;
+using Unity.VisualScripting;
 
 public class Createtrack : MonoBehaviour
 {
@@ -11,26 +12,63 @@ public class Createtrack : MonoBehaviour
     public GameObject[] trackPieces;
     private GameObject spawnedObject;
     private int trackLength = 5;
+    private GameObject lastObject;
+    private Transform endPoint;
+    private Transform startPoint;
+    private GameObject spawned;
 
-    private int spawnX = 0;
-    private int spawnZ = 0;
-    private int angle = 0;
+    private float spawnX = 0;
+    private float spawnZ = 0;
+
+    [SerializeField] private int driveDirection = 0;
+    private int blockIndex;
+
 
     void Start()
     {
+        lastObject = GameObject.Find("Start");
         for (int i = 0; i < trackLength; i++)
         {
-            spawnedObject = trackPieces[Random.Range(0, trackPieces.Length-1)];
-            switch (spawnedObject)
-            {
-                //add all different track pieces offsets before being spawned, and randomize side of turns
-            }
-            Instantiate(spawnedObject,new UnityEngine.Vector3(spawnX,0,spawnZ),UnityEngine.Quaternion.Euler(0,angle,0));
-            switch (spawnedObject)
-            {
-                //add all different track pieces offsets after being spawned plus angle changes
-            }
-        }
-    }
+            blockIndex = UnityEngine.Random.Range(0, trackPieces.Length);
+            spawnedObject = trackPieces[blockIndex];
+            endPoint = lastObject.transform.Find("EndPoint");
+            spawned = Instantiate(spawnedObject, new UnityEngine.Vector3(0, -100, 0), UnityEngine.Quaternion.Euler(0, driveDirection, 0));
+            startPoint = spawned.transform.Find("StartPoint");
+            Debug.Log(startPoint.name);
+            
+            Debug.Log(startPoint.localPosition.z);
+            Debug.Log(endPoint.position.z + spawned.transform.position.z);
+            spawnX = Convert.ToSingle(endPoint.position.x - Mathf.Sin((driveDirection * Mathf.PI) / 180)* startPoint.localPosition.x);
+            spawnZ = Convert.ToSingle(endPoint.position.z  - Mathf.Cos((driveDirection * Mathf.PI) / 180) * startPoint.localPosition.z);
 
+            spawned.transform.position = new UnityEngine.Vector3(spawnX, 0, spawnZ);
+            lastObject = spawned;
+            switch (spawnedObject.tag)
+            {
+                case "Turn90":
+                    driveDirection = driveDirection + 90;
+                    break;
+                case "Turn45":
+                    driveDirection = driveDirection + 45;
+                    break;
+                case "Turn135":
+                    driveDirection = driveDirection + 135;
+                    break;
+                
+            }
+                
+        }
+
+    }
+    double inverseIfNotZero(double num)
+    {
+        if (num == 0)
+        {
+            return 0;
+        } else
+        {
+            return 1 / num;
+        }
+
+    }
 }
