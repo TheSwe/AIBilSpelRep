@@ -176,6 +176,7 @@ MonoBehaviour:
   - {fileID: 458021318422794705, guid: ddcd608cb2c7b8345986b89d41bab57e, type: 3}
   - {fileID: 996142531800158911, guid: 227779d2a275b6442b0efa2b74ff83bb, type: 3}
   - {fileID: 247590153126903097, guid: 95d0d19c2a9cabc4f8bcae29f6002c5b, type: 3}
+  driveDirection: 0
 --- !u!1 &61772378
 GameObject:
   m_ObjectHideFlags: 0

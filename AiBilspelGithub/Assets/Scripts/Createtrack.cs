@@ -34,12 +34,8 @@ public class Createtrack : MonoBehaviour
             endPoint = lastObject.transform.Find("EndPoint");
             spawned = Instantiate(spawnedObject, new UnityEngine.Vector3(0, -100, 0), UnityEngine.Quaternion.Euler(0, driveDirection, 0));
             startPoint = spawned.transform.Find("StartPoint");
-            Debug.Log(startPoint.name);
-            
-            Debug.Log(startPoint.localPosition.z);
-            Debug.Log(endPoint.position.z + spawned.transform.position.z);
-            spawnX = Convert.ToSingle(endPoint.position.x - Mathf.Sin((driveDirection * Mathf.PI) / 180)* startPoint.localPosition.x);
-            spawnZ = Convert.ToSingle(endPoint.position.z  - Mathf.Cos((driveDirection * Mathf.PI) / 180) * startPoint.localPosition.z);
+            spawnX = Convert.ToSingle(endPoint.position.x - startPoint.position.x);
+            spawnZ = Convert.ToSingle(endPoint.position.z - startPoint.position.z);
 
             spawned.transform.position = new UnityEngine.Vector3(spawnX, 0, spawnZ);
             lastObject = spawned;
@@ -54,7 +50,15 @@ public class Createtrack : MonoBehaviour
                 case "Turn135":
                     driveDirection = driveDirection + 135;
                     break;
-                
+                case "Turn-90":
+                    driveDirection = driveDirection - 90;
+                    break;
+                case "Turn-45":
+                    driveDirection = driveDirection - 45;
+                    break;
+                case "Turn-135":
+                    driveDirection = driveDirection - 135;
+                    break;
             }
                 
         }
