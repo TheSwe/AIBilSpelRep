@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.tripolygon.umodeler-x": {
-      "version": "file:C:\\Users\\Arvid\\Documents\\GitHub\\AIBilSpelRep\\AiBilspelGithub\\Packages\\com.tripolygon.umodeler-x-0.11.2\\com.tripolygon.umodeler-x-0.11.2.tgz",
+      "version": "file:C:\\Users\\arvid.kagedal\\Documents\\GitHub\\AIBilSpelRep\\AiBilspelGithub\\Packages\\com.tripolygon.umodeler-x-0.11.2\\com.tripolygon.umodeler-x-0.11.2.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {}

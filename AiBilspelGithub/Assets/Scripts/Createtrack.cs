@@ -20,7 +20,7 @@ public class Createtrack : MonoBehaviour
     private float spawnX = 0;
     private float spawnZ = 0;
 
-    [SerializeField] private int driveDirection = 0;
+    [SerializeField] private float driveDirection = 0;
     private int blockIndex;
 
 
@@ -32,7 +32,7 @@ public class Createtrack : MonoBehaviour
             blockIndex = UnityEngine.Random.Range(0, trackPieces.Length);
             spawnedObject = trackPieces[blockIndex];
             endPoint = lastObject.transform.Find("EndPoint");
-            spawned = Instantiate(spawnedObject, new UnityEngine.Vector3(0, -100, 0), UnityEngine.Quaternion.Euler(0, driveDirection, 0));
+            spawned = Instantiate(spawnedObject, new UnityEngine.Vector3(0, -100, 0), UnityEngine.Quaternion.Euler(0, spawnedObject.transform.localEulerAngles.y+ driveDirection, 0));
             startPoint = spawned.transform.Find("StartPoint");
             spawnX = Convert.ToSingle(endPoint.position.x - startPoint.position.x);
             spawnZ = Convert.ToSingle(endPoint.position.z - startPoint.position.z);
@@ -64,15 +64,5 @@ public class Createtrack : MonoBehaviour
         }
 
     }
-    double inverseIfNotZero(double num)
-    {
-        if (num == 0)
-        {
-            return 0;
-        } else
-        {
-            return 1 / num;
-        }
 
-    }
 }
