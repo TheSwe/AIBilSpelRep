@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8737381406461658157}
   m_Layer: 0
   m_Name: Rak300
-  m_TagString: Untagged
+  m_TagString: Turn0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -212,7 +212,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5302113069490357407}
-  - component: {fileID: 2288152710993923985}
   m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
@@ -229,33 +228,12 @@ Transform:
   m_GameObject: {fileID: 7758705841363883115}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 225}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8737381406461658157}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2288152710993923985
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7758705841363883115}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 154.13098, y: 12.947472, z: 287.58337}
-  m_Center: {x: 0, y: -3.7923355, z: 1.7099075}
 --- !u!1 &8441830106327531817
 GameObject:
   m_ObjectHideFlags: 0
