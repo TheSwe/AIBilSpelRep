@@ -14,6 +14,8 @@ public class CarController : MonoBehaviour
     private float currentbreakForce;
     private bool isBreaking;
 
+    [SerializeField] private bool manualDrive;
+
     [SerializeField] private float motorForce;
     [SerializeField] private float breakForce;
     [SerializeField] private float maxSteerAngle;
@@ -39,10 +41,20 @@ public class CarController : MonoBehaviour
 
     private void GetInput()
     {
-        horizontalInput = gameObject.GetComponent<AgentScript>().steering;
-        verticalInput = gameObject.GetComponent<AgentScript>().gas;
-        isBreaking = Input.GetKey(KeyCode.Space);
-        //Let the car modify horizontal and vertical input to steer car(-1 < steering < 1)
+        if (manualDrive == true)
+        {
+            horizontalInput = Input.GetAxisRaw("Horizontal");
+            verticalInput = Input.GetAxisRaw("Vertical");
+            Debug.Log(Input.GetAxisRaw("Horizontal"));
+        }
+        else
+        {
+            horizontalInput = gameObject.GetComponent<AgentScript>().steering;
+            verticalInput = gameObject.GetComponent<AgentScript>().gas;
+            //isBreaking = Input.GetKey(KeyCode.Space);
+            //Let the car modify horizontal and vertical input to steer car(-1 < steering < 1)
+        }
+        
     }
 
     private void HandleMotor()

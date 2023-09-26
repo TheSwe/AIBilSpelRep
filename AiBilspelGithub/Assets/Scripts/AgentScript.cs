@@ -44,6 +44,14 @@ public class AgentScript : Agent
         //gas = actions.DiscreteActions[1];
         
     }
+    public override void Heuristic(in ActionBuffers actionsOut)
+    {
+        ActionSegment<int> discreteActions = actionsOut.DiscreteActions;
+        discreteActions[0] = (int)Input.GetAxis("Horizontal");
+        discreteActions[1] = (int)Input.GetAxis("Vertical");
+        Debug.Log(Input.GetAxis("Horizontal"));
+        
+    }
 
     public override void CollectObservations(VectorSensor sensor)
     {
