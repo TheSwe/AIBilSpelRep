@@ -1,15 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollisionChecker : MonoBehaviour
 {
     void OnCollisionEnter(Collision collision)
     {
-        
-        Debug.Log("we have made contact");
-        Debug.Log(collision);
-        Debug.Log(collision.gameObject.tag);
-        
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 }

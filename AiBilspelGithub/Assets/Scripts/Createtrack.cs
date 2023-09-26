@@ -26,11 +26,11 @@ public class Createtrack : MonoBehaviour
     [SerializeField] private float driveDirection = 0;
 
     private int blockIndex;
-    
 
     public GameObject colliderBlock;
     private Transform colliderPoint;
 
+    public GameObject endBlock;
     void Start()
     {
         lastObject = GameObject.Find("Start");
@@ -83,9 +83,17 @@ public class Createtrack : MonoBehaviour
             }
 
             yield return null;
-
         }
         Destroy(colliderBlock);
+        spawnedObject = endBlock;
+        endPoint = lastObject.transform.Find("EndPoint");
+        spawned = Instantiate(spawnedObject, new UnityEngine.Vector3(0, -100, 0), UnityEngine.Quaternion.Euler(0, spawnedObject.transform.localEulerAngles.y + driveDirection, 0));
+        startPoint = spawned.transform.Find("StartPoint");
+        spawnX = Convert.ToSingle(endPoint.position.x - startPoint.position.x);
+        spawnZ = Convert.ToSingle(endPoint.position.z - startPoint.position.z);
+
+        spawned.transform.position = new UnityEngine.Vector3(spawnX, 0, spawnZ);
+
     }
     
 }
