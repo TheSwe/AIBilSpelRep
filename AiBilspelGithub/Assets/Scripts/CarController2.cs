@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 public class CarController2 : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class CarController2 : MonoBehaviour
     {
         public GameObject wheelModel;
         public WheelCollider wheelCollider;
+        public TrailRenderer trailRenderer;
 
         public Axle axle;
     }
@@ -65,6 +67,7 @@ public class CarController2 : MonoBehaviour
         Move();
         Steer();
         Brake();
+        SkidMarks();
     }
 
     public void MoveInput(float input)
@@ -101,7 +104,7 @@ public class CarController2 : MonoBehaviour
             if (wheel.axle == Axle.Front)
             {
 
-                float _steerAngle = (float)(steerInput * (maxSteerAngle/ speedAngleChange * carRb.velocity.magnitude));
+                /*float _steerAngle = (float)(steerInput * (maxSteerAngle/ speedAngleChange * carRb.velocity.magnitude));
                 if (_steerAngle > maxSteerAngle)
                 {
                     _steerAngle = maxSteerAngle;
@@ -114,8 +117,9 @@ public class CarController2 : MonoBehaviour
                 } else if (_steerAngle < -maxSteerAngle)
                 {
                     _steerAngle = -maxSteerAngle;
-                }
-                Debug.Log(carRb.velocity.magnitude);
+                }*/
+                float _steerAngle = (float)(steerInput * maxSteerAngle );
+                //Debug.Log(carRb.velocity.magnitude);
                 wheel.wheelCollider.steerAngle = Mathf.Lerp(wheel.wheelCollider.steerAngle, _steerAngle, 0.6f);
             }
         }
@@ -150,6 +154,27 @@ public class CarController2 : MonoBehaviour
             wheel.wheelCollider.GetWorldPose(out pos, out rot);
             wheel.wheelModel.transform.position = pos;
             wheel.wheelModel.transform.rotation = rot;
+        }
+    }
+
+    void SkidMarks()
+    {
+        WheelHit hit;
+        foreach (var wheel in wheels)
+        {
+            if (wheel.wheelCollider.GetGroundHit(out hit) == true)
+            {
+                if (hit.sidewaysSlip > .15|| hit.sidewaysSlip < -.15 || hit.forwardSlip < -.15)
+                {
+                    
+                    wheel.trailRenderer.emitting = true;
+                }
+                else
+                {
+                    
+                    wheel.trailRenderer.emitting = false;
+                }
+            }
         }
     }
 
