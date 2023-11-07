@@ -23,6 +23,7 @@ public class CarController2 : MonoBehaviour
         public GameObject wheelModel;
         public WheelCollider wheelCollider;
         public TrailRenderer trailRenderer;
+        public GameObject trailObject;
 
         public Axle axle;
     }
@@ -32,8 +33,8 @@ public class CarController2 : MonoBehaviour
     public float maxAcceleration = 30.0f;
     public float brakeAcceleration = 50.0f;
 
-    public float maxSteerAngle = 30.0f;
-    public float minSteerAngle = 20f;
+    public float SteerAngle = 30.0f;
+    
     public float speedAngleChange = 2;
     
 
@@ -103,22 +104,7 @@ public class CarController2 : MonoBehaviour
         {
             if (wheel.axle == Axle.Front)
             {
-
-                /*float _steerAngle = (float)(steerInput * (maxSteerAngle/ speedAngleChange * carRb.velocity.magnitude));
-                if (_steerAngle > maxSteerAngle)
-                {
-                    _steerAngle = maxSteerAngle;
-                } else if (_steerAngle < minSteerAngle && _steerAngle > 0)
-                {
-                    _steerAngle = minSteerAngle;
-                } else if (_steerAngle > -minSteerAngle && _steerAngle < 0)
-                {
-                    _steerAngle = -minSteerAngle;
-                } else if (_steerAngle < -maxSteerAngle)
-                {
-                    _steerAngle = -maxSteerAngle;
-                }*/
-                float _steerAngle = (float)(steerInput * maxSteerAngle );
+                float _steerAngle = (float)(steerInput * SteerAngle );
                 //Debug.Log(carRb.velocity.magnitude);
                 wheel.wheelCollider.steerAngle = Mathf.Lerp(wheel.wheelCollider.steerAngle, _steerAngle, 0.6f);
             }
@@ -127,7 +113,7 @@ public class CarController2 : MonoBehaviour
 
     void Brake()
     {
-        if (Input.GetKey(KeyCode.Space) || moveInput == 0)
+        if (Input.GetKey(KeyCode.Space) || moveInput < 0)
         {
             foreach (var wheel in wheels)
             {
@@ -164,18 +150,17 @@ public class CarController2 : MonoBehaviour
         {
             if (wheel.wheelCollider.GetGroundHit(out hit) == true)
             {
-                if (hit.sidewaysSlip > .15|| hit.sidewaysSlip < -.15 || hit.forwardSlip < -.15)
+                if (hit.sidewaysSlip > 0.30|| hit.sidewaysSlip < -0.30 || hit.forwardSlip < -0.30|| hit.forwardSlip > 0.30)
                 {
-                    
                     wheel.trailRenderer.emitting = true;
-                }
+                } 
                 else
                 {
-                    
                     wheel.trailRenderer.emitting = false;
                 }
             }
         }
     }
+
 
 }
