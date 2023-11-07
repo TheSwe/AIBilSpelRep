@@ -516,7 +516,7 @@ WheelCollider:
   m_SidewaysFriction:
     m_ExtremumSlip: 0.05
     m_ExtremumValue: 2
-    m_AsymptoteSlip: 2
+    m_AsymptoteSlip: 1
     m_AsymptoteValue: 100
     m_Stiffness: 1
   m_IncludeLayers:
@@ -821,7 +821,7 @@ WheelCollider:
   m_SidewaysFriction:
     m_ExtremumSlip: 0.05
     m_ExtremumValue: 2
-    m_AsymptoteSlip: 2
+    m_AsymptoteSlip: 1
     m_AsymptoteValue: 100
     m_Stiffness: 1
   m_IncludeLayers:
@@ -945,7 +945,7 @@ WheelCollider:
   m_SidewaysFriction:
     m_ExtremumSlip: 0.05
     m_ExtremumValue: 2
-    m_AsymptoteSlip: 2
+    m_AsymptoteSlip: 1
     m_AsymptoteValue: 100
     m_Stiffness: 1
   m_IncludeLayers:
@@ -1848,7 +1848,7 @@ WheelCollider:
   m_SidewaysFriction:
     m_ExtremumSlip: 0.05
     m_ExtremumValue: 2
-    m_AsymptoteSlip: 2
+    m_AsymptoteSlip: 1
     m_AsymptoteValue: 100
     m_Stiffness: 1
   m_IncludeLayers:
