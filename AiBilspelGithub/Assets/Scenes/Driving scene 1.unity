@@ -2008,6 +2008,7 @@ GameObject:
   - component: {fileID: 4361272616727542204}
   - component: {fileID: 5166484685483361622}
   - component: {fileID: 5166484685483361623}
+  - component: {fileID: 5166484685483361624}
   m_Layer: 0
   m_Name: Body_Mesh_3
   m_TagString: Untagged
@@ -2134,6 +2135,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 7783361632857097627, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
+--- !u!114 &5166484685483361624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4007559458884212961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f5f4be23e78ea46bbfd1ff5296d41d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToAcess: {fileID: 0}
 --- !u!23 &5226402608402714298
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2729,7 +2743,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2019249865625528397}
   - component: {fileID: 8723722003823000530}
+  - component: {fileID: 8723722003823000533}
   - component: {fileID: 8723722003823000531}
+  - component: {fileID: 8723722003823000532}
+  - component: {fileID: 8723722003823000534}
   m_Layer: 0
   m_Name: Fiatt_131
   m_TagString: Untagged
@@ -2763,7 +2780,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &8723722003823000531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2800,6 +2817,53 @@ MonoBehaviour:
     wheelCollider: {fileID: 1159730709}
     trailRenderer: {fileID: 8786485196015718280}
     axle: 1
+--- !u!114 &8723722003823000532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8723722003823000529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17a1fbd3cbd06c478f019a7847163f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8723722003823000533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8723722003823000529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f5f4be23e78ea46bbfd1ff5296d41d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToAcess: {fileID: 8723722003823000529}
+--- !u!64 &8723722003823000534
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8723722003823000529}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7783361632857097627, guid: 7629da1901248bc49b02c95f7524fc8d, type: 3}
 --- !u!4 &8786485196015718279
 Transform:
   m_ObjectHideFlags: 0
