@@ -57,7 +57,7 @@ public class Createtrack : MonoBehaviour
 
             
             lastObject = spawned;
-
+            Debug.Log(spawned.ToString());
 
             switch (spawnedObject.tag)
             {
@@ -93,6 +93,7 @@ public class Createtrack : MonoBehaviour
         spawnZ = Convert.ToSingle(endPoint.position.z - startPoint.position.z);
 
         spawned.transform.position = new UnityEngine.Vector3(spawnX, 0, spawnZ);
+        
 
     }
     
