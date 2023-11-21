@@ -9,6 +9,6 @@ public class CollisionChecker : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
-        Debug.Log("reset");
+        //Debug.Log("reset");
     }
 }

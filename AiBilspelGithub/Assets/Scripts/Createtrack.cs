@@ -57,7 +57,7 @@ public class Createtrack : MonoBehaviour
 
             
             lastObject = spawned;
-            Debug.Log(spawned.ToString());
+            //Debug.Log(spawned.ToString());
 
             switch (spawnedObject.tag)
             {

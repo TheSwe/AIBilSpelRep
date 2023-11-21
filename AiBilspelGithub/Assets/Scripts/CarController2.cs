@@ -36,9 +36,6 @@ public class CarController2 : MonoBehaviour
     public float SteerAngle = 30.0f;
     
     public float speedAngleChange = 2;
-    
-
-    public Vector3 _centerOfMass;
 
     public List<Wheel> wheels;
 
@@ -52,8 +49,11 @@ public class CarController2 : MonoBehaviour
     void Start()
     {
         carRb = GetComponent<Rigidbody>();
-        carRb.centerOfMass = new Vector3(_centerOfMass.x, _centerOfMass.y-10, _centerOfMass.z);
         //Debug.Log(_centerOfMass.y);
+        foreach (var wheel in wheels)
+        {
+            wheel.wheelCollider.motorTorque = moveInput * 12000 * maxAcceleration * Time.deltaTime;
+        }
     }
 
     void Update()
