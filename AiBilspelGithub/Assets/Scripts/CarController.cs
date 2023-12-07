@@ -1,6 +1,7 @@
 ﻿﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class CarController : MonoBehaviour
@@ -29,6 +30,9 @@ public class CarController : MonoBehaviour
     [SerializeField] private Transform wheel_FR_Mesh_3;
     [SerializeField] private Transform wheel_RL_Mesh_3;
     [SerializeField] private Transform wheel_RR_Mesh_3;
+    
+
+
 
     private void FixedUpdate()
     {
@@ -45,7 +49,7 @@ public class CarController : MonoBehaviour
         {
             horizontalInput = Input.GetAxisRaw("Horizontal");
             verticalInput = Input.GetAxisRaw("Vertical");
-            Debug.Log(Input.GetAxisRaw("Horizontal"));
+            UnityEngine.Debug.Log(Input.GetAxisRaw("Horizontal"));
         }
         else
         {
@@ -96,4 +100,8 @@ public class CarController : MonoBehaviour
         wheelTransform.rotation = rot;
         wheelTransform.position = pos;
     }
+
+
+
+
 }

@@ -2,6 +2,9 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Diagnostics;
+using System.IO;
+
 
 public class CarController2 : MonoBehaviour
 {
@@ -44,7 +47,7 @@ public class CarController2 : MonoBehaviour
 
     private Rigidbody carRb;
 
-
+    private Stopwatch timer = new Stopwatch();
 
     void Start()
     {
@@ -54,6 +57,8 @@ public class CarController2 : MonoBehaviour
         {
             wheel.wheelCollider.motorTorque = moveInput * 12000 * maxAcceleration * Time.deltaTime;
         }
+
+        timer.Restart();
     }
 
     void Update()
@@ -162,5 +167,20 @@ public class CarController2 : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter(Collision target)
+    {
+        if (target.gameObject.tag.Equals("Finish") == true)
+        {
+            timer.Stop();
+            string time = timer.Elapsed.Minutes.ToString() + " : " + timer.Elapsed.Seconds.ToString() + " : " + timer.Elapsed.Milliseconds.ToString();
+            UnityEngine.Debug.Log(time);
 
+            string path = Application.dataPath + "/timeLog.txt";
+            //UnityEngine.Debug.Log(path);
+            //Write some text to the test.txt file
+            StreamWriter writer = new StreamWriter(path, true);
+            writer.WriteLine(time);
+            writer.Close();
+        }
+    }
 }
