@@ -8,6 +8,8 @@ using System.IO;
 
 public class CarController2 : MonoBehaviour
 {
+
+    [SerializeField] private bool manualDrive = false;
     public enum ControlMode
     {
         Keyboard,
@@ -88,10 +90,21 @@ public class CarController2 : MonoBehaviour
 
     void GetInputs()
     {
-        if (control == ControlMode.Keyboard)
+
+        if (manualDrive == true)
         {
-            moveInput = Input.GetAxis("Vertical");
-            steerInput = Input.GetAxis("Horizontal");
+            if (control == ControlMode.Keyboard)
+            {
+                moveInput = Input.GetAxis("Vertical");
+                steerInput = Input.GetAxis("Horizontal");
+            }
+        }
+        else
+        {
+            steerInput = gameObject.GetComponent<AgentScript>().steering;
+            moveInput = gameObject.GetComponent<AgentScript>().gas;
+            //isBreaking = Input.GetKey(KeyCode.Space);
+            //Let the car modify horizontal and vertical input to steer car(-1 < steering < 1)
         }
     }
 
@@ -167,7 +180,7 @@ public class CarController2 : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision target)
+    /*void OnCollisionEnter(Collision target)
     {
         if (target.gameObject.tag.Equals("Finish") == true)
         {
@@ -182,5 +195,27 @@ public class CarController2 : MonoBehaviour
             writer.WriteLine(time);
             writer.Close();
         }
+    }*/
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // add checkpoints with time based reward
+        if (other.TryGetComponent<Goal>(out Goal goal))
+        {   
+            carRb.velocity = Vector3.zero;
+            timer.Stop();
+            string time = timer.Elapsed.Minutes.ToString() + " : " + timer.Elapsed.Seconds.ToString() + " : " + timer.Elapsed.Milliseconds.ToString();
+            UnityEngine.Debug.Log(time);
+
+            string path = Application.dataPath + "/timeLog.txt";
+            //UnityEngine.Debug.Log(path);
+            //Write some text to the test.txt file
+            StreamWriter writer = new StreamWriter(path, true);
+            writer.WriteLine(time);
+            writer.Close();
+            timer.Restart();
+        }
+
     }
 }

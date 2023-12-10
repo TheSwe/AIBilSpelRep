@@ -49,7 +49,7 @@ public class AgentScript : Agent
         ActionSegment<int> discreteActions = actionsOut.DiscreteActions;
         discreteActions[0] = (int)Input.GetAxis("Horizontal");
         discreteActions[1] = (int)Input.GetAxis("Vertical");
-        Debug.Log(Input.GetAxis("Horizontal"));
+        //Debug.Log(Input.GetAxis("Horizontal"));
         
     }
 
@@ -110,10 +110,10 @@ public class AgentScript : Agent
     {
         // The cars start position, y is -2
         // add random start loc along start line to avoid over fit
-        TrackCheckpoints resetCp = objectToAccess.GetComponent<TrackCheckpoints>();
-        resetCp.ResetCheckpoints();
-        Vector3 ZeroY = new(40.7f+Random.Range(-5f,5f), 22.2f, 18.4f+ Random.Range(-1f, 1f)); // randomness to spawn pos
-        transform.SetLocalPositionAndRotation(ZeroY, Quaternion.Euler(0, -90, 0));
+        //TrackCheckpoints resetCp = objectToAccess.GetComponent<TrackCheckpoints>();
+        //resetCp.ResetCheckpoints();
+        Vector3 ZeroY = new(40.7f+Random.Range(-2f,2f), 22.2f, 18.4f+ Random.Range(-1f, 1f)); // randomness to spawn pos
+        transform.SetLocalPositionAndRotation(ZeroY, Quaternion.Euler(0, 0, 0));
         SetReward(0f);
     }
 
