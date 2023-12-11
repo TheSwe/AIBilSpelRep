@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 3633353128128394602}
   - component: {fileID: 8107862552404452024}
   - component: {fileID: 468682488989664281}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: checkpointSingle 2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -960,7 +960,7 @@ GameObject:
   - component: {fileID: 206265639439508978}
   - component: {fileID: 4626433640422634016}
   - component: {fileID: 3905068204168336513}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: checkpointSingle 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
