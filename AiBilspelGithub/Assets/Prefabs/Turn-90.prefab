@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2141186751599304424}
   - component: {fileID: 4849035299561336728}
   - component: {fileID: 4651226801696555717}
+  - component: {fileID: 7715614437356536195}
   m_Layer: 0
   m_Name: "V\xE4gg4"
   m_TagString: Untagged
@@ -99,12 +100,24 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7715614437356536195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353617017330888441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a0346d01bd5704cb87aabc842176f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1507099731399377766
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,6 +553,7 @@ GameObject:
   - component: {fileID: 4094644879074564941}
   - component: {fileID: 8178007650119183405}
   - component: {fileID: 6627723113702541775}
+  - component: {fileID: 7430061481229251669}
   m_Layer: 0
   m_Name: "V\xE4gg3"
   m_TagString: Untagged
@@ -627,12 +641,24 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7430061481229251669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4807209239809306717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a0346d01bd5704cb87aabc842176f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4808909206784273638
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,6 +744,7 @@ GameObject:
   - component: {fileID: 4074904539071327700}
   - component: {fileID: 7947958485037948762}
   - component: {fileID: 1273958783019129519}
+  - component: {fileID: 7818082430881893748}
   m_Layer: 0
   m_Name: "V\xE4gg1"
   m_TagString: Untagged
@@ -805,12 +832,24 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7818082430881893748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6629449868167219060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a0346d01bd5704cb87aabc842176f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8420439253655834158
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,6 +980,7 @@ GameObject:
   - component: {fileID: 2238069873248550343}
   - component: {fileID: 3725224433021412117}
   - component: {fileID: 1798227968718116243}
+  - component: {fileID: 9106962820953018544}
   m_Layer: 0
   m_Name: "V\xE4gg2"
   m_TagString: Untagged
@@ -1028,12 +1068,24 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9106962820953018544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8650591761731421387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a0346d01bd5704cb87aabc842176f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8710297034458250631
 GameObject:
   m_ObjectHideFlags: 0
