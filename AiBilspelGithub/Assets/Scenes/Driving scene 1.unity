@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3db2b9b6279b942a014530a2eb166c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manualDrive: 0
+  manualDrive: 1
   control: 0
   maxAcceleration: 300
   brakeAcceleration: 500
