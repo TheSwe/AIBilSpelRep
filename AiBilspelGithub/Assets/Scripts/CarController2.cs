@@ -104,7 +104,7 @@ public class CarController2 : MonoBehaviour
         {
             steerInput = gameObject.GetComponent<AgentScript>().steering;
             //moveInput = gameObject.GetComponent<AgentScript>().gas;
-            moveInput = 0;
+            moveInput = 1;
             //ge mer intiativ för den att accelerera själv, annars kommer den väldigt sällan gasa
             //isBreaking = Input.GetKey(KeyCode.Space);
             //Let the car modify horizontal and vertical input to steer car(-1 < steering < 1)
