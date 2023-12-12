@@ -10,6 +10,7 @@ public class CarController2 : MonoBehaviour
 {
 
     [SerializeField] private bool manualDrive = false;
+
     public enum ControlMode
     {
         Keyboard,
@@ -103,7 +104,7 @@ public class CarController2 : MonoBehaviour
         {
             steerInput = gameObject.GetComponent<AgentScript>().steering;
             //moveInput = gameObject.GetComponent<AgentScript>().gas;
-            moveInput = 1;
+            moveInput = 0;
             //ge mer intiativ för den att accelerera själv, annars kommer den väldigt sällan gasa
             //isBreaking = Input.GetKey(KeyCode.Space);
             //Let the car modify horizontal and vertical input to steer car(-1 < steering < 1)
@@ -205,6 +206,7 @@ public class CarController2 : MonoBehaviour
         // add checkpoints with time based reward
         if (other.TryGetComponent<Goal>(out Goal goal))
         {
+            CheckpointSingle[] cps = FindObjectsOfType<CheckpointSingle>();
             carRb.velocity = Vector3.zero;
             carRb.angularVelocity = Vector3.zero;
             timer.Stop();
@@ -218,12 +220,22 @@ public class CarController2 : MonoBehaviour
             writer.WriteLine(time);
             writer.Close();
             timer.Restart();
+            foreach (var cp in cps)
+            {
+                cp.gameObject.GetComponent<BoxCollider>().enabled = true;
+            }
         }
         else if (other.TryGetComponent<Wall>(out Wall wall))
         {
+            CheckpointSingle[] cps = FindObjectsOfType<CheckpointSingle>();
             carRb.velocity = Vector3.zero;
             carRb.angularVelocity = Vector3.zero;
+            foreach (var cp in cps)
+            {
+                cp.gameObject.GetComponent<BoxCollider>().enabled = true;
+            }
         }
+
 
     }
 }

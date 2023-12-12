@@ -14,6 +14,7 @@ public class AgentScript : Agent
     public Transform target;
     public GameObject objectToAccess;
 
+    
     public override void OnActionReceived(ActionBuffers actions)
     {
         switch (actions.DiscreteActions[0])
@@ -88,6 +89,7 @@ public class AgentScript : Agent
         {
             AddReward(+10f);
             Debug.Log("reward added");
+            checkpointSingle.GetComponent<BoxCollider>().enabled = false;
         }
         if (other.TryGetComponent<Wall>(out Wall wall))
         {
