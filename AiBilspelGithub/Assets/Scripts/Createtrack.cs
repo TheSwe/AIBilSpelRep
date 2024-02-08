@@ -9,10 +9,12 @@ using Unity.Mathematics;
 
 public class Createtrack : MonoBehaviour
 {
+    public bool customTrack;
+    public int[] trackorder;
 
     public GameObject[] trackPieces;
     private GameObject spawnedObject;
-    private int trackLength = 5;
+    public int trackLength = 5;
     private GameObject lastObject;
     private Transform endPoint;
     private Transform startPoint;
@@ -42,7 +44,14 @@ public class Createtrack : MonoBehaviour
     {
         for (int i = 0; i < trackLength; i++)
         {
-            blockIndex = UnityEngine.Random.Range(0, trackPieces.Length);
+            if (customTrack)
+            {
+                blockIndex = trackorder[i];
+            }
+            else
+            {
+                blockIndex = UnityEngine.Random.Range(0, trackPieces.Length);
+            }
             spawnedObject = trackPieces[blockIndex];
             endPoint = lastObject.transform.Find("EndPoint");
             spawned = Instantiate(spawnedObject, new UnityEngine.Vector3(0, -100, 0), UnityEngine.Quaternion.Euler(0, spawnedObject.transform.localEulerAngles.y + driveDirection, 0));
@@ -51,11 +60,11 @@ public class Createtrack : MonoBehaviour
             spawnZ = Convert.ToSingle(endPoint.position.z - startPoint.position.z);
 
             spawned.transform.position = new UnityEngine.Vector3(spawnX, 0, spawnZ);
-
-            colliderPoint = spawned.transform.Find("Collider");
-            colliderBlock.transform.position = new Vector3(colliderPoint.transform.position.x, 0, colliderPoint.transform.position.z);
-
-            
+            if (customTrack == false)
+            {
+                colliderPoint = spawned.transform.Find("Collider");
+                colliderBlock.transform.position = new Vector3(colliderPoint.transform.position.x, 0, colliderPoint.transform.position.z);
+            }
             lastObject = spawned;
             //Debug.Log(spawned.ToString());
 
