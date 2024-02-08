@@ -233,6 +233,7 @@ public class CarController2 : MonoBehaviour
             foreach (var cp in cps)
             {
                 cp.gameObject.GetComponent<BoxCollider>().enabled = true;
+                Destroy(cp.gameObject.GetComponent<Nuddad>());
             }
         }
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CheckpointSingle : MonoBehaviour
@@ -11,6 +12,7 @@ public class CheckpointSingle : MonoBehaviour
         {
             //trackCheckpoints.PlayerThroughCheckpoint(this);
             Debug.Log("Passed cp");
+            this.gameObject.AddComponent<Wall>();
             this.GetComponent<BoxCollider>().enabled = false;
             //Quaternion cprot = this.transform.rotation;
             //Quaternion carrot = player.transform.rotation;

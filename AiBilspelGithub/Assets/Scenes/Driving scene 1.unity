@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3db2b9b6279b942a014530a2eb166c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manualDrive: 1
+  manualDrive: 0
   control: 0
   maxAcceleration: 300
   brakeAcceleration: 500
@@ -666,6 +666,7 @@ MonoBehaviour:
   gas: 0
   target: {fileID: 164534881}
   objectToAccess: {fileID: 164534878}
+  rb: {fileID: 164534880}
 --- !u!114 &164534885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,7 +692,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: My Behavior
+  m_BehaviorName: stupidDriveCar
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1

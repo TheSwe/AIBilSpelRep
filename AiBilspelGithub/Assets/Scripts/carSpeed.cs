@@ -20,4 +20,9 @@ public class carSpeed : MonoBehaviour
     {
         currentSpeed = Vector3.Magnitude(rb.velocity);
     }
+
+    public float getCarSpeed()
+    {
+        return currentSpeed / 150;
+    }
 }

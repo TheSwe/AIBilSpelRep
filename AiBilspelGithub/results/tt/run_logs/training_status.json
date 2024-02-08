@@ -1,0 +1,29 @@
+{
+    "stupidDriveCar": {
+        "checkpoints": [
+            {
+                "steps": 165050,
+                "file_path": "results\\tt\\stupidDriveCar\\stupidDriveCar-165050.onnx",
+                "reward": -20.0,
+                "creation_time": 1707317187.7086697,
+                "auxillary_file_paths": [
+                    "results\\tt\\stupidDriveCar\\stupidDriveCar-165050.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 165050,
+            "file_path": "results\\tt\\stupidDriveCar.onnx",
+            "reward": -20.0,
+            "creation_time": 1707317187.7086697,
+            "auxillary_file_paths": [
+                "results\\tt\\stupidDriveCar\\stupidDriveCar-165050.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.1.1+cpu"
+    }
+}

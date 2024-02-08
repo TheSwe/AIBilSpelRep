@@ -13,8 +13,19 @@ public class AgentScript : Agent
     public float gas;
     public Transform target;
     public GameObject objectToAccess;
+    public Rigidbody rb;
 
-    
+    public override void Initialize()
+    {
+        this.MaxStep = 1000;
+    }
+
+
+    private void Start()
+    {
+        Rigidbody rb = GetComponent<Rigidbody>();
+    }
+
     public override void OnActionReceived(ActionBuffers actions)
     {
         switch (actions.DiscreteActions[0])
@@ -75,34 +86,50 @@ public class AgentScript : Agent
     }
 
     //test
+    void FixedUpdate()
+    {
+        float currentSpeed = Vector3.Magnitude(rb.velocity);
+        AddReward(currentSpeed/150);
+    }
+
+
 
     private void OnTriggerEnter(Collider other)
     {
         // add checkpoints with time based reward
         if(other.TryGetComponent<Goal>(out Goal goal))
         {
-            AddReward(+100f);
+            AddReward(+1000f);
             Debug.Log(GetCumulativeReward());
             EndEpisode();
         }
         if (other.TryGetComponent<CheckpointSingle>(out CheckpointSingle checkpointSingle))
         {
-            AddReward(+10f);
-            Debug.Log("reward added");
-            checkpointSingle.GetComponent<BoxCollider>().enabled = false;
+            if (!checkpointSingle.TryGetComponent<Nuddad>(out Nuddad nuddad))
+            {
+                AddReward(+100f);
+                //checkpointSingle.GetComponent<BoxCollider>().enabled = false;
+                checkpointSingle.AddComponent<Nuddad>();
+            }
+        }
+        if (other.TryGetComponent<Nuddad>(out Nuddad Nuddad))
+        {
+            AddReward(-100);
         }
         if (other.TryGetComponent<Wall>(out Wall wall))
         {
-            AddReward(-30);
+            AddReward(-500f);
             // make it distance to next cp, in someway, list of cps? Make each checkpoint only be taken once
             //float distance_reward = 1 - (Mathf.InverseLerp(0f,150f,Vector3.Distance(GameObject.Find("Goal").transform.position, transform.localPosition)));
             //AddReward(distance_reward);
-            Debug.Log("wall hit");
-            Debug.Log(GetCumulativeReward());
+            if (GetCumulativeReward() < -500)
+            {
+                Debug.Log(GetCumulativeReward());
+            }
             EndEpisode();
         }
 
-        
+
         /*
         - checkpoint change color on coll
         */
