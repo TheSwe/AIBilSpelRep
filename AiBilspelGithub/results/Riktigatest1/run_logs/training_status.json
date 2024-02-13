@@ -1,0 +1,29 @@
+{
+    "stupidDriveCar": {
+        "checkpoints": [
+            {
+                "steps": 2589,
+                "file_path": "results\\Riktigatest1\\stupidDriveCar\\stupidDriveCar-2589.onnx",
+                "reward": -446.7673011057585,
+                "creation_time": 1707399325.751146,
+                "auxillary_file_paths": [
+                    "results\\Riktigatest1\\stupidDriveCar\\stupidDriveCar-2589.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 2589,
+            "file_path": "results\\Riktigatest1\\stupidDriveCar.onnx",
+            "reward": -446.7673011057585,
+            "creation_time": 1707399325.751146,
+            "auxillary_file_paths": [
+                "results\\Riktigatest1\\stupidDriveCar\\stupidDriveCar-2589.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.1.1+cpu"
+    }
+}
