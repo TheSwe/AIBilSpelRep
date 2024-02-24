@@ -1,0 +1,65 @@
+{
+    "stupidDriveCar": {
+        "checkpoints": [
+            {
+                "steps": 3499997,
+                "file_path": "results\\TestRays5mil\\stupidDriveCar\\stupidDriveCar-3499997.onnx",
+                "reward": -165.3531711101532,
+                "creation_time": 1708762176.418797,
+                "auxillary_file_paths": [
+                    "results\\TestRays5mil\\stupidDriveCar\\stupidDriveCar-3499997.pt"
+                ]
+            },
+            {
+                "steps": 3999999,
+                "file_path": "results\\TestRays5mil\\stupidDriveCar\\stupidDriveCar-3999999.onnx",
+                "reward": -342.1394622325897,
+                "creation_time": 1708766378.7372675,
+                "auxillary_file_paths": [
+                    "results\\TestRays5mil\\stupidDriveCar\\stupidDriveCar-3999999.pt"
+                ]
+            },
+            {
+                "steps": 4499998,
+                "file_path": "results\\TestRays5mil\\stupidDriveCar\\stupidDriveCar-4499998.onnx",
+                "reward": null,
+                "creation_time": 1708770570.8980887,
+                "auxillary_file_paths": [
+                    "results\\TestRays5mil\\stupidDriveCar\\stupidDriveCar-4499998.pt"
+                ]
+            },
+            {
+                "steps": 4999999,
+                "file_path": "results\\TestRays5mil\\stupidDriveCar\\stupidDriveCar-4999999.onnx",
+                "reward": -252.32121268908182,
+                "creation_time": 1708774770.4436245,
+                "auxillary_file_paths": [
+                    "results\\TestRays5mil\\stupidDriveCar\\stupidDriveCar-4999999.pt"
+                ]
+            },
+            {
+                "steps": 5000002,
+                "file_path": "results\\TestRays5mil\\stupidDriveCar\\stupidDriveCar-5000002.onnx",
+                "reward": -252.32121268908182,
+                "creation_time": 1708774770.4952426,
+                "auxillary_file_paths": [
+                    "results\\TestRays5mil\\stupidDriveCar\\stupidDriveCar-5000002.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 5000002,
+            "file_path": "results\\TestRays5mil\\stupidDriveCar.onnx",
+            "reward": -252.32121268908182,
+            "creation_time": 1708774770.4952426,
+            "auxillary_file_paths": [
+                "results\\TestRays5mil\\stupidDriveCar\\stupidDriveCar-5000002.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.2.0+cpu"
+    }
+}

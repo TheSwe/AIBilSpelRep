@@ -1,0 +1,56 @@
+{
+    "stupidDriveCar": {
+        "checkpoints": [
+            {
+                "steps": 499998,
+                "file_path": "results\\testPPO\\stupidDriveCar\\stupidDriveCar-499998.onnx",
+                "reward": -347.4782772064209,
+                "creation_time": 1708637678.8721492,
+                "auxillary_file_paths": [
+                    "results\\testPPO\\stupidDriveCar\\stupidDriveCar-499998.pt"
+                ]
+            },
+            {
+                "steps": 999999,
+                "file_path": "results\\testPPO\\stupidDriveCar\\stupidDriveCar-999999.onnx",
+                "reward": -351.81299090385437,
+                "creation_time": 1708641299.412682,
+                "auxillary_file_paths": [
+                    "results\\testPPO\\stupidDriveCar\\stupidDriveCar-999999.pt"
+                ]
+            },
+            {
+                "steps": 1499999,
+                "file_path": "results\\testPPO\\stupidDriveCar\\stupidDriveCar-1499999.onnx",
+                "reward": null,
+                "creation_time": 1708646698.1526623,
+                "auxillary_file_paths": [
+                    "results\\testPPO\\stupidDriveCar\\stupidDriveCar-1499999.pt"
+                ]
+            },
+            {
+                "steps": 1500002,
+                "file_path": "results\\testPPO\\stupidDriveCar\\stupidDriveCar-1500002.onnx",
+                "reward": null,
+                "creation_time": 1708646698.1937885,
+                "auxillary_file_paths": [
+                    "results\\testPPO\\stupidDriveCar\\stupidDriveCar-1500002.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1500002,
+            "file_path": "results\\testPPO\\stupidDriveCar.onnx",
+            "reward": null,
+            "creation_time": 1708646698.1937885,
+            "auxillary_file_paths": [
+                "results\\testPPO\\stupidDriveCar\\stupidDriveCar-1500002.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.2.0+cpu"
+    }
+}
