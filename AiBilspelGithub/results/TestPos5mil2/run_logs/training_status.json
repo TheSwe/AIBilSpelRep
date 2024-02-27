@@ -1,0 +1,38 @@
+{
+    "stupidDriveCar": {
+        "checkpoints": [
+            {
+                "steps": 499998,
+                "file_path": "results\\TestPos5mil2\\stupidDriveCar\\stupidDriveCar-499998.onnx",
+                "reward": -474.8588204563412,
+                "creation_time": 1708811408.948722,
+                "auxillary_file_paths": [
+                    "results\\TestPos5mil2\\stupidDriveCar\\stupidDriveCar-499998.pt"
+                ]
+            },
+            {
+                "steps": 512566,
+                "file_path": "results\\TestPos5mil2\\stupidDriveCar\\stupidDriveCar-512566.onnx",
+                "reward": null,
+                "creation_time": 1708811575.5425484,
+                "auxillary_file_paths": [
+                    "results\\TestPos5mil2\\stupidDriveCar\\stupidDriveCar-512566.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 512566,
+            "file_path": "results\\TestPos5mil2\\stupidDriveCar.onnx",
+            "reward": null,
+            "creation_time": 1708811575.5425484,
+            "auxillary_file_paths": [
+                "results\\TestPos5mil2\\stupidDriveCar\\stupidDriveCar-512566.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.2.0+cpu"
+    }
+}

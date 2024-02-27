@@ -243,6 +243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b8566911bd2f7f4e845624a7b3cdb2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  customTrack: 1
+  trackorder: 0000000003000000000000000500000002000000
   trackPieces:
   - {fileID: 7207349553866946100, guid: 8ff06a1030e9da041b37e304895010b9, type: 3}
   - {fileID: 227992345450138601, guid: 21435d91a39b1fb4985373fad6b5a5af, type: 3}
@@ -252,6 +254,7 @@ MonoBehaviour:
   - {fileID: 4808909206784273638, guid: a66829355867ed94f903f347255ef215, type: 3}
   - {fileID: 7919174132204038060, guid: 599991610ebfc6b438ec6c2275b209c4, type: 3}
   - {fileID: 508046462175204976, guid: f1d823b0f92cde84281040f0bc2982cd, type: 3}
+  trackLength: 5
   driveDirection: 0
   colliderBlock: {fileID: 1468663915}
   endBlock: {fileID: 3197896397600378347, guid: 0c3955ccb3e426f44a6751400aa85706, type: 3}
