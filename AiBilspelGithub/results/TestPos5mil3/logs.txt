@@ -1,0 +1,307 @@
+Microsoft Windows [Version 10.0.19045.4046]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>venv\Scripts\activate
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>mlagents-learn config/stupidDriveCar.yaml --run-id=TestPos5mil3
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+[WARNING] 'encoding_size' was deprecated for RewardSignals. Please use network_settings.
+
+            ┐  ╖
+        ╓╖╬│╡  ││╬╖╖
+    ╓╖╬│││││┘  ╬│││││╬╖
+ ╖╬│││││╬╜        ╙╬│││││╖╖                               ╗╗╗
+ ╬╬╬╬╖││╦╖        ╖╬││╗╣╣╣╬      ╟╣╣╬    ╟╣╣╣             ╜╜╜  ╟╣╣
+ ╬╬╬╬╬╬╬╬╖│╬╖╖╓╬╪│╓╣╣╣╣╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╒╣╣╖╗╣╣╣╗   ╣╣╣ ╣╣╣╣╣╣ ╟╣╣╖   ╣╣╣
+ ╬╬╬╬┐  ╙╬╬╬╬│╓╣╣╣╝╜  ╫╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╟╣╣╣╙ ╙╣╣╣  ╣╣╣ ╙╟╣╣╜╙  ╫╣╣  ╟╣╣
+ ╬╬╬╬┐     ╙╬╬╣╣      ╫╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╟╣╣╬   ╣╣╣  ╣╣╣  ╟╣╣     ╣╣╣┌╣╣╜
+ ╬╬╬╜       ╬╬╣╣      ╙╝╣╣╬      ╙╣╣╣╗╖╓╗╣╣╣╜ ╟╣╣╬   ╣╣╣  ╣╣╣  ╟╣╣╦╓    ╣╣╣╣╣
+ ╙   ╓╦╖    ╬╬╣╣   ╓╗╗╖            ╙╝╣╣╣╣╝╜   ╘╝╝╜   ╝╝╝  ╝╝╝   ╙╣╣╣    ╟╣╣╣
+   ╩╬╬╬╬╬╬╦╦╬╬╣╣╗╣╣╣╣╣╣╣╝                                             ╫╣╣╣╣
+      ╙╬╬╬╬╬╬╬╣╣╣╣╣╣╝╜
+          ╙╬╬╬╣╣╣╜
+             ╙
+
+ Version information:
+  ml-agents: 0.30.0,
+  ml-agents-envs: 0.30.0,
+  Communicator API: 1.5.0,
+  PyTorch: 2.2.0+cpu
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+[INFO] Listening on port 5004. Start training by pressing the Play button in the Unity Editor.
+[INFO] Connected to Unity environment with package version 2.0.1 and communication version 1.5.0
+[INFO] Connected new brain: stupidDriveCar?team=0
+[INFO] Hyperparameters for behavior name stupidDriveCar:
+        trainer_type:   ppo
+        hyperparameters:
+          batch_size:   512
+          buffer_size:  4096
+          learning_rate:        0.0003
+          beta: 0.0005
+          epsilon:      0.2
+          lambd:        0.99
+          num_epoch:    8
+          shared_critic:        False
+          learning_rate_schedule:       linear
+          beta_schedule:        constant
+          epsilon_schedule:     linear
+        network_settings:
+          normalize:    False
+          hidden_units: 128
+          num_layers:   2
+          vis_encode_type:      simple
+          memory:       None
+          goal_conditioning_type:       hyper
+          deterministic:        False
+        reward_signals:
+          extrinsic:
+            gamma:      0.99
+            strength:   1.0
+            network_settings:
+              normalize:        False
+              hidden_units:     128
+              num_layers:       2
+              vis_encode_type:  simple
+              memory:   None
+              goal_conditioning_type:   hyper
+              deterministic:    False
+          curiosity:
+            gamma:      0.99
+            strength:   0.1
+            network_settings:
+              normalize:        False
+              hidden_units:     256
+              num_layers:       2
+              vis_encode_type:  simple
+              memory:   None
+              goal_conditioning_type:   hyper
+              deterministic:    False
+            learning_rate:      0.0003
+            encoding_size:      256
+        init_path:      None
+        keep_checkpoints:       5
+        checkpoint_interval:    500000
+        max_steps:      50000000
+        time_horizon:   10
+        summary_freq:   25000
+        threaded:       False
+        self_play:      None
+        behavioral_cloning:     None
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\torch_entities\utils.py:289: UserWarning: The use of `x.T` on tensors of dimension other than 2 to reverse their shape is deprecated and it will throw an error in a future release. Consider `x.mT` to transpose batches of matrices or `x.permute(*torch.arange(x.ndim - 1, -1, -1))` to reverse the dimensions of a tensor. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\aten\src\ATen\native\TensorShape.cpp:3641.)
+  torch.nn.functional.one_hot(_act.T, action_size[i]).float()
+[INFO] stupidDriveCar. Step: 25000. Time Elapsed: 222.857 s. Mean Reward: -431.526. Std of Reward: 32.569. Training.
+[INFO] stupidDriveCar. Step: 50000. Time Elapsed: 442.085 s. Mean Reward: -417.373. Std of Reward: 36.086. Training.
+[INFO] stupidDriveCar. Step: 75000. Time Elapsed: 662.853 s. Mean Reward: -409.851. Std of Reward: 51.594. Training.
+[INFO] stupidDriveCar. Step: 100000. Time Elapsed: 883.909 s. Mean Reward: -400.488. Std of Reward: 45.711. Training.
+[INFO] stupidDriveCar. Step: 125000. Time Elapsed: 1107.030 s. Mean Reward: -386.254. Std of Reward: 66.456. Training.
+[INFO] stupidDriveCar. Step: 150000. Time Elapsed: 1330.403 s. Mean Reward: -395.928. Std of Reward: 112.368. Training.
+[INFO] stupidDriveCar. Step: 175000. Time Elapsed: 1554.811 s. Mean Reward: -383.168. Std of Reward: 92.785. Training.
+[INFO] stupidDriveCar. Step: 200000. Time Elapsed: 1779.874 s. Mean Reward: -346.444. Std of Reward: 81.576. Training.
+[INFO] stupidDriveCar. Step: 225000. Time Elapsed: 2005.482 s. Mean Reward: -354.915. Std of Reward: 91.924. Training.
+[INFO] stupidDriveCar. Step: 250000. Time Elapsed: 2231.307 s. Mean Reward: -348.134. Std of Reward: 56.905. Training.
+[INFO] stupidDriveCar. Step: 275000. Time Elapsed: 2464.864 s. Mean Reward: -340.561. Std of Reward: 57.207. Training.
+[INFO] stupidDriveCar. Step: 300000. Time Elapsed: 2693.897 s. Mean Reward: -334.402. Std of Reward: 53.552. Training.
+[INFO] stupidDriveCar. Step: 325000. Time Elapsed: 2925.379 s. Mean Reward: -340.320. Std of Reward: 81.831. Training.
+[INFO] stupidDriveCar. Step: 350000. Time Elapsed: 3164.064 s. Mean Reward: -337.949. Std of Reward: 83.052. Training.
+[INFO] stupidDriveCar. Step: 375000. Time Elapsed: 3406.693 s. Mean Reward: -304.945. Std of Reward: 62.960. Training.
+[INFO] stupidDriveCar. Step: 400000. Time Elapsed: 3650.541 s. Mean Reward: -285.800. Std of Reward: 59.160. Training.
+[INFO] stupidDriveCar. Step: 425000. Time Elapsed: 3895.155 s. Mean Reward: -284.822. Std of Reward: 71.813. Training.
+[INFO] stupidDriveCar. Step: 450000. Time Elapsed: 4140.910 s. Mean Reward: -258.819. Std of Reward: 75.301. Training.
+[INFO] stupidDriveCar. Step: 475000. Time Elapsed: 4387.579 s. Mean Reward: -251.155. Std of Reward: 82.718. Training.
+[INFO] stupidDriveCar. Step: 500000. Time Elapsed: 4635.333 s. Mean Reward: -252.635. Std of Reward: 87.576. Training.
+[INFO] Exported results\TestPos5mil3\stupidDriveCar\stupidDriveCar-499995.onnx
+[INFO] stupidDriveCar. Step: 525000. Time Elapsed: 4889.438 s. Mean Reward: -257.076. Std of Reward: 90.091. Training.
+[INFO] stupidDriveCar. Step: 550000. Time Elapsed: 5138.703 s. Mean Reward: -227.195. Std of Reward: 96.312. Training.
+[INFO] stupidDriveCar. Step: 575000. Time Elapsed: 5389.461 s. Mean Reward: -214.176. Std of Reward: 92.431. Training.
+[INFO] stupidDriveCar. Step: 600000. Time Elapsed: 5640.342 s. Mean Reward: -245.143. Std of Reward: 83.480. Training.
+[INFO] stupidDriveCar. Step: 625000. Time Elapsed: 5892.731 s. Mean Reward: -231.686. Std of Reward: 89.648. Training.
+[INFO] stupidDriveCar. Step: 650000. Time Elapsed: 6148.591 s. Mean Reward: -221.819. Std of Reward: 94.618. Training.
+[INFO] stupidDriveCar. Step: 675000. Time Elapsed: 6408.172 s. Mean Reward: -205.895. Std of Reward: 99.810. Training.
+[INFO] stupidDriveCar. Step: 700000. Time Elapsed: 6662.839 s. Mean Reward: -207.706. Std of Reward: 100.101. Training.
+[INFO] stupidDriveCar. Step: 725000. Time Elapsed: 6918.676 s. Mean Reward: -209.113. Std of Reward: 108.023. Training.
+[INFO] stupidDriveCar. Step: 750000. Time Elapsed: 7175.778 s. Mean Reward: -205.262. Std of Reward: 104.374. Training.
+[INFO] stupidDriveCar. Step: 775000. Time Elapsed: 7433.739 s. Mean Reward: -204.216. Std of Reward: 102.503. Training.
+[INFO] stupidDriveCar. Step: 800000. Time Elapsed: 7699.231 s. Mean Reward: -195.263. Std of Reward: 98.553. Training.
+[INFO] stupidDriveCar. Step: 825000. Time Elapsed: 7959.684 s. Mean Reward: -212.683. Std of Reward: 108.505. Training.
+[INFO] stupidDriveCar. Step: 850000. Time Elapsed: 8220.143 s. Mean Reward: -219.617. Std of Reward: 108.384. Training.
+[INFO] stupidDriveCar. Step: 875000. Time Elapsed: 8483.681 s. Mean Reward: -217.687. Std of Reward: 103.432. Training.
+[INFO] stupidDriveCar. Step: 900000. Time Elapsed: 8745.990 s. Mean Reward: -218.467. Std of Reward: 102.770. Training.
+[INFO] stupidDriveCar. Step: 925000. Time Elapsed: 9009.957 s. Mean Reward: -217.200. Std of Reward: 110.963. Training.
+[INFO] stupidDriveCar. Step: 950000. Time Elapsed: 9274.617 s. Mean Reward: -203.543. Std of Reward: 105.226. Training.
+[INFO] stupidDriveCar. Step: 975000. Time Elapsed: 9582.065 s. Mean Reward: -201.831. Std of Reward: 100.468. Training.
+[INFO] stupidDriveCar. Step: 1000000. Time Elapsed: 9850.082 s. Mean Reward: -201.181. Std of Reward: 102.305. Training.
+[INFO] Exported results\TestPos5mil3\stupidDriveCar\stupidDriveCar-999996.onnx
+[INFO] stupidDriveCar. Step: 1025000. Time Elapsed: 10119.330 s. Mean Reward: -210.010. Std of Reward: 105.098. Training.
+[INFO] stupidDriveCar. Step: 1050000. Time Elapsed: 10394.781 s. Mean Reward: -210.366. Std of Reward: 104.047. Training.
+[INFO] stupidDriveCar. Step: 1075000. Time Elapsed: 10665.358 s. Mean Reward: -248.318. Std of Reward: 110.957. Training.
+[INFO] stupidDriveCar. Step: 1100000. Time Elapsed: 10936.518 s. Mean Reward: -217.005. Std of Reward: 105.938. Training.
+[INFO] stupidDriveCar. Step: 1125000. Time Elapsed: 11208.226 s. Mean Reward: -194.203. Std of Reward: 101.333. Training.
+[INFO] stupidDriveCar. Step: 1150000. Time Elapsed: 11480.281 s. Mean Reward: -198.794. Std of Reward: 102.274. Training.
+[INFO] stupidDriveCar. Step: 1175000. Time Elapsed: 11755.257 s. Mean Reward: -202.848. Std of Reward: 105.287. Training.
+[INFO] stupidDriveCar. Step: 1200000. Time Elapsed: 12031.047 s. Mean Reward: -210.444. Std of Reward: 109.295. Training.
+[INFO] stupidDriveCar. Step: 1225000. Time Elapsed: 12306.391 s. Mean Reward: -192.800. Std of Reward: 103.269. Training.
+[INFO] stupidDriveCar. Step: 1250000. Time Elapsed: 12583.011 s. Mean Reward: -204.193. Std of Reward: 104.413. Training.
+[INFO] stupidDriveCar. Step: 1275000. Time Elapsed: 12859.395 s. Mean Reward: -204.205. Std of Reward: 106.063. Training.
+[INFO] stupidDriveCar. Step: 1300000. Time Elapsed: 13137.856 s. Mean Reward: -219.555. Std of Reward: 106.435. Training.
+[INFO] stupidDriveCar. Step: 1325000. Time Elapsed: 13421.770 s. Mean Reward: -225.020. Std of Reward: 110.952. Training.
+[INFO] stupidDriveCar. Step: 1350000. Time Elapsed: 13701.623 s. Mean Reward: -209.052. Std of Reward: 112.216. Training.
+[INFO] stupidDriveCar. Step: 1375000. Time Elapsed: 13981.332 s. Mean Reward: -203.724. Std of Reward: 101.130. Training.
+[INFO] stupidDriveCar. Step: 1400000. Time Elapsed: 14263.157 s. Mean Reward: -208.747. Std of Reward: 103.339. Training.
+[INFO] stupidDriveCar. Step: 1425000. Time Elapsed: 14544.304 s. Mean Reward: -216.027. Std of Reward: 105.549. Training.
+[INFO] stupidDriveCar. Step: 1450000. Time Elapsed: 14831.149 s. Mean Reward: -198.096. Std of Reward: 101.277. Training.
+[INFO] stupidDriveCar. Step: 1475000. Time Elapsed: 15115.268 s. Mean Reward: -183.471. Std of Reward: 98.494. Training.
+[INFO] stupidDriveCar. Step: 1500000. Time Elapsed: 15399.486 s. Mean Reward: -194.772. Std of Reward: 105.247. Training.
+[INFO] Exported results\TestPos5mil3\stupidDriveCar\stupidDriveCar-1499999.onnx
+[INFO] stupidDriveCar. Step: 1525000. Time Elapsed: 15684.500 s. Mean Reward: -186.931. Std of Reward: 101.224. Training.
+[INFO] stupidDriveCar. Step: 1550000. Time Elapsed: 15968.515 s. Mean Reward: -199.431. Std of Reward: 107.994. Training.
+[INFO] stupidDriveCar. Step: 1575000. Time Elapsed: 16260.252 s. Mean Reward: -195.325. Std of Reward: 112.836. Training.
+[INFO] stupidDriveCar. Step: 1600000. Time Elapsed: 16547.032 s. Mean Reward: -195.953. Std of Reward: 113.683. Training.
+[INFO] stupidDriveCar. Step: 1625000. Time Elapsed: 16835.259 s. Mean Reward: -200.766. Std of Reward: 110.546. Training.
+[INFO] stupidDriveCar. Step: 1650000. Time Elapsed: 17123.555 s. Mean Reward: -192.701. Std of Reward: 103.236. Training.
+[INFO] stupidDriveCar. Step: 1675000. Time Elapsed: 17413.156 s. Mean Reward: -198.314. Std of Reward: 105.103. Training.
+[INFO] stupidDriveCar. Step: 1700000. Time Elapsed: 17703.012 s. Mean Reward: -194.028. Std of Reward: 103.650. Training.
+[INFO] stupidDriveCar. Step: 1725000. Time Elapsed: 17993.336 s. Mean Reward: -195.832. Std of Reward: 108.058. Training.
+[INFO] stupidDriveCar. Step: 1750000. Time Elapsed: 18285.708 s. Mean Reward: -199.452. Std of Reward: 113.002. Training.
+[INFO] stupidDriveCar. Step: 1775000. Time Elapsed: 18578.177 s. Mean Reward: -202.281. Std of Reward: 109.201. Training.
+[INFO] stupidDriveCar. Step: 1800000. Time Elapsed: 18871.731 s. Mean Reward: -207.292. Std of Reward: 110.573. Training.
+[INFO] stupidDriveCar. Step: 1825000. Time Elapsed: 19165.673 s. Mean Reward: -195.386. Std of Reward: 110.324. Training.
+[INFO] stupidDriveCar. Step: 1850000. Time Elapsed: 19466.907 s. Mean Reward: -205.106. Std of Reward: 132.751. Training.
+[INFO] stupidDriveCar. Step: 1875000. Time Elapsed: 19763.823 s. Mean Reward: -197.455. Std of Reward: 110.240. Training.
+[INFO] stupidDriveCar. Step: 1900000. Time Elapsed: 20060.538 s. Mean Reward: -208.413. Std of Reward: 110.087. Training.
+[INFO] stupidDriveCar. Step: 1925000. Time Elapsed: 20359.568 s. Mean Reward: -237.703. Std of Reward: 125.367. Training.
+[INFO] stupidDriveCar. Step: 1950000. Time Elapsed: 20659.213 s. Mean Reward: -209.230. Std of Reward: 111.237. Training.
+[INFO] stupidDriveCar. Step: 1975000. Time Elapsed: 20960.962 s. Mean Reward: -230.566. Std of Reward: 114.841. Training.
+[INFO] stupidDriveCar. Step: 2000000. Time Elapsed: 21264.799 s. Mean Reward: -225.862. Std of Reward: 113.590. Training.
+[INFO] Exported results\TestPos5mil3\stupidDriveCar\stupidDriveCar-1999998.onnx
+[INFO] stupidDriveCar. Step: 2025000. Time Elapsed: 21572.186 s. Mean Reward: -220.998. Std of Reward: 114.917. Training.
+[INFO] stupidDriveCar. Step: 2050000. Time Elapsed: 21891.112 s. Mean Reward: -199.471. Std of Reward: 112.364. Training.
+[INFO] stupidDriveCar. Step: 2075000. Time Elapsed: 22200.036 s. Mean Reward: -192.117. Std of Reward: 102.293. Training.
+[INFO] stupidDriveCar. Step: 2100000. Time Elapsed: 22514.482 s. Mean Reward: -197.718. Std of Reward: 108.875. Training.
+[INFO] stupidDriveCar. Step: 2125000. Time Elapsed: 22826.077 s. Mean Reward: -184.475. Std of Reward: 103.936. Training.
+[INFO] stupidDriveCar. Step: 2150000. Time Elapsed: 23135.750 s. Mean Reward: -206.018. Std of Reward: 178.811. Training.
+[INFO] stupidDriveCar. Step: 2175000. Time Elapsed: 23448.623 s. Mean Reward: -215.831. Std of Reward: 127.498. Training.
+[INFO] stupidDriveCar. Step: 2200000. Time Elapsed: 23762.012 s. Mean Reward: -215.096. Std of Reward: 126.240. Training.
+[INFO] stupidDriveCar. Step: 2225000. Time Elapsed: 24078.338 s. Mean Reward: -215.925. Std of Reward: 137.107. Training.
+[INFO] stupidDriveCar. Step: 2250000. Time Elapsed: 24396.385 s. Mean Reward: -201.898. Std of Reward: 112.718. Training.
+[INFO] stupidDriveCar. Step: 2275000. Time Elapsed: 24717.979 s. Mean Reward: -210.417. Std of Reward: 136.814. Training.
+[INFO] stupidDriveCar. Step: 2300000. Time Elapsed: 25041.123 s. Mean Reward: -212.474. Std of Reward: 115.085. Training.
+[INFO] stupidDriveCar. Step: 2325000. Time Elapsed: 25350.803 s. Mean Reward: -319.856. Std of Reward: 174.757. Training.
+[INFO] stupidDriveCar. Step: 2350000. Time Elapsed: 25659.721 s. Mean Reward: -254.322. Std of Reward: 155.758. Training.
+[INFO] stupidDriveCar. Step: 2375000. Time Elapsed: 25971.583 s. Mean Reward: -255.862. Std of Reward: 249.604. Training.
+[INFO] stupidDriveCar. Step: 2400000. Time Elapsed: 26278.310 s. Mean Reward: -234.288. Std of Reward: 156.604. Training.
+[INFO] stupidDriveCar. Step: 2425000. Time Elapsed: 26586.040 s. Mean Reward: -234.741. Std of Reward: 165.502. Training.
+[INFO] stupidDriveCar. Step: 2450000. Time Elapsed: 26898.261 s. Mean Reward: -231.787. Std of Reward: 145.408. Training.
+[INFO] stupidDriveCar. Step: 2475000. Time Elapsed: 27210.940 s. Mean Reward: -235.327. Std of Reward: 183.777. Training.
+[INFO] stupidDriveCar. Step: 2500000. Time Elapsed: 27524.678 s. Mean Reward: -251.264. Std of Reward: 200.257. Training.
+[INFO] Exported results\TestPos5mil3\stupidDriveCar\stupidDriveCar-2499997.onnx
+[INFO] stupidDriveCar. Step: 2525000. Time Elapsed: 27840.015 s. Mean Reward: -235.332. Std of Reward: 211.345. Training.
+[INFO] stupidDriveCar. Step: 2550000. Time Elapsed: 28157.526 s. Mean Reward: -231.820. Std of Reward: 228.537. Training.
+[INFO] stupidDriveCar. Step: 2575000. Time Elapsed: 28476.906 s. Mean Reward: -229.630. Std of Reward: 192.725. Training.
+[INFO] stupidDriveCar. Step: 2600000. Time Elapsed: 28798.669 s. Mean Reward: -209.793. Std of Reward: 196.266. Training.
+[INFO] stupidDriveCar. Step: 2625000. Time Elapsed: 29127.712 s. Mean Reward: -201.992. Std of Reward: 176.312. Training.
+[INFO] stupidDriveCar. Step: 2650000. Time Elapsed: 29453.173 s. Mean Reward: -205.624. Std of Reward: 161.680. Training.
+[INFO] stupidDriveCar. Step: 2675000. Time Elapsed: 29780.460 s. Mean Reward: -209.053. Std of Reward: 166.715. Training.
+[INFO] stupidDriveCar. Step: 2700000. Time Elapsed: 30109.850 s. Mean Reward: -211.874. Std of Reward: 206.701. Training.
+[INFO] stupidDriveCar. Step: 2725000. Time Elapsed: 30439.198 s. Mean Reward: -238.011. Std of Reward: 256.471. Training.
+[INFO] stupidDriveCar. Step: 2750000. Time Elapsed: 30769.824 s. Mean Reward: -231.049. Std of Reward: 215.848. Training.
+[INFO] stupidDriveCar. Step: 2775000. Time Elapsed: 31102.144 s. Mean Reward: -233.804. Std of Reward: 245.671. Training.
+[INFO] stupidDriveCar. Step: 2800000. Time Elapsed: 31436.118 s. Mean Reward: -235.562. Std of Reward: 180.506. Training.
+[INFO] stupidDriveCar. Step: 2825000. Time Elapsed: 31769.794 s. Mean Reward: -256.038. Std of Reward: 271.220. Training.
+[INFO] stupidDriveCar. Step: 2850000. Time Elapsed: 32105.578 s. Mean Reward: -219.550. Std of Reward: 222.666. Training.
+[INFO] stupidDriveCar. Step: 2875000. Time Elapsed: 32441.880 s. Mean Reward: -261.000. Std of Reward: 303.436. Training.
+[INFO] stupidDriveCar. Step: 2900000. Time Elapsed: 32786.118 s. Mean Reward: -245.040. Std of Reward: 266.433. Training.
+[INFO] stupidDriveCar. Step: 2925000. Time Elapsed: 33125.734 s. Mean Reward: -218.757. Std of Reward: 237.621. Training.
+[INFO] stupidDriveCar. Step: 2950000. Time Elapsed: 33466.559 s. Mean Reward: -224.196. Std of Reward: 253.745. Training.
+[INFO] stupidDriveCar. Step: 2975000. Time Elapsed: 33808.380 s. Mean Reward: -218.481. Std of Reward: 243.459. Training.
+[INFO] stupidDriveCar. Step: 3000000. Time Elapsed: 34150.529 s. Mean Reward: -216.587. Std of Reward: 249.124. Training.
+[INFO] Exported results\TestPos5mil3\stupidDriveCar\stupidDriveCar-2999999.onnx
+[INFO] stupidDriveCar. Step: 3025000. Time Elapsed: 34495.226 s. Mean Reward: -201.772. Std of Reward: 199.870. Training.
+[INFO] stupidDriveCar. Step: 3050000. Time Elapsed: 34842.937 s. Mean Reward: -203.900. Std of Reward: 204.166. Training.
+[INFO] stupidDriveCar. Step: 3075000. Time Elapsed: 35189.754 s. Mean Reward: -237.165. Std of Reward: 284.416. Training.
+[INFO] stupidDriveCar. Step: 3100000. Time Elapsed: 35537.323 s. Mean Reward: -236.432. Std of Reward: 287.958. Training.
+[INFO] stupidDriveCar. Step: 3125000. Time Elapsed: 35885.578 s. Mean Reward: -229.220. Std of Reward: 279.427. Training.
+[INFO] stupidDriveCar. Step: 3150000. Time Elapsed: 36243.566 s. Mean Reward: -209.166. Std of Reward: 243.935. Training.
+[INFO] stupidDriveCar. Step: 3175000. Time Elapsed: 36595.351 s. Mean Reward: -220.080. Std of Reward: 241.339. Training.
+[INFO] stupidDriveCar. Step: 3200000. Time Elapsed: 36949.746 s. Mean Reward: -219.389. Std of Reward: 213.405. Training.
+[INFO] stupidDriveCar. Step: 3225000. Time Elapsed: 37308.522 s. Mean Reward: -214.280. Std of Reward: 219.235. Training.
+[INFO] stupidDriveCar. Step: 3250000. Time Elapsed: 37668.253 s. Mean Reward: -211.511. Std of Reward: 258.060. Training.
+[INFO] stupidDriveCar. Step: 3275000. Time Elapsed: 38032.915 s. Mean Reward: -220.931. Std of Reward: 273.683. Training.
+[INFO] stupidDriveCar. Step: 3300000. Time Elapsed: 38427.657 s. Mean Reward: -252.415. Std of Reward: 319.756. Training.
+[INFO] stupidDriveCar. Step: 3325000. Time Elapsed: 38799.330 s. Mean Reward: -247.759. Std of Reward: 298.414. Training.
+[INFO] stupidDriveCar. Step: 3350000. Time Elapsed: 39167.949 s. Mean Reward: -256.714. Std of Reward: 315.626. Training.
+[INFO] stupidDriveCar. Step: 3375000. Time Elapsed: 39539.877 s. Mean Reward: -239.421. Std of Reward: 283.990. Training.
+[INFO] stupidDriveCar. Step: 3400000. Time Elapsed: 39915.461 s. Mean Reward: -243.175. Std of Reward: 286.575. Training.
+[INFO] stupidDriveCar. Step: 3425000. Time Elapsed: 40296.262 s. Mean Reward: -294.196. Std of Reward: 336.869. Training.
+[INFO] stupidDriveCar. Step: 3450000. Time Elapsed: 40678.164 s. Mean Reward: -282.369. Std of Reward: 346.141. Training.
+[INFO] stupidDriveCar. Step: 3475000. Time Elapsed: 41063.718 s. Mean Reward: -248.073. Std of Reward: 310.984. Training.
+[INFO] stupidDriveCar. Step: 3500000. Time Elapsed: 41453.197 s. Mean Reward: -275.003. Std of Reward: 330.375. Training.
+[INFO] Exported results\TestPos5mil3\stupidDriveCar\stupidDriveCar-3499993.onnx
+[INFO] stupidDriveCar. Step: 3525000. Time Elapsed: 41849.266 s. Mean Reward: -261.916. Std of Reward: 293.836. Training.
+[INFO] stupidDriveCar. Step: 3550000. Time Elapsed: 42249.398 s. Mean Reward: -240.596. Std of Reward: 297.141. Training.
+[INFO] stupidDriveCar. Step: 3575000. Time Elapsed: 42653.417 s. Mean Reward: -223.434. Std of Reward: 262.189. Training.
+[INFO] stupidDriveCar. Step: 3600000. Time Elapsed: 43058.891 s. Mean Reward: -260.205. Std of Reward: 361.021. Training.
+[INFO] stupidDriveCar. Step: 3625000. Time Elapsed: 43471.313 s. Mean Reward: -218.683. Std of Reward: 222.751. Training.
+[INFO] stupidDriveCar. Step: 3650000. Time Elapsed: 43887.294 s. Mean Reward: -223.528. Std of Reward: 193.628. Training.
+[INFO] stupidDriveCar. Step: 3675000. Time Elapsed: 44313.105 s. Mean Reward: -245.942. Std of Reward: 288.683. Training.
+[INFO] stupidDriveCar. Step: 3700000. Time Elapsed: 44735.814 s. Mean Reward: -240.515. Std of Reward: 293.688. Training.
+[INFO] stupidDriveCar. Step: 3725000. Time Elapsed: 45160.495 s. Mean Reward: -264.123. Std of Reward: 337.628. Training.
+[INFO] stupidDriveCar. Step: 3750000. Time Elapsed: 45589.542 s. Mean Reward: -245.930. Std of Reward: 297.695. Training.
+[INFO] stupidDriveCar. Step: 3775000. Time Elapsed: 46022.321 s. Mean Reward: -278.161. Std of Reward: 350.264. Training.
+[INFO] stupidDriveCar. Step: 3800000. Time Elapsed: 46457.729 s. Mean Reward: -244.838. Std of Reward: 283.738. Training.
+[INFO] stupidDriveCar. Step: 3825000. Time Elapsed: 46904.894 s. Mean Reward: -233.518. Std of Reward: 289.956. Training.
+[INFO] stupidDriveCar. Step: 3850000. Time Elapsed: 47345.919 s. Mean Reward: -246.194. Std of Reward: 268.521. Training.
+[INFO] stupidDriveCar. Step: 3875000. Time Elapsed: 47795.367 s. Mean Reward: -234.784. Std of Reward: 257.233. Training.
+[INFO] stupidDriveCar. Step: 3900000. Time Elapsed: 48243.936 s. Mean Reward: -243.477. Std of Reward: 264.592. Training.
+[INFO] stupidDriveCar. Step: 3925000. Time Elapsed: 48693.383 s. Mean Reward: -227.913. Std of Reward: 241.438. Training.
+[INFO] stupidDriveCar. Step: 3950000. Time Elapsed: 49150.984 s. Mean Reward: -221.065. Std of Reward: 238.564. Training.
+[INFO] stupidDriveCar. Step: 3975000. Time Elapsed: 49604.408 s. Mean Reward: -226.321. Std of Reward: 279.586. Training.
+[INFO] stupidDriveCar. Step: 4000000. Time Elapsed: 50062.299 s. Mean Reward: -235.618. Std of Reward: 279.417. Training.
+[INFO] Exported results\TestPos5mil3\stupidDriveCar\stupidDriveCar-3999996.onnx
+[INFO] stupidDriveCar. Step: 4025000. Time Elapsed: 50523.139 s. Mean Reward: -237.341. Std of Reward: 270.346. Training.
+[INFO] stupidDriveCar. Step: 4050000. Time Elapsed: 50986.712 s. Mean Reward: -261.304. Std of Reward: 348.659. Training.
+[INFO] stupidDriveCar. Step: 4075000. Time Elapsed: 51457.693 s. Mean Reward: -218.207. Std of Reward: 256.754. Training.
+[INFO] stupidDriveCar. Step: 4100000. Time Elapsed: 51932.926 s. Mean Reward: -228.243. Std of Reward: 292.757. Training.
+[INFO] stupidDriveCar. Step: 4125000. Time Elapsed: 52416.864 s. Mean Reward: -211.564. Std of Reward: 265.669. Training.
+[INFO] stupidDriveCar. Step: 4150000. Time Elapsed: 52906.826 s. Mean Reward: -210.909. Std of Reward: 268.031. Training.
+[INFO] stupidDriveCar. Step: 4175000. Time Elapsed: 53403.948 s. Mean Reward: -234.391. Std of Reward: 298.072. Training.
+[INFO] stupidDriveCar. Step: 4200000. Time Elapsed: 53917.815 s. Mean Reward: -231.668. Std of Reward: 267.993. Training.
+[INFO] stupidDriveCar. Step: 4225000. Time Elapsed: 54433.860 s. Mean Reward: -236.636. Std of Reward: 267.616. Training.
+[INFO] stupidDriveCar. Step: 4250000. Time Elapsed: 54966.967 s. Mean Reward: -224.015. Std of Reward: 163.763. Training.
+[INFO] stupidDriveCar. Step: 4275000. Time Elapsed: 55512.845 s. Mean Reward: -228.577. Std of Reward: 225.380. Training.
+[INFO] stupidDriveCar. Step: 4300000. Time Elapsed: 56075.414 s. Mean Reward: -217.633. Std of Reward: 217.127. Training.
+[INFO] stupidDriveCar. Step: 4325000. Time Elapsed: 56647.337 s. Mean Reward: -225.232. Std of Reward: 235.693. Training.
+[INFO] stupidDriveCar. Step: 4350000. Time Elapsed: 57233.693 s. Mean Reward: -216.265. Std of Reward: 235.760. Training.
+[INFO] stupidDriveCar. Step: 4375000. Time Elapsed: 57831.486 s. Mean Reward: -241.824. Std of Reward: 288.786. Training.
+[INFO] stupidDriveCar. Step: 4400000. Time Elapsed: 58437.871 s. Mean Reward: -245.084. Std of Reward: 272.131. Training.
+[INFO] stupidDriveCar. Step: 4425000. Time Elapsed: 59047.215 s. Mean Reward: -272.025. Std of Reward: 269.436. Training.
+[INFO] stupidDriveCar. Step: 4450000. Time Elapsed: 59667.313 s. Mean Reward: -227.262. Std of Reward: 249.982. Training.
+[INFO] stupidDriveCar. Step: 4475000. Time Elapsed: 60301.741 s. Mean Reward: -249.843. Std of Reward: 276.123. Training.
+[INFO] stupidDriveCar. Step: 4500000. Time Elapsed: 60946.156 s. Mean Reward: -216.614. Std of Reward: 242.060. Training.
+[INFO] Exported results\TestPos5mil3\stupidDriveCar\stupidDriveCar-4499997.onnx
+[INFO] stupidDriveCar. Step: 4525000. Time Elapsed: 61596.637 s. Mean Reward: -225.655. Std of Reward: 271.073. Training.
+[INFO] stupidDriveCar. Step: 4550000. Time Elapsed: 62256.018 s. Mean Reward: -230.003. Std of Reward: 271.301. Training.
+[INFO] stupidDriveCar. Step: 4575000. Time Elapsed: 62925.932 s. Mean Reward: -255.431. Std of Reward: 333.487. Training.
+[INFO] stupidDriveCar. Step: 4600000. Time Elapsed: 63601.133 s. Mean Reward: -226.850. Std of Reward: 257.705. Training.
+[INFO] stupidDriveCar. Step: 4625000. Time Elapsed: 64295.924 s. Mean Reward: -211.956. Std of Reward: 239.354. Training.
+[INFO] stupidDriveCar. Step: 4650000. Time Elapsed: 65011.606 s. Mean Reward: -186.530. Std of Reward: 167.270. Training.
+[INFO] stupidDriveCar. Step: 4675000. Time Elapsed: 65743.414 s. Mean Reward: -168.785. Std of Reward: 111.719. Training.
+[INFO] stupidDriveCar. Step: 4700000. Time Elapsed: 66503.600 s. Mean Reward: -162.965. Std of Reward: 92.027. Training.
+[INFO] stupidDriveCar. Step: 4725000. Time Elapsed: 67281.217 s. Mean Reward: -174.338. Std of Reward: 149.087. Training.
+[INFO] stupidDriveCar. Step: 4750000. Time Elapsed: 68088.107 s. Mean Reward: -213.087. Std of Reward: 225.305. Training.
+[INFO] stupidDriveCar. Step: 4775000. Time Elapsed: 68941.299 s. Mean Reward: -226.585. Std of Reward: 263.469. Training.
+[INFO] stupidDriveCar. Step: 4800000. Time Elapsed: 69847.099 s. Mean Reward: -209.731. Std of Reward: 222.632. Training.
+[INFO] stupidDriveCar. Step: 4825000. Time Elapsed: 70818.252 s. Mean Reward: -244.546. Std of Reward: 302.137. Training.
+[INFO] stupidDriveCar. Step: 4850000. Time Elapsed: 71855.587 s. Mean Reward: -247.666. Std of Reward: 261.941. Training.
+[INFO] stupidDriveCar. Step: 4875000. Time Elapsed: 72979.864 s. Mean Reward: -236.719. Std of Reward: 246.677. Training.
+[INFO] stupidDriveCar. Step: 4900000. Time Elapsed: 74158.100 s. Mean Reward: -246.491. Std of Reward: 278.729. Training.
+[INFO] stupidDriveCar. Step: 4925000. Time Elapsed: 75374.742 s. Mean Reward: -235.515. Std of Reward: 255.383. Training.
+[INFO] stupidDriveCar. Step: 4950000. Time Elapsed: 76630.215 s. Mean Reward: -220.454. Std of Reward: 207.914. Training.
+[INFO] stupidDriveCar. Step: 4975000. Time Elapsed: 77917.005 s. Mean Reward: -213.476. Std of Reward: 204.825. Training.
+[INFO] stupidDriveCar. Step: 5000000. Time Elapsed: 79221.823 s. Mean Reward: -229.798. Std of Reward: 215.404. Training.
+[INFO] Exported results\TestPos5mil3\stupidDriveCar\stupidDriveCar-4999998.onnx
+[WARNING] Restarting worker[0] after 'Communicator has exited.'
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+[INFO] Listening on port 5004. Start training by pressing the Play button in the Unity Editor.

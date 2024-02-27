@@ -6,6 +6,7 @@ using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
+using Unity.MLAgents.Policies;
 
 public class AgentScript : Agent
 {
@@ -14,6 +15,8 @@ public class AgentScript : Agent
     public Transform target;
     public GameObject objectToAccess;
     public Rigidbody rb;
+
+    [SerializeField] bool test2Settings = false;
 
     public override void Initialize()
     {
@@ -80,9 +83,12 @@ public class AgentScript : Agent
         - Useless due to new sensor
 
         */ 
-
-        sensor.AddObservation(transform.localPosition); //tillfällig
-        
+        if (test2Settings == true)
+        {
+            sensor.AddObservation(transform.localPosition);
+            sensor.AddObservation(transform.localRotation.eulerAngles.y);
+            objectToAccess.GetComponent<RayPerceptionSensorComponent3D>().enabled = false;
+        }
     }
 
     //test
