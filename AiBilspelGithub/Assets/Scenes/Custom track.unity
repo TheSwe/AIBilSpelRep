@@ -243,8 +243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b8566911bd2f7f4e845624a7b3cdb2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customTrack: 0
-  trackorder: 0000000000000000000000000000000000000000000000000000000000000000
+  customTrack: 1
+  trackorder: 0000000003000000000000000500000002000000000000000000000000000000
   trackPieces:
   - {fileID: 7207349553866946100, guid: 8ff06a1030e9da041b37e304895010b9, type: 3}
   - {fileID: 227992345450138601, guid: 21435d91a39b1fb4985373fad6b5a5af, type: 3}
@@ -564,7 +564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3db2b9b6279b942a014530a2eb166c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manualDrive: 1
+  manualDrive: 0
   control: 0
   maxAcceleration: 300
   brakeAcceleration: 500
@@ -669,6 +669,7 @@ MonoBehaviour:
   gas: 0
   target: {fileID: 164534881}
   objectToAccess: {fileID: 164534878}
+  rb: {fileID: 164534880}
 --- !u!114 &164534885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -694,7 +695,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: My Behavior
+  m_BehaviorName: stupidDriveCar
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1

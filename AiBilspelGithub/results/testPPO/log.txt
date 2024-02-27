@@ -1,0 +1,1799 @@
+Microsoft Windows [Version 10.0.19045.3930]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>python
+Python 3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit()
+
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>python -m venv venv
+
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>venv/Scripts/activate
+'venv' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>venv\Scripts\activate
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>python -m pip install --upgrade pip
+Requirement already satisfied: pip in c:\users\arvid.kagedal\documents\github\aibilspelrep\aibilspelgithub\venv\lib\site-packages (22.0.4)
+Collecting pip
+  Downloading pip-24.0-py3-none-any.whl (2.1 MB)
+     ---------------------------------------- 2.1/2.1 MB 4.3 MB/s eta 0:00:00
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 22.0.4
+    Uninstalling pip-22.0.4:
+      Successfully uninstalled pip-22.0.4
+Successfully installed pip-24.0
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>pip install mlagents
+Collecting mlagents
+  Downloading mlagents-0.30.0.tar.gz (131 kB)
+     ---------------------------------------- 132.0/132.0 kB 7.6 MB/s eta 0:00:00
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Installing backend dependencies ... done
+  Preparing metadata (pyproject.toml) ... done
+Collecting grpcio>=1.11.0 (from mlagents)
+  Downloading grpcio-1.60.1-cp39-cp39-win_amd64.whl.metadata (4.2 kB)
+Collecting h5py>=2.9.0 (from mlagents)
+  Downloading h5py-3.10.0-cp39-cp39-win_amd64.whl.metadata (2.5 kB)
+Collecting mlagents-envs==0.30.0 (from mlagents)
+  Downloading mlagents_envs-0.30.0.tar.gz (56 kB)
+     ---------------------------------------- 56.7/56.7 kB ? eta 0:00:00
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Installing backend dependencies ... done
+  Preparing metadata (pyproject.toml) ... done
+Collecting numpy<2.0,>=1.13.3 (from mlagents)
+  Downloading numpy-1.26.4-cp39-cp39-win_amd64.whl.metadata (61 kB)
+     ---------------------------------------- 61.0/61.0 kB ? eta 0:00:00
+Collecting Pillow>=4.2.1 (from mlagents)
+  Downloading pillow-10.2.0-cp39-cp39-win_amd64.whl.metadata (9.9 kB)
+Collecting protobuf>=3.6 (from mlagents)
+  Downloading protobuf-4.25.3-cp39-cp39-win_amd64.whl.metadata (541 bytes)
+Collecting pyyaml>=3.1.0 (from mlagents)
+  Downloading PyYAML-6.0.1-cp39-cp39-win_amd64.whl.metadata (2.1 kB)
+Collecting tensorboard>=1.15 (from mlagents)
+  Downloading tensorboard-2.16.2-py3-none-any.whl.metadata (1.6 kB)
+Collecting attrs>=19.3.0 (from mlagents)
+  Downloading attrs-23.2.0-py3-none-any.whl.metadata (9.5 kB)
+Collecting pypiwin32==223 (from mlagents)
+  Downloading pypiwin32-223-py3-none-any.whl (1.7 kB)
+Collecting cattrs<1.7,>=1.1.0 (from mlagents)
+  Downloading cattrs-1.5.0-py3-none-any.whl (19 kB)
+Collecting cloudpickle (from mlagents-envs==0.30.0->mlagents)
+  Downloading cloudpickle-3.0.0-py3-none-any.whl.metadata (7.0 kB)
+Collecting gym>=0.21.0 (from mlagents-envs==0.30.0->mlagents)
+  Downloading gym-0.26.2.tar.gz (721 kB)
+     ---------------------------------------- 721.7/721.7 kB 7.6 MB/s eta 0:00:00
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Installing backend dependencies ... done
+  Preparing metadata (pyproject.toml) ... done
+Collecting pettingzoo==1.15.0 (from mlagents-envs==0.30.0->mlagents)
+  Downloading PettingZoo-1.15.0.tar.gz (756 kB)
+     ---------------------------------------- 756.7/756.7 kB 4.0 MB/s eta 0:00:00
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Installing backend dependencies ... done
+  Preparing metadata (pyproject.toml) ... done
+Collecting numpy<2.0,>=1.13.3 (from mlagents)
+  Downloading numpy-1.21.2-cp39-cp39-win_amd64.whl (14.0 MB)
+     ---------------------------------------- 14.0/14.0 MB 4.0 MB/s eta 0:00:00
+Collecting filelock>=3.4.0 (from mlagents-envs==0.30.0->mlagents)
+  Downloading filelock-3.13.1-py3-none-any.whl.metadata (2.8 kB)
+Collecting pywin32>=223 (from pypiwin32==223->mlagents)
+  Downloading pywin32-306-cp39-cp39-win_amd64.whl.metadata (6.4 kB)
+Collecting absl-py>=0.4 (from tensorboard>=1.15->mlagents)
+  Downloading absl_py-2.1.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting markdown>=2.6.8 (from tensorboard>=1.15->mlagents)
+  Downloading Markdown-3.5.2-py3-none-any.whl.metadata (7.0 kB)
+Requirement already satisfied: setuptools>=41.0.0 in c:\users\arvid.kagedal\documents\github\aibilspelrep\aibilspelgithub\venv\lib\site-packages (from tensorboard>=1.15->mlagents) (58.1.0)
+Collecting six>1.9 (from tensorboard>=1.15->mlagents)
+  Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+Collecting tensorboard-data-server<0.8.0,>=0.7.0 (from tensorboard>=1.15->mlagents)
+  Downloading tensorboard_data_server-0.7.2-py3-none-any.whl.metadata (1.1 kB)
+Collecting werkzeug>=1.0.1 (from tensorboard>=1.15->mlagents)
+  Downloading werkzeug-3.0.1-py3-none-any.whl.metadata (4.1 kB)
+Collecting gym-notices>=0.0.4 (from gym>=0.21.0->mlagents-envs==0.30.0->mlagents)
+  Downloading gym_notices-0.0.8-py3-none-any.whl.metadata (1.0 kB)
+Collecting importlib-metadata>=4.8.0 (from gym>=0.21.0->mlagents-envs==0.30.0->mlagents)
+  Downloading importlib_metadata-7.0.1-py3-none-any.whl.metadata (4.9 kB)
+Collecting MarkupSafe>=2.1.1 (from werkzeug>=1.0.1->tensorboard>=1.15->mlagents)
+  Downloading MarkupSafe-2.1.5-cp39-cp39-win_amd64.whl.metadata (3.1 kB)
+Collecting zipp>=0.5 (from importlib-metadata>=4.8.0->gym>=0.21.0->mlagents-envs==0.30.0->mlagents)
+  Downloading zipp-3.17.0-py3-none-any.whl.metadata (3.7 kB)
+Downloading attrs-23.2.0-py3-none-any.whl (60 kB)
+   ---------------------------------------- 60.8/60.8 kB 3.4 MB/s eta 0:00:00
+Downloading grpcio-1.60.1-cp39-cp39-win_amd64.whl (3.7 MB)
+   ---------------------------------------- 3.7/3.7 MB 3.3 MB/s eta 0:00:00
+Downloading h5py-3.10.0-cp39-cp39-win_amd64.whl (2.7 MB)
+   ---------------------------------------- 2.7/2.7 MB 5.1 MB/s eta 0:00:00
+Downloading pillow-10.2.0-cp39-cp39-win_amd64.whl (2.6 MB)
+   ---------------------------------------- 2.6/2.6 MB 7.3 MB/s eta 0:00:00
+Downloading protobuf-4.25.3-cp39-cp39-win_amd64.whl (413 kB)
+   ---------------------------------------- 413.4/413.4 kB 1.5 MB/s eta 0:00:00
+Downloading PyYAML-6.0.1-cp39-cp39-win_amd64.whl (152 kB)
+   ---------------------------------------- 152.8/152.8 kB 8.9 MB/s eta 0:00:00
+Downloading tensorboard-2.16.2-py3-none-any.whl (5.5 MB)
+   ---------------------------------------- 5.5/5.5 MB 8.0 MB/s eta 0:00:00
+Downloading absl_py-2.1.0-py3-none-any.whl (133 kB)
+   ---------------------------------------- 133.7/133.7 kB 2.0 MB/s eta 0:00:00
+Downloading filelock-3.13.1-py3-none-any.whl (11 kB)
+Downloading cloudpickle-3.0.0-py3-none-any.whl (20 kB)
+Downloading Markdown-3.5.2-py3-none-any.whl (103 kB)
+   ---------------------------------------- 103.9/103.9 kB 5.9 MB/s eta 0:00:00
+Downloading pywin32-306-cp39-cp39-win_amd64.whl (9.3 MB)
+   ---------------------------------------- 9.3/9.3 MB 5.8 MB/s eta 0:00:00
+Downloading tensorboard_data_server-0.7.2-py3-none-any.whl (2.4 kB)
+Downloading werkzeug-3.0.1-py3-none-any.whl (226 kB)
+   ---------------------------------------- 226.7/226.7 kB 13.5 MB/s eta 0:00:00
+Downloading gym_notices-0.0.8-py3-none-any.whl (3.0 kB)
+Downloading importlib_metadata-7.0.1-py3-none-any.whl (23 kB)
+Downloading MarkupSafe-2.1.5-cp39-cp39-win_amd64.whl (17 kB)
+Downloading zipp-3.17.0-py3-none-any.whl (7.4 kB)
+Building wheels for collected packages: mlagents, mlagents-envs, pettingzoo, gym
+  Building wheel for mlagents (pyproject.toml) ... done
+  Created wheel for mlagents: filename=mlagents-0.30.0-py3-none-any.whl size=168460 sha256=c7a8d76a8c73be448eb57abda3daed7a5536da262ea7f86833c0c834dc88365c
+  Stored in directory: c:\users\arvid.kagedal\appdata\local\pip\cache\wheels\5c\8a\c3\39cf65990bffb0b634f7be00d00b2f376e0cc080cef2862988
+  Building wheel for mlagents-envs (pyproject.toml) ... done
+  Created wheel for mlagents-envs: filename=mlagents_envs-0.30.0-py3-none-any.whl size=88762 sha256=967649904ece5cd9efea1910e1af87ac9fa108ff6ca30cabccc5f7a496b18f85
+  Stored in directory: c:\users\arvid.kagedal\appdata\local\pip\cache\wheels\57\59\8f\64ce14f4ac14b1c3c39a2d13f4052a672be991239f07adf152
+  Building wheel for pettingzoo (pyproject.toml) ... done
+  Created wheel for pettingzoo: filename=PettingZoo-1.15.0-py3-none-any.whl size=875645 sha256=fa72eab48480f512ba3dd592b82b456b037c10c0e8b80660bab452954224e9fc
+  Stored in directory: c:\users\arvid.kagedal\appdata\local\pip\cache\wheels\28\41\39\907f7364e5f371af41f720f4e5ca07f42e35e57b42f0382895
+  Building wheel for gym (pyproject.toml) ... done
+  Created wheel for gym: filename=gym-0.26.2-py3-none-any.whl size=827634 sha256=3bc1328a4bd22a194a3e51d87da24e40d30017a28fc3dfe14ee90fe8e92886f4
+  Stored in directory: c:\users\arvid.kagedal\appdata\local\pip\cache\wheels\af\2b\30\5e78b8b9599f2a2286a582b8da80594f654bf0e18d825a4405
+Successfully built mlagents mlagents-envs pettingzoo gym
+Installing collected packages: pywin32, gym-notices, zipp, tensorboard-data-server, six, pyyaml, pypiwin32, protobuf, Pillow, numpy, MarkupSafe, grpcio, filelock, cloudpickle, attrs, absl-py, werkzeug, importlib-metadata, h5py, cattrs, markdown, gym, tensorboard, pettingzoo, mlagents-envs, mlagents
+Successfully installed MarkupSafe-2.1.5 Pillow-10.2.0 absl-py-2.1.0 attrs-23.2.0 cattrs-1.5.0 cloudpickle-3.0.0 filelock-3.13.1 grpcio-1.60.1 gym-0.26.2 gym-notices-0.0.8 h5py-3.10.0 importlib-metadata-7.0.1 markdown-3.5.2 mlagents-0.30.0 mlagents-envs-0.30.0 numpy-1.21.2 pettingzoo-1.15.0 protobuf-4.25.3 pypiwin32-223 pywin32-306 pyyaml-6.0.1 six-1.16.0 tensorboard-2.16.2 tensorboard-data-server-0.7.2 werkzeug-3.0.1 zipp-3.17.0
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>pip3 installtorch torchvision torchaudio
+ERROR: unknown command "installtorch" - maybe you meant "install"
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>pip3 install torch torchvision torchaudio
+Collecting torch
+  Downloading torch-2.2.0-cp39-cp39-win_amd64.whl.metadata (26 kB)
+Collecting torchvision
+  Downloading torchvision-0.17.0-cp39-cp39-win_amd64.whl.metadata (6.6 kB)
+Collecting torchaudio
+  Downloading torchaudio-2.2.0-cp39-cp39-win_amd64.whl.metadata (6.4 kB)
+Requirement already satisfied: filelock in c:\users\arvid.kagedal\documents\github\aibilspelrep\aibilspelgithub\venv\lib\site-packages (from torch) (3.13.1)
+Collecting typing-extensions>=4.8.0 (from torch)
+  Downloading typing_extensions-4.9.0-py3-none-any.whl.metadata (3.0 kB)
+Collecting sympy (from torch)
+  Downloading sympy-1.12-py3-none-any.whl.metadata (12 kB)
+Collecting networkx (from torch)
+  Downloading networkx-3.2.1-py3-none-any.whl.metadata (5.2 kB)
+Collecting jinja2 (from torch)
+  Downloading Jinja2-3.1.3-py3-none-any.whl.metadata (3.3 kB)
+Collecting fsspec (from torch)
+  Downloading fsspec-2024.2.0-py3-none-any.whl.metadata (6.8 kB)
+Requirement already satisfied: numpy in c:\users\arvid.kagedal\documents\github\aibilspelrep\aibilspelgithub\venv\lib\site-packages (from torchvision) (1.21.2)
+Collecting requests (from torchvision)
+  Downloading requests-2.31.0-py3-none-any.whl.metadata (4.6 kB)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in c:\users\arvid.kagedal\documents\github\aibilspelrep\aibilspelgithub\venv\lib\site-packages (from torchvision) (10.2.0)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\arvid.kagedal\documents\github\aibilspelrep\aibilspelgithub\venv\lib\site-packages (from jinja2->torch) (2.1.5)
+Collecting charset-normalizer<4,>=2 (from requests->torchvision)
+  Downloading charset_normalizer-3.3.2-cp39-cp39-win_amd64.whl.metadata (34 kB)
+Collecting idna<4,>=2.5 (from requests->torchvision)
+  Downloading idna-3.6-py3-none-any.whl.metadata (9.9 kB)
+Collecting urllib3<3,>=1.21.1 (from requests->torchvision)
+  Downloading urllib3-2.2.1-py3-none-any.whl.metadata (6.4 kB)
+Collecting certifi>=2017.4.17 (from requests->torchvision)
+  Downloading certifi-2024.2.2-py3-none-any.whl.metadata (2.2 kB)
+Collecting mpmath>=0.19 (from sympy->torch)
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Downloading torch-2.2.0-cp39-cp39-win_amd64.whl (198.5 MB)
+   ---------------------------------------- 198.5/198.5 MB 5.2 MB/s eta 0:00:00
+Downloading torchvision-0.17.0-cp39-cp39-win_amd64.whl (1.2 MB)
+   ---------------------------------------- 1.2/1.2 MB 5.3 MB/s eta 0:00:00
+Downloading torchaudio-2.2.0-cp39-cp39-win_amd64.whl (2.4 MB)
+   ---------------------------------------- 2.4/2.4 MB 4.7 MB/s eta 0:00:00
+Downloading typing_extensions-4.9.0-py3-none-any.whl (32 kB)
+Downloading fsspec-2024.2.0-py3-none-any.whl (170 kB)
+   ---------------------------------------- 170.9/170.9 kB 5.2 MB/s eta 0:00:00
+Downloading Jinja2-3.1.3-py3-none-any.whl (133 kB)
+   ---------------------------------------- 133.2/133.2 kB 8.2 MB/s eta 0:00:00
+Downloading networkx-3.2.1-py3-none-any.whl (1.6 MB)
+   ---------------------------------------- 1.6/1.6 MB 8.8 MB/s eta 0:00:00
+Downloading requests-2.31.0-py3-none-any.whl (62 kB)
+   ---------------------------------------- 62.6/62.6 kB ? eta 0:00:00
+Downloading sympy-1.12-py3-none-any.whl (5.7 MB)
+   ---------------------------------------- 5.7/5.7 MB 4.4 MB/s eta 0:00:00
+Downloading certifi-2024.2.2-py3-none-any.whl (163 kB)
+   ---------------------------------------- 163.8/163.8 kB 1.7 MB/s eta 0:00:00
+Downloading charset_normalizer-3.3.2-cp39-cp39-win_amd64.whl (100 kB)
+   ---------------------------------------- 100.4/100.4 kB 1.2 MB/s eta 0:00:00
+Downloading idna-3.6-py3-none-any.whl (61 kB)
+   ---------------------------------------- 61.6/61.6 kB ? eta 0:00:00
+Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+   ---------------------------------------- 536.2/536.2 kB 5.6 MB/s eta 0:00:00
+Downloading urllib3-2.2.1-py3-none-any.whl (121 kB)
+   ---------------------------------------- 121.1/121.1 kB 6.9 MB/s eta 0:00:00
+Installing collected packages: mpmath, urllib3, typing-extensions, sympy, networkx, jinja2, idna, fsspec, charset-normalizer, certifi, torch, requests, torchvision, torchaudio
+Successfully installed certifi-2024.2.2 charset-normalizer-3.3.2 fsspec-2024.2.0 idna-3.6 jinja2-3.1.3 mpmath-1.3.0 networkx-3.2.1 requests-2.31.0 sympy-1.12 torch-2.2.0 torchaudio-2.2.0 torchvision-0.17.0 typing-extensions-4.9.0 urllib3-2.2.1
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>pip install onnx
+Collecting onnx
+  Downloading onnx-1.15.0-cp39-cp39-win_amd64.whl.metadata (15 kB)
+Requirement already satisfied: numpy in c:\users\arvid.kagedal\documents\github\aibilspelrep\aibilspelgithub\venv\lib\site-packages (from onnx) (1.21.2)
+Requirement already satisfied: protobuf>=3.20.2 in c:\users\arvid.kagedal\documents\github\aibilspelrep\aibilspelgithub\venv\lib\site-packages (from onnx) (4.25.3)
+Downloading onnx-1.15.0-cp39-cp39-win_amd64.whl (14.3 MB)
+   ---------------------------------------- 14.3/14.3 MB 3.4 MB/s eta 0:00:00
+Installing collected packages: onnx
+Successfully installed onnx-1.15.0
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>pip install protobuf==3.20.3
+Collecting protobuf==3.20.3
+  Downloading protobuf-3.20.3-cp39-cp39-win_amd64.whl.metadata (699 bytes)
+Downloading protobuf-3.20.3-cp39-cp39-win_amd64.whl (904 kB)
+   ---------------------------------------- 904.2/904.2 kB 7.2 MB/s eta 0:00:00
+Installing collected packages: protobuf
+  Attempting uninstall: protobuf
+    Found existing installation: protobuf 4.25.3
+    Uninstalling protobuf-4.25.3:
+      Successfully uninstalled protobuf-4.25.3
+Successfully installed protobuf-3.20.3
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>pip3 install packaging
+Collecting packaging
+  Downloading packaging-23.2-py3-none-any.whl.metadata (3.2 kB)
+Downloading packaging-23.2-py3-none-any.whl (53 kB)
+   ---------------------------------------- 53.0/53.0 kB 455.0 kB/s eta 0:00:00
+Installing collected packages: packaging
+Successfully installed packaging-23.2
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>mlagents-learn --help
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+usage: mlagents-learn.exe [-h] [--env ENV_PATH] [--resume] [--deterministic] [--force] [--run-id RUN_ID]
+                          [--initialize-from RUN_ID] [--seed SEED] [--inference] [--base-port BASE_PORT]
+                          [--num-envs NUM_ENVS] [--num-areas NUM_AREAS] [--debug] [--env-args ...]
+                          [--max-lifetime-restarts MAX_LIFETIME_RESTARTS]
+                          [--restarts-rate-limit-n RESTARTS_RATE_LIMIT_N]
+                          [--restarts-rate-limit-period-s RESTARTS_RATE_LIMIT_PERIOD_S] [--torch] [--tensorflow]
+                          [--results-dir RESULTS_DIR] [--width WIDTH] [--height HEIGHT]
+                          [--quality-level QUALITY_LEVEL] [--time-scale TIME_SCALE]
+                          [--target-frame-rate TARGET_FRAME_RATE] [--capture-frame-rate CAPTURE_FRAME_RATE]
+                          [--no-graphics] [--torch-device DEVICE]
+                          [trainer_config_path]
+
+positional arguments:
+  trainer_config_path
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --env ENV_PATH        Path to the Unity executable to train (default: None)
+  --resume              Whether to resume training from a checkpoint. Specify a --run-id to use this option. If set,
+                        the training code loads an already trained model to initialize the neural network before
+                        resuming training. This option is only valid when the models exist, and have the same behavior
+                        names as the current agents in your scene. (default: False)
+  --deterministic       Whether to select actions deterministically in policy. `dist.mean` for continuous action
+                        space, and `dist.argmax` for deterministic action space (default: False)
+  --force               Whether to force-overwrite this run-id's existing summary and model data. (Without this flag,
+                        attempting to train a model with a run-id that has been used before will throw an error.
+                        (default: False)
+  --run-id RUN_ID       The identifier for the training run. This identifier is used to name the subdirectories in
+                        which the trained model and summary statistics are saved as well as the saved model itself. If
+                        you use TensorBoard to view the training statistics, always set a unique run-id for each
+                        training run. (The statistics for all runs with the same id are combined as if they were
+                        produced by a the same session.) (default: ppo)
+  --initialize-from RUN_ID
+                        Specify a previously saved run ID from which to initialize the model from. This can be used,
+                        for instance, to fine-tune an existing model on a new environment. Note that the previously
+                        saved models must have the same behavior parameters as your current environment. (default:
+                        None)
+  --seed SEED           A number to use as a seed for the random number generator used by the training code (default:
+                        -1)
+  --inference           Whether to run in Python inference mode (i.e. no training). Use with --resume to load a model
+                        trained with an existing run ID. (default: False)
+  --base-port BASE_PORT
+                        The starting port for environment communication. Each concurrent Unity environment instance
+                        will get assigned a port sequentially, starting from the base-port. Each instance will use the
+                        port (base_port + worker_id), where the worker_id is sequential IDs given to each instance
+                        from 0 to (num_envs - 1). Note that when training using the Editor rather than an executable,
+                        the base port will be ignored. (default: 5005)
+  --num-envs NUM_ENVS   The number of concurrent Unity environment instances to collect experiences from when training
+                        (default: 1)
+  --num-areas NUM_AREAS
+                        The number of parallel training areas in each Unity environment instance. (default: 1)
+  --debug               Whether to enable debug-level logging for some parts of the code (default: False)
+  --env-args ...        Arguments passed to the Unity executable. Be aware that the standalone build will also process
+                        these as Unity Command Line Arguments. You should choose different argument names if you want
+                        to create environment-specific arguments. All arguments after this flag will be passed to the
+                        executable. (default: None)
+  --max-lifetime-restarts MAX_LIFETIME_RESTARTS
+                        The max number of times a single Unity executable can crash over its lifetime before ml-agents
+                        exits. Can be set to -1 if no limit is desired. (default: 10)
+  --restarts-rate-limit-n RESTARTS_RATE_LIMIT_N
+                        The maximum number of times a single Unity executable can crash over a period of time (period
+                        set in restarts-rate-limit-period-s). Can be set to -1 to not use rate limiting with restarts.
+                        (default: 1)
+  --restarts-rate-limit-period-s RESTARTS_RATE_LIMIT_PERIOD_S
+                        The period of time --restarts-rate-limit-n applies to. (default: 60)
+  --torch               (Removed) Use the PyTorch framework. (default: False)
+  --tensorflow          (Removed) Use the TensorFlow framework. (default: False)
+  --results-dir RESULTS_DIR
+                        Results base directory (default: results)
+
+Engine Configuration:
+  --width WIDTH         The width of the executable window of the environment(s) in pixels (ignored for editor
+                        training). (default: 84)
+  --height HEIGHT       The height of the executable window of the environment(s) in pixels (ignored for editor
+                        training) (default: 84)
+  --quality-level QUALITY_LEVEL
+                        The quality level of the environment(s). Equivalent to calling QualitySettings.SetQualityLevel
+                        in Unity. (default: 5)
+  --time-scale TIME_SCALE
+                        The time scale of the Unity environment(s). Equivalent to setting Time.timeScale in Unity.
+                        (default: 20)
+  --target-frame-rate TARGET_FRAME_RATE
+                        The target frame rate of the Unity environment(s). Equivalent to setting
+                        Application.targetFrameRate in Unity. (default: -1)
+  --capture-frame-rate CAPTURE_FRAME_RATE
+                        The capture frame rate of the Unity environment(s). Equivalent to setting
+                        Time.captureFramerate in Unity. (default: 60)
+  --no-graphics         Whether to run the Unity executable in no-graphics mode (i.e. without initializing the
+                        graphics driver. Use this only if your agents don't use visual observations. (default: False)
+
+Torch Configuration:
+  --torch-device DEVICE
+                        Settings for the default torch.device used in training, for example, "cpu", "cuda", or
+                        "cuda:0" (default: None)
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>mlagents-learn stupidDriveCar.yaml --run-id=test1
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+Traceback (most recent call last):
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\cli_utils.py", line 306, in load_config
+    with open(config_path) as data_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'stupidDriveCar.yaml'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\Scripts\mlagents-learn.exe\__main__.py", line 7, in <module>
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 264, in main
+    run_cli(parse_command_line())
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 56, in parse_command_line
+    return RunOptions.from_argparse(args)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 899, in from_argparse
+    configured_dict.update(load_config(config_path))
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\cli_utils.py", line 310, in load_config
+    raise TrainerConfigError(f"Config file could not be found at {abs_path}.")
+mlagents.trainers.exception.TrainerConfigError: Config file could not be found at C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\stupidDriveCar.yaml.
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>mlagents-learn config/stupidDriveCar.yaml --run-id=test1
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+[WARNING] 'encoding_size' was deprecated for RewardSignals. Please use network_settings.
+
+            ┐  ╖
+        ╓╖╬│╡  ││╬╖╖
+    ╓╖╬│││││┘  ╬│││││╬╖
+ ╖╬│││││╬╜        ╙╬│││││╖╖                               ╗╗╗
+ ╬╬╬╬╖││╦╖        ╖╬││╗╣╣╣╬      ╟╣╣╬    ╟╣╣╣             ╜╜╜  ╟╣╣
+ ╬╬╬╬╬╬╬╬╖│╬╖╖╓╬╪│╓╣╣╣╣╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╒╣╣╖╗╣╣╣╗   ╣╣╣ ╣╣╣╣╣╣ ╟╣╣╖   ╣╣╣
+ ╬╬╬╬┐  ╙╬╬╬╬│╓╣╣╣╝╜  ╫╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╟╣╣╣╙ ╙╣╣╣  ╣╣╣ ╙╟╣╣╜╙  ╫╣╣  ╟╣╣
+ ╬╬╬╬┐     ╙╬╬╣╣      ╫╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╟╣╣╬   ╣╣╣  ╣╣╣  ╟╣╣     ╣╣╣┌╣╣╜
+ ╬╬╬╜       ╬╬╣╣      ╙╝╣╣╬      ╙╣╣╣╗╖╓╗╣╣╣╜ ╟╣╣╬   ╣╣╣  ╣╣╣  ╟╣╣╦╓    ╣╣╣╣╣
+ ╙   ╓╦╖    ╬╬╣╣   ╓╗╗╖            ╙╝╣╣╣╣╝╜   ╘╝╝╜   ╝╝╝  ╝╝╝   ╙╣╣╣    ╟╣╣╣
+   ╩╬╬╬╬╬╬╦╦╬╬╣╣╗╣╣╣╣╣╣╣╝                                             ╫╣╣╣╣
+      ╙╬╬╬╬╬╬╬╣╣╣╣╣╣╝╜
+          ╙╬╬╬╣╣╣╜
+             ╙
+
+ Version information:
+  ml-agents: 0.30.0,
+  ml-agents-envs: 0.30.0,
+  Communicator API: 1.5.0,
+  PyTorch: 2.2.0+cpu
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+[INFO] Listening on port 5004. Start training by pressing the Play button in the Unity Editor.
+[INFO] Connected to Unity environment with package version 2.0.1 and communication version 1.5.0
+[INFO] Connected new brain: stupidDriveCar?team=0
+[INFO] Hyperparameters for behavior name stupidDriveCar:
+        trainer_type:   ppo
+        hyperparameters:
+          batch_size:   512
+          buffer_size:  4096
+          learning_rate:        0.0003
+          beta: 0.0005
+          epsilon:      0.2
+          lambd:        0.99
+          num_epoch:    8
+          shared_critic:        False
+          learning_rate_schedule:       linear
+          beta_schedule:        constant
+          epsilon_schedule:     linear
+        network_settings:
+          normalize:    False
+          hidden_units: 128
+          num_layers:   2
+          vis_encode_type:      simple
+          memory:       None
+          goal_conditioning_type:       hyper
+          deterministic:        False
+        reward_signals:
+          extrinsic:
+            gamma:      0.99
+            strength:   1.0
+            network_settings:
+              normalize:        False
+              hidden_units:     128
+              num_layers:       2
+              vis_encode_type:  simple
+              memory:   None
+              goal_conditioning_type:   hyper
+              deterministic:    False
+          curiosity:
+            gamma:      0.99
+            strength:   0.1
+            network_settings:
+              normalize:        False
+              hidden_units:     256
+              num_layers:       2
+              vis_encode_type:  simple
+              memory:   None
+              goal_conditioning_type:   hyper
+              deterministic:    False
+            learning_rate:      0.0003
+            encoding_size:      256
+        init_path:      None
+        keep_checkpoints:       5
+        checkpoint_interval:    250000
+        max_steps:      750000
+        time_horizon:   10
+        summary_freq:   25000
+        threaded:       False
+        self_play:      None
+        behavioral_cloning:     None
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\torch_entities\utils.py:289: UserWarning: The use of `x.T` on tensors of dimension other than 2 to reverse their shape is deprecated and it will throw an error in a future release. Consider `x.mT` to transpose batches of matrices or `x.permute(*torch.arange(x.ndim - 1, -1, -1))` to reverse the dimensions of a tensor. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\aten\src\ATen\native\TensorShape.cpp:3641.)
+  torch.nn.functional.one_hot(_act.T, action_size[i]).float()
+[INFO] stupidDriveCar. Step: 25000. Time Elapsed: 241.099 s. Mean Reward: -437.547. Std of Reward: 41.516. Training.
+[INFO] stupidDriveCar. Step: 50000. Time Elapsed: 440.980 s. Mean Reward: -432.299. Std of Reward: 36.260. Training.
+[INFO] stupidDriveCar. Step: 75000. Time Elapsed: 644.198 s. Mean Reward: -429.962. Std of Reward: 36.550. Training.
+[INFO] stupidDriveCar. Step: 100000. Time Elapsed: 852.567 s. Mean Reward: -422.299. Std of Reward: 36.201. Training.
+[INFO] stupidDriveCar. Step: 125000. Time Elapsed: 1059.522 s. Mean Reward: -403.210. Std of Reward: 48.622. Training.
+[INFO] stupidDriveCar. Step: 150000. Time Elapsed: 1267.444 s. Mean Reward: -383.807. Std of Reward: 59.777. Training.
+[INFO] stupidDriveCar. Step: 175000. Time Elapsed: 1476.780 s. Mean Reward: -374.900. Std of Reward: 74.878. Training.
+[INFO] stupidDriveCar. Step: 200000. Time Elapsed: 1686.900 s. Mean Reward: -368.707. Std of Reward: 89.998. Training.
+[INFO] stupidDriveCar. Step: 225000. Time Elapsed: 1897.364 s. Mean Reward: -346.664. Std of Reward: 104.128. Training.
+[INFO] stupidDriveCar. Step: 250000. Time Elapsed: 2107.336 s. Mean Reward: -345.731. Std of Reward: 121.923. Training.
+[INFO] Exported results\test1\stupidDriveCar\stupidDriveCar-249992.onnx
+[INFO] stupidDriveCar. Step: 275000. Time Elapsed: 2327.017 s. Mean Reward: -343.490. Std of Reward: 97.737. Training.
+[INFO] stupidDriveCar. Step: 300000. Time Elapsed: 2536.411 s. Mean Reward: -340.464. Std of Reward: 105.565. Training.
+[INFO] stupidDriveCar. Step: 325000. Time Elapsed: 2747.246 s. Mean Reward: -322.757. Std of Reward: 105.609. Training.
+[INFO] stupidDriveCar. Step: 350000. Time Elapsed: 2957.058 s. Mean Reward: -330.538. Std of Reward: 135.542. Training.
+[INFO] stupidDriveCar. Step: 375000. Time Elapsed: 3167.276 s. Mean Reward: -300.836. Std of Reward: 98.076. Training.
+[INFO] stupidDriveCar. Step: 400000. Time Elapsed: 3380.249 s. Mean Reward: -301.158. Std of Reward: 90.411. Training.
+[INFO] stupidDriveCar. Step: 425000. Time Elapsed: 3592.560 s. Mean Reward: -313.615. Std of Reward: 111.967. Training.
+[INFO] stupidDriveCar. Step: 450000. Time Elapsed: 3802.061 s. Mean Reward: -306.364. Std of Reward: 109.554. Training.
+[INFO] stupidDriveCar. Step: 475000. Time Elapsed: 4012.620 s. Mean Reward: -314.608. Std of Reward: 167.414. Training.
+[INFO] stupidDriveCar. Step: 500000. Time Elapsed: 4223.717 s. Mean Reward: -293.321. Std of Reward: 146.080. Training.
+[INFO] Exported results\test1\stupidDriveCar\stupidDriveCar-499999.onnx
+[INFO] stupidDriveCar. Step: 525000. Time Elapsed: 4441.294 s. Mean Reward: -295.197. Std of Reward: 162.715. Training.
+[INFO] stupidDriveCar. Step: 550000. Time Elapsed: 4649.750 s. Mean Reward: -286.279. Std of Reward: 177.462. Training.
+[INFO] stupidDriveCar. Step: 575000. Time Elapsed: 4857.563 s. Mean Reward: -270.602. Std of Reward: 138.993. Training.
+[INFO] stupidDriveCar. Step: 600000. Time Elapsed: 5071.223 s. Mean Reward: -278.958. Std of Reward: 123.362. Training.
+[INFO] stupidDriveCar. Step: 625000. Time Elapsed: 5283.272 s. Mean Reward: -280.027. Std of Reward: 111.561. Training.
+[INFO] stupidDriveCar. Step: 650000. Time Elapsed: 5493.852 s. Mean Reward: -284.800. Std of Reward: 115.101. Training.
+[INFO] stupidDriveCar. Step: 675000. Time Elapsed: 5705.127 s. Mean Reward: -282.835. Std of Reward: 114.727. Training.
+[INFO] stupidDriveCar. Step: 700000. Time Elapsed: 5914.393 s. Mean Reward: -267.424. Std of Reward: 138.169. Training.
+[INFO] stupidDriveCar. Step: 725000. Time Elapsed: 6124.135 s. Mean Reward: -265.731. Std of Reward: 202.712. Training.
+[INFO] stupidDriveCar. Step: 750000. Time Elapsed: 6333.115 s. Mean Reward: -259.543. Std of Reward: 166.366. Training.
+[INFO] Exported results\test1\stupidDriveCar\stupidDriveCar-749990.onnx
+[INFO] Exported results\test1\stupidDriveCar\stupidDriveCar-750010.onnx
+[INFO] Copied results\test1\stupidDriveCar\stupidDriveCar-750010.onnx to results\test1\stupidDriveCar.onnx.
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>mlagents-learn config/stupidDriveCar.yaml --run-id=test1 --resume
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+[WARNING] 'encoding_size' was deprecated for RewardSignals. Please use network_settings.
+
+            ┐  ╖
+        ╓╖╬│╡  ││╬╖╖
+    ╓╖╬│││││┘  ╬│││││╬╖
+ ╖╬│││││╬╜        ╙╬│││││╖╖                               ╗╗╗
+ ╬╬╬╬╖││╦╖        ╖╬││╗╣╣╣╬      ╟╣╣╬    ╟╣╣╣             ╜╜╜  ╟╣╣
+ ╬╬╬╬╬╬╬╬╖│╬╖╖╓╬╪│╓╣╣╣╣╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╒╣╣╖╗╣╣╣╗   ╣╣╣ ╣╣╣╣╣╣ ╟╣╣╖   ╣╣╣
+ ╬╬╬╬┐  ╙╬╬╬╬│╓╣╣╣╝╜  ╫╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╟╣╣╣╙ ╙╣╣╣  ╣╣╣ ╙╟╣╣╜╙  ╫╣╣  ╟╣╣
+ ╬╬╬╬┐     ╙╬╬╣╣      ╫╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╟╣╣╬   ╣╣╣  ╣╣╣  ╟╣╣     ╣╣╣┌╣╣╜
+ ╬╬╬╜       ╬╬╣╣      ╙╝╣╣╬      ╙╣╣╣╗╖╓╗╣╣╣╜ ╟╣╣╬   ╣╣╣  ╣╣╣  ╟╣╣╦╓    ╣╣╣╣╣
+ ╙   ╓╦╖    ╬╬╣╣   ╓╗╗╖            ╙╝╣╣╣╣╝╜   ╘╝╝╜   ╝╝╝  ╝╝╝   ╙╣╣╣    ╟╣╣╣
+   ╩╬╬╬╬╬╬╦╦╬╬╣╣╗╣╣╣╣╣╣╣╝                                             ╫╣╣╣╣
+      ╙╬╬╬╬╬╬╬╣╣╣╣╣╣╝╜
+          ╙╬╬╬╣╣╣╜
+             ╙
+
+ Version information:
+  ml-agents: 0.30.0,
+  ml-agents-envs: 0.30.0,
+  Communicator API: 1.5.0,
+  PyTorch: 2.2.0+cpu
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+[INFO] Listening on port 5004. Start training by pressing the Play button in the Unity Editor.
+[INFO] Connected to Unity environment with package version 2.0.1 and communication version 1.5.0
+[INFO] Connected new brain: stupidDriveCar?team=0
+[INFO] Hyperparameters for behavior name stupidDriveCar:
+        trainer_type:   ppo
+        hyperparameters:
+          batch_size:   512
+          buffer_size:  4096
+          learning_rate:        0.0003
+          beta: 0.0005
+          epsilon:      0.2
+          lambd:        0.99
+          num_epoch:    8
+          shared_critic:        False
+          learning_rate_schedule:       linear
+          beta_schedule:        constant
+          epsilon_schedule:     linear
+        network_settings:
+          normalize:    False
+          hidden_units: 128
+          num_layers:   2
+          vis_encode_type:      simple
+          memory:       None
+          goal_conditioning_type:       hyper
+          deterministic:        False
+        reward_signals:
+          extrinsic:
+            gamma:      0.99
+            strength:   1.0
+            network_settings:
+              normalize:        False
+              hidden_units:     128
+              num_layers:       2
+              vis_encode_type:  simple
+              memory:   None
+              goal_conditioning_type:   hyper
+              deterministic:    False
+          curiosity:
+            gamma:      0.99
+            strength:   0.1
+            network_settings:
+              normalize:        False
+              hidden_units:     256
+              num_layers:       2
+              vis_encode_type:  simple
+              memory:   None
+              goal_conditioning_type:   hyper
+              deterministic:    False
+            learning_rate:      0.0003
+            encoding_size:      256
+        init_path:      None
+        keep_checkpoints:       5
+        checkpoint_interval:    250000
+        max_steps:      750000
+        time_horizon:   10
+        summary_freq:   25000
+        threaded:       False
+        self_play:      None
+        behavioral_cloning:     None
+[INFO] Resuming from results\test1\stupidDriveCar.
+[INFO] Resuming training from step 750010.
+[INFO] Exported results\test1\stupidDriveCar\stupidDriveCar-750010.onnx
+[INFO] Copied results\test1\stupidDriveCar\stupidDriveCar-750010.onnx to results\test1\stupidDriveCar.onnx.
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>mlagents-learn config/stupidDriveCar.yaml --run-id=test1 --resume
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+[WARNING] 'encoding_size' was deprecated for RewardSignals. Please use network_settings.
+
+            ┐  ╖
+        ╓╖╬│╡  ││╬╖╖
+    ╓╖╬│││││┘  ╬│││││╬╖
+ ╖╬│││││╬╜        ╙╬│││││╖╖                               ╗╗╗
+ ╬╬╬╬╖││╦╖        ╖╬││╗╣╣╣╬      ╟╣╣╬    ╟╣╣╣             ╜╜╜  ╟╣╣
+ ╬╬╬╬╬╬╬╬╖│╬╖╖╓╬╪│╓╣╣╣╣╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╒╣╣╖╗╣╣╣╗   ╣╣╣ ╣╣╣╣╣╣ ╟╣╣╖   ╣╣╣
+ ╬╬╬╬┐  ╙╬╬╬╬│╓╣╣╣╝╜  ╫╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╟╣╣╣╙ ╙╣╣╣  ╣╣╣ ╙╟╣╣╜╙  ╫╣╣  ╟╣╣
+ ╬╬╬╬┐     ╙╬╬╣╣      ╫╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╟╣╣╬   ╣╣╣  ╣╣╣  ╟╣╣     ╣╣╣┌╣╣╜
+ ╬╬╬╜       ╬╬╣╣      ╙╝╣╣╬      ╙╣╣╣╗╖╓╗╣╣╣╜ ╟╣╣╬   ╣╣╣  ╣╣╣  ╟╣╣╦╓    ╣╣╣╣╣
+ ╙   ╓╦╖    ╬╬╣╣   ╓╗╗╖            ╙╝╣╣╣╣╝╜   ╘╝╝╜   ╝╝╝  ╝╝╝   ╙╣╣╣    ╟╣╣╣
+   ╩╬╬╬╬╬╬╦╦╬╬╣╣╗╣╣╣╣╣╣╣╝                                             ╫╣╣╣╣
+      ╙╬╬╬╬╬╬╬╣╣╣╣╣╣╝╜
+          ╙╬╬╬╣╣╣╜
+             ╙
+
+ Version information:
+  ml-agents: 0.30.0,
+  ml-agents-envs: 0.30.0,
+  Communicator API: 1.5.0,
+  PyTorch: 2.2.0+cpu
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+[INFO] Listening on port 5004. Start training by pressing the Play button in the Unity Editor.
+[INFO] Connected to Unity environment with package version 2.0.1 and communication version 1.5.0
+[INFO] Connected new brain: stupidDriveCar?team=0
+[INFO] Hyperparameters for behavior name stupidDriveCar:
+        trainer_type:   ppo
+        hyperparameters:
+          batch_size:   512
+          buffer_size:  4096
+          learning_rate:        0.0003
+          beta: 0.0005
+          epsilon:      0.2
+          lambd:        0.99
+          num_epoch:    8
+          shared_critic:        False
+          learning_rate_schedule:       linear
+          beta_schedule:        constant
+          epsilon_schedule:     linear
+        network_settings:
+          normalize:    False
+          hidden_units: 128
+          num_layers:   2
+          vis_encode_type:      simple
+          memory:       None
+          goal_conditioning_type:       hyper
+          deterministic:        False
+        reward_signals:
+          extrinsic:
+            gamma:      0.99
+            strength:   1.0
+            network_settings:
+              normalize:        False
+              hidden_units:     128
+              num_layers:       2
+              vis_encode_type:  simple
+              memory:   None
+              goal_conditioning_type:   hyper
+              deterministic:    False
+          curiosity:
+            gamma:      0.99
+            strength:   0.1
+            network_settings:
+              normalize:        False
+              hidden_units:     256
+              num_layers:       2
+              vis_encode_type:  simple
+              memory:   None
+              goal_conditioning_type:   hyper
+              deterministic:    False
+            learning_rate:      0.0003
+            encoding_size:      256
+        init_path:      None
+        keep_checkpoints:       5
+        checkpoint_interval:    250000
+        max_steps:      1500000
+        time_horizon:   10
+        summary_freq:   25000
+        threaded:       False
+        self_play:      None
+        behavioral_cloning:     None
+[INFO] Resuming from results\test1\stupidDriveCar.
+[INFO] Resuming training from step 750010.
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\torch_entities\utils.py:289: UserWarning: The use of `x.T` on tensors of dimension other than 2 to reverse their shape is deprecated and it will throw an error in a future release. Consider `x.mT` to transpose batches of matrices or `x.permute(*torch.arange(x.ndim - 1, -1, -1))` to reverse the dimensions of a tensor. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\aten\src\ATen\native\TensorShape.cpp:3641.)
+  torch.nn.functional.one_hot(_act.T, action_size[i]).float()
+[WARNING] Restarting worker[0] after 'Communicator has exited.'
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+[INFO] Listening on port 5004. Start training by pressing the Play button in the Unity Editor.
+[INFO] Exported results\test1\stupidDriveCar\stupidDriveCar-750500.onnx
+[INFO] Copied results\test1\stupidDriveCar\stupidDriveCar-750500.onnx to results\test1\stupidDriveCar.onnx.
+Traceback (most recent call last):
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\Scripts\mlagents-learn.exe\__main__.py", line 7, in <module>
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 264, in main
+    run_cli(parse_command_line())
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 260, in run_cli
+    run_training(run_seed, options, num_areas)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 136, in run_training
+    tc.start_learning(env_manager)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents_envs\timers.py", line 305, in wrapped
+    return func(*args, **kwargs)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\trainer_controller.py", line 175, in start_learning
+    n_steps = self.advance(env_manager)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents_envs\timers.py", line 305, in wrapped
+    return func(*args, **kwargs)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\trainer_controller.py", line 233, in advance
+    new_step_infos = env_manager.get_steps()
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\env_manager.py", line 124, in get_steps
+    new_step_infos = self._step()
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\subprocess_env_manager.py", line 420, in _step
+    self._restart_failed_workers(step)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\subprocess_env_manager.py", line 328, in _restart_failed_workers
+    self.reset(self.env_parameters)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\env_manager.py", line 68, in reset
+    self.first_step_infos = self._reset_env(config)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\subprocess_env_manager.py", line 446, in _reset_env
+    ew.previous_step = EnvironmentStep(ew.recv().payload, ew.worker_id, {}, {})
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\subprocess_env_manager.py", line 101, in recv
+    raise env_exception
+mlagents_envs.exception.UnityTimeOutException: The Unity environment took too long to respond. Make sure that :
+         The environment does not need user interaction to launch
+         The Agents' Behavior Parameters > Behavior Type is set to "Default"
+         The environment and the Python interface have compatible versions.
+         If you're running on a headless server without graphics support, turn off display by either passing --no-graphics option or build your Unity executable as server build.
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>mlagents-learn config/stupidDriveCar.yaml --run-id=test1 --resume
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+[WARNING] 'encoding_size' was deprecated for RewardSignals. Please use network_settings.
+
+            ┐  ╖
+        ╓╖╬│╡  ││╬╖╖
+    ╓╖╬│││││┘  ╬│││││╬╖
+ ╖╬│││││╬╜        ╙╬│││││╖╖                               ╗╗╗
+ ╬╬╬╬╖││╦╖        ╖╬││╗╣╣╣╬      ╟╣╣╬    ╟╣╣╣             ╜╜╜  ╟╣╣
+ ╬╬╬╬╬╬╬╬╖│╬╖╖╓╬╪│╓╣╣╣╣╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╒╣╣╖╗╣╣╣╗   ╣╣╣ ╣╣╣╣╣╣ ╟╣╣╖   ╣╣╣
+ ╬╬╬╬┐  ╙╬╬╬╬│╓╣╣╣╝╜  ╫╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╟╣╣╣╙ ╙╣╣╣  ╣╣╣ ╙╟╣╣╜╙  ╫╣╣  ╟╣╣
+ ╬╬╬╬┐     ╙╬╬╣╣      ╫╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╟╣╣╬   ╣╣╣  ╣╣╣  ╟╣╣     ╣╣╣┌╣╣╜
+ ╬╬╬╜       ╬╬╣╣      ╙╝╣╣╬      ╙╣╣╣╗╖╓╗╣╣╣╜ ╟╣╣╬   ╣╣╣  ╣╣╣  ╟╣╣╦╓    ╣╣╣╣╣
+ ╙   ╓╦╖    ╬╬╣╣   ╓╗╗╖            ╙╝╣╣╣╣╝╜   ╘╝╝╜   ╝╝╝  ╝╝╝   ╙╣╣╣    ╟╣╣╣
+   ╩╬╬╬╬╬╬╦╦╬╬╣╣╗╣╣╣╣╣╣╣╝                                             ╫╣╣╣╣
+      ╙╬╬╬╬╬╬╬╣╣╣╣╣╣╝╜
+          ╙╬╬╬╣╣╣╜
+             ╙
+
+ Version information:
+  ml-agents: 0.30.0,
+  ml-agents-envs: 0.30.0,
+  Communicator API: 1.5.0,
+  PyTorch: 2.2.0+cpu
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+[INFO] Listening on port 5004. Start training by pressing the Play button in the Unity Editor.
+[INFO] Connected to Unity environment with package version 2.0.1 and communication version 1.5.0
+[INFO] Connected new brain: stupidDriveCar?team=0
+[INFO] Hyperparameters for behavior name stupidDriveCar:
+        trainer_type:   ppo
+        hyperparameters:
+          batch_size:   512
+          buffer_size:  4096
+          learning_rate:        0.0003
+          beta: 0.0005
+          epsilon:      0.2
+          lambd:        0.99
+          num_epoch:    8
+          shared_critic:        False
+          learning_rate_schedule:       linear
+          beta_schedule:        constant
+          epsilon_schedule:     linear
+        network_settings:
+          normalize:    False
+          hidden_units: 128
+          num_layers:   2
+          vis_encode_type:      simple
+          memory:       None
+          goal_conditioning_type:       hyper
+          deterministic:        False
+        reward_signals:
+          extrinsic:
+            gamma:      0.99
+            strength:   1.0
+            network_settings:
+              normalize:        False
+              hidden_units:     128
+              num_layers:       2
+              vis_encode_type:  simple
+              memory:   None
+              goal_conditioning_type:   hyper
+              deterministic:    False
+          curiosity:
+            gamma:      0.99
+            strength:   0.1
+            network_settings:
+              normalize:        False
+              hidden_units:     256
+              num_layers:       2
+              vis_encode_type:  simple
+              memory:   None
+              goal_conditioning_type:   hyper
+              deterministic:    False
+            learning_rate:      0.0003
+            encoding_size:      256
+        init_path:      None
+        keep_checkpoints:       5
+        checkpoint_interval:    250000
+        max_steps:      1500000
+        time_horizon:   10
+        summary_freq:   25000
+        threaded:       False
+        self_play:      None
+        behavioral_cloning:     None
+[INFO] Resuming from results\test1\stupidDriveCar.
+[INFO] Resuming training from step 750500.
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\torch_entities\utils.py:289: UserWarning: The use of `x.T` on tensors of dimension other than 2 to reverse their shape is deprecated and it will throw an error in a future release. Consider `x.mT` to transpose batches of matrices or `x.permute(*torch.arange(x.ndim - 1, -1, -1))` to reverse the dimensions of a tensor. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\aten\src\ATen\native\TensorShape.cpp:3641.)
+  torch.nn.functional.one_hot(_act.T, action_size[i]).float()
+[INFO] stupidDriveCar. Step: 775000. Time Elapsed: 210.704 s. Mean Reward: -253.184. Std of Reward: 244.523. Training.
+[INFO] stupidDriveCar. Step: 800000. Time Elapsed: 429.776 s. Mean Reward: -273.169. Std of Reward: 187.566. Training.
+[INFO] stupidDriveCar. Step: 825000. Time Elapsed: 641.955 s. Mean Reward: -252.143. Std of Reward: 134.788. Training.
+[INFO] stupidDriveCar. Step: 850000. Time Elapsed: 854.777 s. Mean Reward: -300.986. Std of Reward: 204.000. Training.
+[INFO] stupidDriveCar. Step: 875000. Time Elapsed: 1067.387 s. Mean Reward: -323.700. Std of Reward: 91.514. Training.
+[INFO] stupidDriveCar. Step: 900000. Time Elapsed: 1280.717 s. Mean Reward: -314.951. Std of Reward: 100.144. Training.
+[INFO] stupidDriveCar. Step: 925000. Time Elapsed: 1496.741 s. Mean Reward: -310.230. Std of Reward: 112.148. Training.
+[INFO] stupidDriveCar. Step: 950000. Time Elapsed: 1711.443 s. Mean Reward: -315.002. Std of Reward: 119.927. Training.
+[INFO] stupidDriveCar. Step: 975000. Time Elapsed: 1919.984 s. Mean Reward: -301.332. Std of Reward: 116.111. Training.
+[INFO] stupidDriveCar. Step: 1000000. Time Elapsed: 2127.656 s. Mean Reward: -290.980. Std of Reward: 143.160. Training.
+[INFO] Exported results\test1\stupidDriveCar\stupidDriveCar-999997.onnx
+[INFO] stupidDriveCar. Step: 1025000. Time Elapsed: 2343.950 s. Mean Reward: -317.339. Std of Reward: 147.650. Training.
+[INFO] stupidDriveCar. Step: 1050000. Time Elapsed: 2559.751 s. Mean Reward: -348.755. Std of Reward: 139.818. Training.
+[INFO] stupidDriveCar. Step: 1075000. Time Elapsed: 2773.812 s. Mean Reward: -380.159. Std of Reward: 130.683. Training.
+[INFO] stupidDriveCar. Step: 1100000. Time Elapsed: 2983.715 s. Mean Reward: -433.339. Std of Reward: 100.812. Training.
+[INFO] stupidDriveCar. Step: 1125000. Time Elapsed: 3191.223 s. Mean Reward: -462.478. Std of Reward: 58.553. Training.
+[INFO] stupidDriveCar. Step: 1150000. Time Elapsed: 3394.238 s. Mean Reward: -470.240. Std of Reward: 35.411. Training.
+[INFO] stupidDriveCar. Step: 1175000. Time Elapsed: 3601.438 s. Mean Reward: -474.565. Std of Reward: 19.892. Training.
+[INFO] stupidDriveCar. Step: 1200000. Time Elapsed: 3803.166 s. Mean Reward: -476.878. Std of Reward: 8.150. Training.
+[WARNING] Restarting worker[0] after 'Communicator has exited.'
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+[INFO] Listening on port 5004. Start training by pressing the Play button in the Unity Editor.
+[INFO] Exported results\test1\stupidDriveCar\stupidDriveCar-1211786.onnx
+[INFO] Copied results\test1\stupidDriveCar\stupidDriveCar-1211786.onnx to results\test1\stupidDriveCar.onnx.
+Traceback (most recent call last):
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\Scripts\mlagents-learn.exe\__main__.py", line 7, in <module>
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 264, in main
+    run_cli(parse_command_line())
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 260, in run_cli
+    run_training(run_seed, options, num_areas)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 136, in run_training
+    tc.start_learning(env_manager)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents_envs\timers.py", line 305, in wrapped
+    return func(*args, **kwargs)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\trainer_controller.py", line 175, in start_learning
+    n_steps = self.advance(env_manager)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents_envs\timers.py", line 305, in wrapped
+    return func(*args, **kwargs)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\trainer_controller.py", line 233, in advance
+    new_step_infos = env_manager.get_steps()
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\env_manager.py", line 124, in get_steps
+    new_step_infos = self._step()
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\subprocess_env_manager.py", line 420, in _step
+    self._restart_failed_workers(step)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\subprocess_env_manager.py", line 328, in _restart_failed_workers
+    self.reset(self.env_parameters)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\env_manager.py", line 68, in reset
+    self.first_step_infos = self._reset_env(config)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\subprocess_env_manager.py", line 446, in _reset_env
+    ew.previous_step = EnvironmentStep(ew.recv().payload, ew.worker_id, {}, {})
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\subprocess_env_manager.py", line 101, in recv
+    raise env_exception
+mlagents_envs.exception.UnityTimeOutException: The Unity environment took too long to respond. Make sure that :
+         The environment does not need user interaction to launch
+         The Agents' Behavior Parameters > Behavior Type is set to "Default"
+         The environment and the Python interface have compatible versions.
+         If you're running on a headless server without graphics support, turn off display by either passing --no-graphics option or build your Unity executable as server build.
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>mlagents-learn config/stupidDriveCarSAC.yaml --run-id=testSac
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+Traceback (most recent call last):
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\Scripts\mlagents-learn.exe\__main__.py", line 7, in <module>
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 264, in main
+    run_cli(parse_command_line())
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 56, in parse_command_line
+    return RunOptions.from_argparse(args)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 931, in from_argparse
+    final_runoptions = RunOptions.from_dict(configured_dict)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 961, in from_dict
+    return cattr.structure(options_dict, RunOptions)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 222, in structure
+    return self._structure_func.dispatch(cl)(obj, cl)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 359, in structure_attrs_fromdict
+    dispatch(type_)(val, type_) if type_ is not None else val
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 657, in dict_to_trainerdict
+    cattr.structure(d, Dict[str, TrainerSettings])
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 222, in structure
+    return self._structure_func.dispatch(cl)(obj, cl)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 410, in _structure_dict
+    return {
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 411, in <dictcomp>
+    key_conv(k, key_type): val_conv(v, val_type)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 711, in structure
+    d_copy[key] = check_and_structure(key, val, t)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 41, in check_and_structure
+    raise TrainerConfigError(
+mlagents.trainers.exception.TrainerConfigError: The option trainer was specified in your YAML file for TrainerSettings, but is invalid.
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>mlagents-learn config/stupidDriveCarSAC.yaml --run-id=testSAC
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+Traceback (most recent call last):
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\Scripts\mlagents-learn.exe\__main__.py", line 7, in <module>
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 264, in main
+    run_cli(parse_command_line())
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 56, in parse_command_line
+    return RunOptions.from_argparse(args)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 931, in from_argparse
+    final_runoptions = RunOptions.from_dict(configured_dict)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 961, in from_dict
+    return cattr.structure(options_dict, RunOptions)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 222, in structure
+    return self._structure_func.dispatch(cl)(obj, cl)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 359, in structure_attrs_fromdict
+    dispatch(type_)(val, type_) if type_ is not None else val
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 657, in dict_to_trainerdict
+    cattr.structure(d, Dict[str, TrainerSettings])
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 222, in structure
+    return self._structure_func.dispatch(cl)(obj, cl)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 410, in _structure_dict
+    return {
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 411, in <dictcomp>
+    key_conv(k, key_type): val_conv(v, val_type)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 711, in structure
+    d_copy[key] = check_and_structure(key, val, t)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 41, in check_and_structure
+    raise TrainerConfigError(
+mlagents.trainers.exception.TrainerConfigError: The option trainer was specified in your YAML file for TrainerSettings, but is invalid.
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>mlagents-learn config/stupidDriveCarSAC.yaml --run-id=testSAC
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+Traceback (most recent call last):
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\Scripts\mlagents-learn.exe\__main__.py", line 7, in <module>
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 264, in main
+    run_cli(parse_command_line())
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 56, in parse_command_line
+    return RunOptions.from_argparse(args)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 931, in from_argparse
+    final_runoptions = RunOptions.from_dict(configured_dict)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 961, in from_dict
+    return cattr.structure(options_dict, RunOptions)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 222, in structure
+    return self._structure_func.dispatch(cl)(obj, cl)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 359, in structure_attrs_fromdict
+    dispatch(type_)(val, type_) if type_ is not None else val
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 657, in dict_to_trainerdict
+    cattr.structure(d, Dict[str, TrainerSettings])
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 222, in structure
+    return self._structure_func.dispatch(cl)(obj, cl)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 410, in _structure_dict
+    return {
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 411, in <dictcomp>
+    key_conv(k, key_type): val_conv(v, val_type)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 711, in structure
+    d_copy[key] = check_and_structure(key, val, t)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 41, in check_and_structure
+    raise TrainerConfigError(
+mlagents.trainers.exception.TrainerConfigError: The option trainer was specified in your YAML file for TrainerSettings, but is invalid.
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>python -m mlagents.trainers.upgrade_config config/stupidDriveCarSAC.yaml config/stupidDriveCarSACNEW.yaml
+Converting config/stupidDriveCarSAC.yaml and saving to config/stupidDriveCarSACNEW.yaml.
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>mlagents-learn config/stupidDriveCarSACNEW.yaml --run-id=testSAC
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+Traceback (most recent call last):
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\Scripts\mlagents-learn.exe\__main__.py", line 7, in <module>
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 264, in main
+    run_cli(parse_command_line())
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 56, in parse_command_line
+    return RunOptions.from_argparse(args)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 931, in from_argparse
+    final_runoptions = RunOptions.from_dict(configured_dict)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 961, in from_dict
+    return cattr.structure(options_dict, RunOptions)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 222, in structure
+    return self._structure_func.dispatch(cl)(obj, cl)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 359, in structure_attrs_fromdict
+    dispatch(type_)(val, type_) if type_ is not None else val
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 657, in dict_to_trainerdict
+    cattr.structure(d, Dict[str, TrainerSettings])
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 222, in structure
+    return self._structure_func.dispatch(cl)(obj, cl)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 410, in _structure_dict
+    return {
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 411, in <dictcomp>
+    key_conv(k, key_type): val_conv(v, val_type)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 711, in structure
+    d_copy[key] = check_and_structure(key, val, t)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 41, in check_and_structure
+    raise TrainerConfigError(
+mlagents.trainers.exception.TrainerConfigError: The option trainer was specified in your YAML file for TrainerSettings, but is invalid.
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>mlagents-learn config/stupidDriveCarSACNEW.yaml --run-id=testSAC
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+Traceback (most recent call last):
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\Scripts\mlagents-learn.exe\__main__.py", line 7, in <module>
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 264, in main
+    run_cli(parse_command_line())
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 56, in parse_command_line
+    return RunOptions.from_argparse(args)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 931, in from_argparse
+    final_runoptions = RunOptions.from_dict(configured_dict)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 961, in from_dict
+    return cattr.structure(options_dict, RunOptions)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 222, in structure
+    return self._structure_func.dispatch(cl)(obj, cl)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 359, in structure_attrs_fromdict
+    dispatch(type_)(val, type_) if type_ is not None else val
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 657, in dict_to_trainerdict
+    cattr.structure(d, Dict[str, TrainerSettings])
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 222, in structure
+    return self._structure_func.dispatch(cl)(obj, cl)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 410, in _structure_dict
+    return {
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 411, in <dictcomp>
+    key_conv(k, key_type): val_conv(v, val_type)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 711, in structure
+    d_copy[key] = check_and_structure(key, val, t)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 41, in check_and_structure
+    raise TrainerConfigError(
+mlagents.trainers.exception.TrainerConfigError: The option trainer was specified in your YAML file for TrainerSettings, but is invalid.
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>mlagents-learn config/stupidDriveCar.yaml --run-id=testSAC
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+Traceback (most recent call last):
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\Scripts\mlagents-learn.exe\__main__.py", line 7, in <module>
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 264, in main
+    run_cli(parse_command_line())
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 56, in parse_command_line
+    return RunOptions.from_argparse(args)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 931, in from_argparse
+    final_runoptions = RunOptions.from_dict(configured_dict)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 961, in from_dict
+    return cattr.structure(options_dict, RunOptions)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 222, in structure
+    return self._structure_func.dispatch(cl)(obj, cl)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 359, in structure_attrs_fromdict
+    dispatch(type_)(val, type_) if type_ is not None else val
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 657, in dict_to_trainerdict
+    cattr.structure(d, Dict[str, TrainerSettings])
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 222, in structure
+    return self._structure_func.dispatch(cl)(obj, cl)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 410, in _structure_dict
+    return {
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 411, in <dictcomp>
+    key_conv(k, key_type): val_conv(v, val_type)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 711, in structure
+    d_copy[key] = check_and_structure(key, val, t)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 41, in check_and_structure
+    raise TrainerConfigError(
+mlagents.trainers.exception.TrainerConfigError: The option trainer was specified in your YAML file for TrainerSettings, but is invalid.
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>mlagents-learn config/stupidDriveCar.yaml --run-id=testSAC
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+Traceback (most recent call last):
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\Scripts\mlagents-learn.exe\__main__.py", line 7, in <module>
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 264, in main
+    run_cli(parse_command_line())
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 56, in parse_command_line
+    return RunOptions.from_argparse(args)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 931, in from_argparse
+    final_runoptions = RunOptions.from_dict(configured_dict)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 961, in from_dict
+    return cattr.structure(options_dict, RunOptions)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 222, in structure
+    return self._structure_func.dispatch(cl)(obj, cl)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 359, in structure_attrs_fromdict
+    dispatch(type_)(val, type_) if type_ is not None else val
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 657, in dict_to_trainerdict
+    cattr.structure(d, Dict[str, TrainerSettings])
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 222, in structure
+    return self._structure_func.dispatch(cl)(obj, cl)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 410, in _structure_dict
+    return {
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 411, in <dictcomp>
+    key_conv(k, key_type): val_conv(v, val_type)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 711, in structure
+    d_copy[key] = check_and_structure(key, val, t)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 41, in check_and_structure
+    raise TrainerConfigError(
+mlagents.trainers.exception.TrainerConfigError: The option trainer was specified in your YAML file for TrainerSettings, but is invalid.
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>mlagents-learn config/stupidDriveCar.yaml --run-id=testSAC
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+Traceback (most recent call last):
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\Scripts\mlagents-learn.exe\__main__.py", line 7, in <module>
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 264, in main
+    run_cli(parse_command_line())
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 56, in parse_command_line
+    return RunOptions.from_argparse(args)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 908, in from_argparse
+    raise TrainerConfigError(
+mlagents.trainers.exception.TrainerConfigError: The option stupidDriveCar was specified in your YAML file, but is invalid.
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>mlagents-learn config/stupidDriveCar.yaml --run-id=testSAC
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+Traceback (most recent call last):
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\Scripts\mlagents-learn.exe\__main__.py", line 7, in <module>
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 264, in main
+    run_cli(parse_command_line())
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 56, in parse_command_line
+    return RunOptions.from_argparse(args)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 908, in from_argparse
+    raise TrainerConfigError(
+mlagents.trainers.exception.TrainerConfigError: The option trainer was specified in your YAML file, but is invalid.
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>mlagents-learn config/stupidDriveCar.yaml --run-id=testSAC
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+Traceback (most recent call last):
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\Scripts\mlagents-learn.exe\__main__.py", line 7, in <module>
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 264, in main
+    run_cli(parse_command_line())
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 56, in parse_command_line
+    return RunOptions.from_argparse(args)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 931, in from_argparse
+    final_runoptions = RunOptions.from_dict(configured_dict)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 961, in from_dict
+    return cattr.structure(options_dict, RunOptions)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 222, in structure
+    return self._structure_func.dispatch(cl)(obj, cl)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 359, in structure_attrs_fromdict
+    dispatch(type_)(val, type_) if type_ is not None else val
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 657, in dict_to_trainerdict
+    cattr.structure(d, Dict[str, TrainerSettings])
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 222, in structure
+    return self._structure_func.dispatch(cl)(obj, cl)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 410, in _structure_dict
+    return {
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 411, in <dictcomp>
+    key_conv(k, key_type): val_conv(v, val_type)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 711, in structure
+    d_copy[key] = check_and_structure(key, val, t)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 41, in check_and_structure
+    raise TrainerConfigError(
+mlagents.trainers.exception.TrainerConfigError: The option batch_size was specified in your YAML file for TrainerSettings, but is invalid.
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>mlagents-learn config/stupidDriveCar.yaml --run-id=testSAC
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+Traceback (most recent call last):
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\Scripts\mlagents-learn.exe\__main__.py", line 7, in <module>
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 264, in main
+    run_cli(parse_command_line())
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 56, in parse_command_line
+    return RunOptions.from_argparse(args)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 931, in from_argparse
+    final_runoptions = RunOptions.from_dict(configured_dict)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 961, in from_dict
+    return cattr.structure(options_dict, RunOptions)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 222, in structure
+    return self._structure_func.dispatch(cl)(obj, cl)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 359, in structure_attrs_fromdict
+    dispatch(type_)(val, type_) if type_ is not None else val
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 657, in dict_to_trainerdict
+    cattr.structure(d, Dict[str, TrainerSettings])
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 222, in structure
+    return self._structure_func.dispatch(cl)(obj, cl)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 410, in _structure_dict
+    return {
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\cattr\converters.py", line 411, in <dictcomp>
+    key_conv(k, key_type): val_conv(v, val_type)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 697, in structure
+    d_copy[key] = strict_to_cls(
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 67, in strict_to_cls
+    d_copy[key] = check_and_structure(key, val, t)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 41, in check_and_structure
+    raise TrainerConfigError(
+mlagents.trainers.exception.TrainerConfigError: The option hidden_units was specified in your YAML file for SACSettings, but is invalid.
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>mlagents-learn config/stupidDriveCar.yaml --run-id=testSAC
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+
+            ┐  ╖
+        ╓╖╬│╡  ││╬╖╖
+    ╓╖╬│││││┘  ╬│││││╬╖
+ ╖╬│││││╬╜        ╙╬│││││╖╖                               ╗╗╗
+ ╬╬╬╬╖││╦╖        ╖╬││╗╣╣╣╬      ╟╣╣╬    ╟╣╣╣             ╜╜╜  ╟╣╣
+ ╬╬╬╬╬╬╬╬╖│╬╖╖╓╬╪│╓╣╣╣╣╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╒╣╣╖╗╣╣╣╗   ╣╣╣ ╣╣╣╣╣╣ ╟╣╣╖   ╣╣╣
+ ╬╬╬╬┐  ╙╬╬╬╬│╓╣╣╣╝╜  ╫╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╟╣╣╣╙ ╙╣╣╣  ╣╣╣ ╙╟╣╣╜╙  ╫╣╣  ╟╣╣
+ ╬╬╬╬┐     ╙╬╬╣╣      ╫╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╟╣╣╬   ╣╣╣  ╣╣╣  ╟╣╣     ╣╣╣┌╣╣╜
+ ╬╬╬╜       ╬╬╣╣      ╙╝╣╣╬      ╙╣╣╣╗╖╓╗╣╣╣╜ ╟╣╣╬   ╣╣╣  ╣╣╣  ╟╣╣╦╓    ╣╣╣╣╣
+ ╙   ╓╦╖    ╬╬╣╣   ╓╗╗╖            ╙╝╣╣╣╣╝╜   ╘╝╝╜   ╝╝╝  ╝╝╝   ╙╣╣╣    ╟╣╣╣
+   ╩╬╬╬╬╬╬╦╦╬╬╣╣╗╣╣╣╣╣╣╣╝                                             ╫╣╣╣╣
+      ╙╬╬╬╬╬╬╬╣╣╣╣╣╣╝╜
+          ╙╬╬╬╣╣╣╜
+             ╙
+
+ Version information:
+  ml-agents: 0.30.0,
+  ml-agents-envs: 0.30.0,
+  Communicator API: 1.5.0,
+  PyTorch: 2.2.0+cpu
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+[INFO] Listening on port 5004. Start training by pressing the Play button in the Unity Editor.
+[INFO] Connected to Unity environment with package version 2.0.1 and communication version 1.5.0
+[INFO] Connected new brain: stupidDriveCar?team=0
+Traceback (most recent call last):
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\Scripts\mlagents-learn.exe\__main__.py", line 7, in <module>
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 264, in main
+    run_cli(parse_command_line())
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 260, in run_cli
+    run_training(run_seed, options, num_areas)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 136, in run_training
+    tc.start_learning(env_manager)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents_envs\timers.py", line 305, in wrapped
+    return func(*args, **kwargs)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\trainer_controller.py", line 172, in start_learning
+    self._reset_env(env_manager)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents_envs\timers.py", line 305, in wrapped
+    return func(*args, **kwargs)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\trainer_controller.py", line 107, in _reset_env
+    self._register_new_behaviors(env_manager, env_manager.first_step_infos)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\trainer_controller.py", line 267, in _register_new_behaviors
+    self._create_trainers_and_managers(env_manager, new_behavior_ids)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\trainer_controller.py", line 165, in _create_trainers_and_managers
+    self._create_trainer_and_manager(env_manager, behavior_id)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\trainer_controller.py", line 125, in _create_trainer_and_manager
+    trainer = self.trainer_factory.generate(brain_name)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\trainer\trainer_factory.py", line 57, in generate
+    trainer_settings = self.trainer_config[behavior_name]
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\settings.py", line 732, in __missing__
+    raise TrainerConfigError(
+mlagents.trainers.exception.TrainerConfigError: The behavior name stupidDriveCar has not been specified in the trainer configuration. Please add an entry in the configuration file for stupidDriveCar, or set default_settings.
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>mlagents-learn config/stupidDriveCar.yaml --run-id=testSAC
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+
+            ┐  ╖
+        ╓╖╬│╡  ││╬╖╖
+    ╓╖╬│││││┘  ╬│││││╬╖
+ ╖╬│││││╬╜        ╙╬│││││╖╖                               ╗╗╗
+ ╬╬╬╬╖││╦╖        ╖╬││╗╣╣╣╬      ╟╣╣╬    ╟╣╣╣             ╜╜╜  ╟╣╣
+ ╬╬╬╬╬╬╬╬╖│╬╖╖╓╬╪│╓╣╣╣╣╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╒╣╣╖╗╣╣╣╗   ╣╣╣ ╣╣╣╣╣╣ ╟╣╣╖   ╣╣╣
+ ╬╬╬╬┐  ╙╬╬╬╬│╓╣╣╣╝╜  ╫╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╟╣╣╣╙ ╙╣╣╣  ╣╣╣ ╙╟╣╣╜╙  ╫╣╣  ╟╣╣
+ ╬╬╬╬┐     ╙╬╬╣╣      ╫╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╟╣╣╬   ╣╣╣  ╣╣╣  ╟╣╣     ╣╣╣┌╣╣╜
+ ╬╬╬╜       ╬╬╣╣      ╙╝╣╣╬      ╙╣╣╣╗╖╓╗╣╣╣╜ ╟╣╣╬   ╣╣╣  ╣╣╣  ╟╣╣╦╓    ╣╣╣╣╣
+ ╙   ╓╦╖    ╬╬╣╣   ╓╗╗╖            ╙╝╣╣╣╣╝╜   ╘╝╝╜   ╝╝╝  ╝╝╝   ╙╣╣╣    ╟╣╣╣
+   ╩╬╬╬╬╬╬╦╦╬╬╣╣╗╣╣╣╣╣╣╣╝                                             ╫╣╣╣╣
+      ╙╬╬╬╬╬╬╬╣╣╣╣╣╣╝╜
+          ╙╬╬╬╣╣╣╜
+             ╙
+
+ Version information:
+  ml-agents: 0.30.0,
+  ml-agents-envs: 0.30.0,
+  Communicator API: 1.5.0,
+  PyTorch: 2.2.0+cpu
+Traceback (most recent call last):
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\Scripts\mlagents-learn.exe\__main__.py", line 7, in <module>
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 264, in main
+    run_cli(parse_command_line())
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 260, in run_cli
+    run_training(run_seed, options, num_areas)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 75, in run_training
+    validate_existing_directories(
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\directory_utils.py", line 25, in validate_existing_directories
+    raise UnityTrainerException(
+mlagents.trainers.exception.UnityTrainerException: Previous data from this run ID was found. Either specify a new run ID, use --resume to resume this run, or use the --force parameter to overwrite existing data.
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>mlagents-learn config/stupidDriveCar.yaml --run-id=testSAC2
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+
+            ┐  ╖
+        ╓╖╬│╡  ││╬╖╖
+    ╓╖╬│││││┘  ╬│││││╬╖
+ ╖╬│││││╬╜        ╙╬│││││╖╖                               ╗╗╗
+ ╬╬╬╬╖││╦╖        ╖╬││╗╣╣╣╬      ╟╣╣╬    ╟╣╣╣             ╜╜╜  ╟╣╣
+ ╬╬╬╬╬╬╬╬╖│╬╖╖╓╬╪│╓╣╣╣╣╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╒╣╣╖╗╣╣╣╗   ╣╣╣ ╣╣╣╣╣╣ ╟╣╣╖   ╣╣╣
+ ╬╬╬╬┐  ╙╬╬╬╬│╓╣╣╣╝╜  ╫╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╟╣╣╣╙ ╙╣╣╣  ╣╣╣ ╙╟╣╣╜╙  ╫╣╣  ╟╣╣
+ ╬╬╬╬┐     ╙╬╬╣╣      ╫╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╟╣╣╬   ╣╣╣  ╣╣╣  ╟╣╣     ╣╣╣┌╣╣╜
+ ╬╬╬╜       ╬╬╣╣      ╙╝╣╣╬      ╙╣╣╣╗╖╓╗╣╣╣╜ ╟╣╣╬   ╣╣╣  ╣╣╣  ╟╣╣╦╓    ╣╣╣╣╣
+ ╙   ╓╦╖    ╬╬╣╣   ╓╗╗╖            ╙╝╣╣╣╣╝╜   ╘╝╝╜   ╝╝╝  ╝╝╝   ╙╣╣╣    ╟╣╣╣
+   ╩╬╬╬╬╬╬╦╦╬╬╣╣╗╣╣╣╣╣╣╣╝                                             ╫╣╣╣╣
+      ╙╬╬╬╬╬╬╬╣╣╣╣╣╣╝╜
+          ╙╬╬╬╣╣╣╜
+             ╙
+
+ Version information:
+  ml-agents: 0.30.0,
+  ml-agents-envs: 0.30.0,
+  Communicator API: 1.5.0,
+  PyTorch: 2.2.0+cpu
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+[INFO] Listening on port 5004. Start training by pressing the Play button in the Unity Editor.
+[INFO] Connected to Unity environment with package version 2.0.1 and communication version 1.5.0
+[INFO] Connected new brain: stupidDriveCar?team=0
+[INFO] Hyperparameters for behavior name stupidDriveCar:
+        trainer_type:   sac
+        hyperparameters:
+          learning_rate:        0.0003
+          learning_rate_schedule:       constant
+          batch_size:   64
+          buffer_size:  50000
+          buffer_init_steps:    0
+          tau:  0.005
+          steps_per_update:     10.0
+          save_replay_buffer:   False
+          init_entcoef: 0.01
+          reward_signal_steps_per_update:       10.0
+        network_settings:
+          normalize:    False
+          hidden_units: 20
+          num_layers:   2
+          vis_encode_type:      simple
+          memory:       None
+          goal_conditioning_type:       hyper
+          deterministic:        False
+        reward_signals:
+          extrinsic:
+            gamma:      0.99
+            strength:   1.0
+            network_settings:
+              normalize:        False
+              hidden_units:     128
+              num_layers:       2
+              vis_encode_type:  simple
+              memory:   None
+              goal_conditioning_type:   hyper
+              deterministic:    False
+        init_path:      None
+        keep_checkpoints:       5
+        checkpoint_interval:    500000
+        max_steps:      500000
+        time_horizon:   10
+        summary_freq:   2000
+        threaded:       False
+        self_play:      None
+        behavioral_cloning:     None
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\torch_entities\utils.py:289: UserWarning: The use of `x.T` on tensors of dimension other than 2 to reverse their shape is deprecated and it will throw an error in a future release. Consider `x.mT` to transpose batches of matrices or `x.permute(*torch.arange(x.ndim - 1, -1, -1))` to reverse the dimensions of a tensor. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\aten\src\ATen\native\TensorShape.cpp:3641.)
+  torch.nn.functional.one_hot(_act.T, action_size[i]).float()
+[INFO] stupidDriveCar. Step: 2000. Time Elapsed: 27.717 s. Mean Reward: -415.182. Std of Reward: 56.115. Training.
+[INFO] stupidDriveCar. Step: 4000. Time Elapsed: 43.143 s. Mean Reward: -337.213. Std of Reward: 15.011. Training.
+[INFO] stupidDriveCar. Step: 6000. Time Elapsed: 59.740 s. Mean Reward: -341.280. Std of Reward: 27.282. Training.
+[INFO] stupidDriveCar. Step: 8000. Time Elapsed: 76.918 s. Mean Reward: -396.535. Std of Reward: 60.109. Training.
+[INFO] stupidDriveCar. Step: 10000. Time Elapsed: 93.957 s. Mean Reward: -421.804. Std of Reward: 17.639. Training.
+[INFO] stupidDriveCar. Step: 12000. Time Elapsed: 110.885 s. Mean Reward: -412.924. Std of Reward: 32.841. Training.
+[INFO] stupidDriveCar. Step: 14000. Time Elapsed: 128.013 s. Mean Reward: -335.061. Std of Reward: 1.051. Training.
+[INFO] stupidDriveCar. Step: 16000. Time Elapsed: 144.987 s. Mean Reward: -334.989. Std of Reward: 1.187. Training.
+[INFO] stupidDriveCar. Step: 18000. Time Elapsed: 162.137 s. Mean Reward: -334.867. Std of Reward: 1.191. Training.
+[INFO] stupidDriveCar. Step: 20000. Time Elapsed: 179.137 s. Mean Reward: -334.955. Std of Reward: 1.088. Training.
+[INFO] stupidDriveCar. Step: 22000. Time Elapsed: 196.123 s. Mean Reward: -335.022. Std of Reward: 1.010. Training.
+[INFO] stupidDriveCar. Step: 24000. Time Elapsed: 213.483 s. Mean Reward: -334.959. Std of Reward: 1.069. Training.
+[INFO] stupidDriveCar. Step: 26000. Time Elapsed: 231.036 s. Mean Reward: -335.076. Std of Reward: 1.044. Training.
+[INFO] stupidDriveCar. Step: 28000. Time Elapsed: 248.228 s. Mean Reward: -334.932. Std of Reward: 0.974. Training.
+[INFO] stupidDriveCar. Step: 30000. Time Elapsed: 265.512 s. Mean Reward: -335.233. Std of Reward: 0.984. Training.
+[INFO] stupidDriveCar. Step: 32000. Time Elapsed: 283.105 s. Mean Reward: -335.136. Std of Reward: 0.992. Training.
+[INFO] stupidDriveCar. Step: 34000. Time Elapsed: 300.174 s. Mean Reward: -335.078. Std of Reward: 0.958. Training.
+[INFO] stupidDriveCar. Step: 36000. Time Elapsed: 318.035 s. Mean Reward: -334.872. Std of Reward: 1.062. Training.
+[INFO] stupidDriveCar. Step: 38000. Time Elapsed: 335.026 s. Mean Reward: -416.314. Std of Reward: 67.310. Training.
+[INFO] stupidDriveCar. Step: 40000. Time Elapsed: 351.996 s. Mean Reward: -454.770. Std of Reward: 41.208. Training.
+[INFO] stupidDriveCar. Step: 42000. Time Elapsed: 369.235 s. Mean Reward: -464.097. Std of Reward: 9.780. Training.
+[INFO] stupidDriveCar. Step: 44000. Time Elapsed: 386.178 s. Mean Reward: -462.995. Std of Reward: 9.284. Training.
+[INFO] stupidDriveCar. Step: 46000. Time Elapsed: 403.337 s. Mean Reward: -341.682. Std of Reward: 25.083. Training.
+[INFO] stupidDriveCar. Step: 48000. Time Elapsed: 420.358 s. Mean Reward: -334.853. Std of Reward: 1.136. Training.
+[INFO] stupidDriveCar. Step: 50000. Time Elapsed: 437.988 s. Mean Reward: -335.083. Std of Reward: 0.983. Training.
+[INFO] stupidDriveCar. Step: 52000. Time Elapsed: 455.178 s. Mean Reward: -336.989. Std of Reward: 13.498. Training.
+[INFO] stupidDriveCar. Step: 54000. Time Elapsed: 472.357 s. Mean Reward: -336.858. Std of Reward: 15.269. Training.
+[INFO] stupidDriveCar. Step: 56000. Time Elapsed: 489.861 s. Mean Reward: -334.732. Std of Reward: 0.953. Training.
+[INFO] stupidDriveCar. Step: 58000. Time Elapsed: 506.826 s. Mean Reward: -334.826. Std of Reward: 0.869. Training.
+[INFO] stupidDriveCar. Step: 60000. Time Elapsed: 524.021 s. Mean Reward: -335.092. Std of Reward: 0.843. Training.
+[INFO] stupidDriveCar. Step: 62000. Time Elapsed: 542.692 s. Mean Reward: -335.025. Std of Reward: 1.033. Training.
+[INFO] stupidDriveCar. Step: 64000. Time Elapsed: 559.736 s. Mean Reward: -334.795. Std of Reward: 1.127. Training.
+[INFO] stupidDriveCar. Step: 66000. Time Elapsed: 576.788 s. Mean Reward: -334.998. Std of Reward: 1.025. Training.
+[INFO] stupidDriveCar. Step: 68000. Time Elapsed: 593.865 s. Mean Reward: -334.931. Std of Reward: 0.883. Training.
+[INFO] stupidDriveCar. Step: 70000. Time Elapsed: 611.990 s. Mean Reward: -335.173. Std of Reward: 1.074. Training.
+[INFO] stupidDriveCar. Step: 72000. Time Elapsed: 629.380 s. Mean Reward: -334.729. Std of Reward: 0.982. Training.
+[INFO] stupidDriveCar. Step: 74000. Time Elapsed: 646.544 s. Mean Reward: -335.089. Std of Reward: 0.999. Training.
+[INFO] stupidDriveCar. Step: 76000. Time Elapsed: 664.138 s. Mean Reward: -335.105. Std of Reward: 0.914. Training.
+[INFO] stupidDriveCar. Step: 78000. Time Elapsed: 681.712 s. Mean Reward: -335.026. Std of Reward: 1.130. Training.
+[INFO] stupidDriveCar. Step: 80000. Time Elapsed: 698.942 s. Mean Reward: -334.933. Std of Reward: 1.123. Training.
+[INFO] stupidDriveCar. Step: 82000. Time Elapsed: 716.593 s. Mean Reward: -335.029. Std of Reward: 1.101. Training.
+[INFO] stupidDriveCar. Step: 84000. Time Elapsed: 734.464 s. Mean Reward: -334.986. Std of Reward: 0.881. Training.
+[INFO] stupidDriveCar. Step: 86000. Time Elapsed: 751.657 s. Mean Reward: -334.826. Std of Reward: 1.156. Training.
+[INFO] stupidDriveCar. Step: 88000. Time Elapsed: 768.910 s. Mean Reward: -335.235. Std of Reward: 1.003. Training.
+[INFO] stupidDriveCar. Step: 90000. Time Elapsed: 786.492 s. Mean Reward: -335.050. Std of Reward: 0.991. Training.
+[INFO] stupidDriveCar. Step: 92000. Time Elapsed: 803.613 s. Mean Reward: -335.077. Std of Reward: 0.984. Training.
+[INFO] stupidDriveCar. Step: 94000. Time Elapsed: 820.712 s. Mean Reward: -334.987. Std of Reward: 0.964. Training.
+[INFO] stupidDriveCar. Step: 96000. Time Elapsed: 837.603 s. Mean Reward: -335.291. Std of Reward: 1.032. Training.
+[INFO] stupidDriveCar. Step: 98000. Time Elapsed: 855.226 s. Mean Reward: -335.005. Std of Reward: 1.133. Training.
+[INFO] stupidDriveCar. Step: 100000. Time Elapsed: 872.325 s. Mean Reward: -334.999. Std of Reward: 1.101. Training.
+[INFO] stupidDriveCar. Step: 102000. Time Elapsed: 889.685 s. Mean Reward: -335.113. Std of Reward: 0.978. Training.
+[INFO] stupidDriveCar. Step: 104000. Time Elapsed: 907.232 s. Mean Reward: -335.017. Std of Reward: 1.164. Training.
+[INFO] stupidDriveCar. Step: 106000. Time Elapsed: 924.452 s. Mean Reward: -334.865. Std of Reward: 1.099. Training.
+[INFO] stupidDriveCar. Step: 108000. Time Elapsed: 941.655 s. Mean Reward: -334.883. Std of Reward: 1.006. Training.
+[INFO] stupidDriveCar. Step: 110000. Time Elapsed: 960.168 s. Mean Reward: -335.130. Std of Reward: 1.151. Training.
+[INFO] stupidDriveCar. Step: 112000. Time Elapsed: 977.361 s. Mean Reward: -334.989. Std of Reward: 1.026. Training.
+[INFO] stupidDriveCar. Step: 114000. Time Elapsed: 994.618 s. Mean Reward: -334.782. Std of Reward: 0.966. Training.
+[INFO] stupidDriveCar. Step: 116000. Time Elapsed: 1011.879 s. Mean Reward: -335.119. Std of Reward: 1.000. Training.
+[INFO] stupidDriveCar. Step: 118000. Time Elapsed: 1030.275 s. Mean Reward: -334.775. Std of Reward: 0.955. Training.
+[INFO] stupidDriveCar. Step: 120000. Time Elapsed: 1047.276 s. Mean Reward: -334.995. Std of Reward: 1.093. Training.
+[INFO] stupidDriveCar. Step: 122000. Time Elapsed: 1064.525 s. Mean Reward: -335.107. Std of Reward: 1.005. Training.
+[INFO] stupidDriveCar. Step: 124000. Time Elapsed: 1082.125 s. Mean Reward: -334.838. Std of Reward: 0.891. Training.
+[INFO] stupidDriveCar. Step: 126000. Time Elapsed: 1099.720 s. Mean Reward: -335.052. Std of Reward: 0.957. Training.
+[INFO] stupidDriveCar. Step: 128000. Time Elapsed: 1116.926 s. Mean Reward: -335.244. Std of Reward: 0.948. Training.
+[INFO] stupidDriveCar. Step: 130000. Time Elapsed: 1134.162 s. Mean Reward: -335.011. Std of Reward: 1.035. Training.
+[INFO] stupidDriveCar. Step: 132000. Time Elapsed: 1152.787 s. Mean Reward: -335.044. Std of Reward: 1.108. Training.
+[INFO] stupidDriveCar. Step: 134000. Time Elapsed: 1169.864 s. Mean Reward: -334.933. Std of Reward: 0.888. Training.
+[INFO] stupidDriveCar. Step: 136000. Time Elapsed: 1187.500 s. Mean Reward: -334.918. Std of Reward: 1.037. Training.
+[INFO] stupidDriveCar. Step: 138000. Time Elapsed: 1204.682 s. Mean Reward: -335.145. Std of Reward: 1.130. Training.
+[INFO] stupidDriveCar. Step: 140000. Time Elapsed: 1222.271 s. Mean Reward: -334.999. Std of Reward: 0.987. Training.
+[INFO] stupidDriveCar. Step: 142000. Time Elapsed: 1239.539 s. Mean Reward: -335.175. Std of Reward: 1.094. Training.
+[INFO] stupidDriveCar. Step: 144000. Time Elapsed: 1257.532 s. Mean Reward: -335.366. Std of Reward: 0.945. Training.
+[INFO] stupidDriveCar. Step: 146000. Time Elapsed: 1275.452 s. Mean Reward: -335.021. Std of Reward: 1.124. Training.
+[INFO] stupidDriveCar. Step: 148000. Time Elapsed: 1292.594 s. Mean Reward: -334.905. Std of Reward: 1.051. Training.
+[INFO] stupidDriveCar. Step: 150000. Time Elapsed: 1309.866 s. Mean Reward: -335.068. Std of Reward: 1.097. Training.
+[INFO] stupidDriveCar. Step: 152000. Time Elapsed: 1328.073 s. Mean Reward: -334.932. Std of Reward: 1.017. Training.
+[INFO] stupidDriveCar. Step: 154000. Time Elapsed: 1345.130 s. Mean Reward: -445.071. Std of Reward: 51.476. Training.
+[INFO] stupidDriveCar. Step: 156000. Time Elapsed: 1362.148 s. Mean Reward: -440.993. Std of Reward: 46.884. Training.
+[INFO] stupidDriveCar. Step: 158000. Time Elapsed: 1379.884 s. Mean Reward: -471.118. Std of Reward: 15.108. Training.
+[INFO] stupidDriveCar. Step: 160000. Time Elapsed: 1396.655 s. Mean Reward: -476.210. Std of Reward: 2.684. Training.
+[INFO] stupidDriveCar. Step: 162000. Time Elapsed: 1413.634 s. Mean Reward: -475.067. Std of Reward: 4.141. Training.
+[INFO] stupidDriveCar. Step: 164000. Time Elapsed: 1430.447 s. Mean Reward: -472.651. Std of Reward: 7.202. Training.
+[INFO] stupidDriveCar. Step: 166000. Time Elapsed: 1448.552 s. Mean Reward: -470.071. Std of Reward: 9.646. Training.
+[INFO] stupidDriveCar. Step: 168000. Time Elapsed: 1465.659 s. Mean Reward: -450.812. Std of Reward: 34.246. Training.
+[INFO] stupidDriveCar. Step: 170000. Time Elapsed: 1482.750 s. Mean Reward: -413.828. Std of Reward: 52.684. Training.
+[INFO] stupidDriveCar. Step: 172000. Time Elapsed: 1500.536 s. Mean Reward: -429.167. Std of Reward: 48.867. Training.
+[INFO] stupidDriveCar. Step: 174000. Time Elapsed: 1518.130 s. Mean Reward: -439.756. Std of Reward: 43.071. Training.
+[INFO] stupidDriveCar. Step: 176000. Time Elapsed: 1535.457 s. Mean Reward: -403.573. Std of Reward: 48.068. Training.
+[INFO] stupidDriveCar. Step: 178000. Time Elapsed: 1552.712 s. Mean Reward: -413.093. Std of Reward: 49.876. Training.
+[INFO] stupidDriveCar. Step: 180000. Time Elapsed: 1571.409 s. Mean Reward: -417.175. Std of Reward: 45.305. Training.
+[INFO] stupidDriveCar. Step: 182000. Time Elapsed: 1589.053 s. Mean Reward: -417.536. Std of Reward: 50.407. Training.
+[INFO] stupidDriveCar. Step: 184000. Time Elapsed: 1606.299 s. Mean Reward: -409.574. Std of Reward: 54.061. Training.
+[INFO] stupidDriveCar. Step: 186000. Time Elapsed: 1623.954 s. Mean Reward: -432.329. Std of Reward: 42.863. Training.
+[INFO] stupidDriveCar. Step: 188000. Time Elapsed: 1641.261 s. Mean Reward: -449.870. Std of Reward: 33.165. Training.
+[INFO] stupidDriveCar. Step: 190000. Time Elapsed: 1658.364 s. Mean Reward: -458.660. Std of Reward: 19.060. Training.
+[INFO] stupidDriveCar. Step: 192000. Time Elapsed: 1675.456 s. Mean Reward: -471.917. Std of Reward: 7.357. Training.
+[INFO] stupidDriveCar. Step: 194000. Time Elapsed: 1692.735 s. Mean Reward: -470.681. Std of Reward: 5.983. Training.
+[INFO] stupidDriveCar. Step: 196000. Time Elapsed: 1709.860 s. Mean Reward: -462.739. Std of Reward: 21.345. Training.
+[INFO] stupidDriveCar. Step: 198000. Time Elapsed: 1726.703 s. Mean Reward: -463.839. Std of Reward: 16.437. Training.
+[INFO] stupidDriveCar. Step: 200000. Time Elapsed: 1745.130 s. Mean Reward: -457.916. Std of Reward: 26.378. Training.
+[INFO] stupidDriveCar. Step: 202000. Time Elapsed: 1764.245 s. Mean Reward: -462.847. Std of Reward: 19.240. Training.
+[INFO] stupidDriveCar. Step: 204000. Time Elapsed: 1782.389 s. Mean Reward: -467.203. Std of Reward: 11.787. Training.
+[INFO] stupidDriveCar. Step: 206000. Time Elapsed: 1799.457 s. Mean Reward: -462.125. Std of Reward: 24.980. Training.
+[INFO] stupidDriveCar. Step: 208000. Time Elapsed: 1817.063 s. Mean Reward: -463.565. Std of Reward: 16.464. Training.
+[INFO] stupidDriveCar. Step: 210000. Time Elapsed: 1833.847 s. Mean Reward: -467.454. Std of Reward: 8.548. Training.
+[INFO] stupidDriveCar. Step: 212000. Time Elapsed: 1850.936 s. Mean Reward: -466.726. Std of Reward: 19.737. Training.
+[INFO] stupidDriveCar. Step: 214000. Time Elapsed: 1868.074 s. Mean Reward: -470.512. Std of Reward: 7.357. Training.
+[INFO] stupidDriveCar. Step: 216000. Time Elapsed: 1885.042 s. Mean Reward: -468.227. Std of Reward: 8.493. Training.
+[INFO] stupidDriveCar. Step: 218000. Time Elapsed: 1902.078 s. Mean Reward: -464.938. Std of Reward: 16.133. Training.
+[INFO] stupidDriveCar. Step: 220000. Time Elapsed: 1918.929 s. Mean Reward: -465.040. Std of Reward: 8.840. Training.
+[INFO] stupidDriveCar. Step: 222000. Time Elapsed: 1936.463 s. Mean Reward: -463.510. Std of Reward: 15.905. Training.
+[INFO] stupidDriveCar. Step: 224000. Time Elapsed: 1953.270 s. Mean Reward: -464.441. Std of Reward: 10.317. Training.
+[INFO] stupidDriveCar. Step: 226000. Time Elapsed: 1970.308 s. Mean Reward: -462.982. Std of Reward: 10.044. Training.
+[INFO] stupidDriveCar. Step: 228000. Time Elapsed: 1987.705 s. Mean Reward: -462.609. Std of Reward: 9.042. Training.
+[INFO] stupidDriveCar. Step: 230000. Time Elapsed: 2004.594 s. Mean Reward: -460.457. Std of Reward: 15.025. Training.
+[INFO] stupidDriveCar. Step: 232000. Time Elapsed: 2021.732 s. Mean Reward: -458.722. Std of Reward: 9.797. Training.
+[INFO] stupidDriveCar. Step: 234000. Time Elapsed: 2038.746 s. Mean Reward: -457.936. Std of Reward: 15.302. Training.
+[INFO] stupidDriveCar. Step: 236000. Time Elapsed: 2056.602 s. Mean Reward: -451.064. Std of Reward: 25.224. Training.
+[WARNING] Restarting worker[0] after 'Communicator has exited.'
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+[INFO] Listening on port 5004. Start training by pressing the Play button in the Unity Editor.
+[INFO] Exported results\testSAC2\stupidDriveCar\stupidDriveCar-237962.onnx
+[INFO] Copied results\testSAC2\stupidDriveCar\stupidDriveCar-237962.onnx to results\testSAC2\stupidDriveCar.onnx.
+Traceback (most recent call last):
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\arvid.kagedal\Desktop\AiFolder\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\Scripts\mlagents-learn.exe\__main__.py", line 7, in <module>
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 264, in main
+    run_cli(parse_command_line())
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 260, in run_cli
+    run_training(run_seed, options, num_areas)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\learn.py", line 136, in run_training
+    tc.start_learning(env_manager)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents_envs\timers.py", line 305, in wrapped
+    return func(*args, **kwargs)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\trainer_controller.py", line 175, in start_learning
+    n_steps = self.advance(env_manager)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents_envs\timers.py", line 305, in wrapped
+    return func(*args, **kwargs)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\trainer_controller.py", line 233, in advance
+    new_step_infos = env_manager.get_steps()
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\env_manager.py", line 124, in get_steps
+    new_step_infos = self._step()
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\subprocess_env_manager.py", line 420, in _step
+    self._restart_failed_workers(step)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\subprocess_env_manager.py", line 328, in _restart_failed_workers
+    self.reset(self.env_parameters)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\env_manager.py", line 68, in reset
+    self.first_step_infos = self._reset_env(config)
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\subprocess_env_manager.py", line 446, in _reset_env
+    ew.previous_step = EnvironmentStep(ew.recv().payload, ew.worker_id, {}, {})
+  File "C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\mlagents\trainers\subprocess_env_manager.py", line 101, in recv
+    raise env_exception
+mlagents_envs.exception.UnityTimeOutException: The Unity environment took too long to respond. Make sure that :
+         The environment does not need user interaction to launch
+         The Agents' Behavior Parameters > Behavior Type is set to "Default"
+         The environment and the Python interface have compatible versions.
+         If you're running on a headless server without graphics support, turn off display by either passing --no-graphics option or build your Unity executable as server build.
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>mlagents-learn config/stupidDriveCar.yaml --run-id=testPPO
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+
+            ┐  ╖
+        ╓╖╬│╡  ││╬╖╖
+    ╓╖╬│││││┘  ╬│││││╬╖
+ ╖╬│││││╬╜        ╙╬│││││╖╖                               ╗╗╗
+ ╬╬╬╬╖││╦╖        ╖╬││╗╣╣╣╬      ╟╣╣╬    ╟╣╣╣             ╜╜╜  ╟╣╣
+ ╬╬╬╬╬╬╬╬╖│╬╖╖╓╬╪│╓╣╣╣╣╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╒╣╣╖╗╣╣╣╗   ╣╣╣ ╣╣╣╣╣╣ ╟╣╣╖   ╣╣╣
+ ╬╬╬╬┐  ╙╬╬╬╬│╓╣╣╣╝╜  ╫╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╟╣╣╣╙ ╙╣╣╣  ╣╣╣ ╙╟╣╣╜╙  ╫╣╣  ╟╣╣
+ ╬╬╬╬┐     ╙╬╬╣╣      ╫╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╟╣╣╬   ╣╣╣  ╣╣╣  ╟╣╣     ╣╣╣┌╣╣╜
+ ╬╬╬╜       ╬╬╣╣      ╙╝╣╣╬      ╙╣╣╣╗╖╓╗╣╣╣╜ ╟╣╣╬   ╣╣╣  ╣╣╣  ╟╣╣╦╓    ╣╣╣╣╣
+ ╙   ╓╦╖    ╬╬╣╣   ╓╗╗╖            ╙╝╣╣╣╣╝╜   ╘╝╝╜   ╝╝╝  ╝╝╝   ╙╣╣╣    ╟╣╣╣
+   ╩╬╬╬╬╬╬╦╦╬╬╣╣╗╣╣╣╣╣╣╣╝                                             ╫╣╣╣╣
+      ╙╬╬╬╬╬╬╬╣╣╣╣╣╣╝╜
+          ╙╬╬╬╣╣╣╜
+             ╙
+
+ Version information:
+  ml-agents: 0.30.0,
+  ml-agents-envs: 0.30.0,
+  Communicator API: 1.5.0,
+  PyTorch: 2.2.0+cpu
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+[INFO] Listening on port 5004. Start training by pressing the Play button in the Unity Editor.
+[INFO] Connected to Unity environment with package version 2.0.1 and communication version 1.5.0
+[INFO] Connected new brain: stupidDriveCar?team=0
+[INFO] Hyperparameters for behavior name stupidDriveCar:
+        trainer_type:   ppo
+        hyperparameters:
+          batch_size:   32
+          buffer_size:  256
+          learning_rate:        0.0003
+          beta: 0.005
+          epsilon:      0.2
+          lambd:        0.95
+          num_epoch:    3
+          shared_critic:        False
+          learning_rate_schedule:       linear
+          beta_schedule:        linear
+          epsilon_schedule:     linear
+        network_settings:
+          normalize:    False
+          hidden_units: 20
+          num_layers:   1
+          vis_encode_type:      simple
+          memory:       None
+          goal_conditioning_type:       hyper
+          deterministic:        False
+        reward_signals:
+          extrinsic:
+            gamma:      0.9
+            strength:   1.0
+            network_settings:
+              normalize:        False
+              hidden_units:     128
+              num_layers:       2
+              vis_encode_type:  simple
+              memory:   None
+              goal_conditioning_type:   hyper
+              deterministic:    False
+        init_path:      None
+        keep_checkpoints:       5
+        checkpoint_interval:    500000
+        max_steps:      1500000
+        time_horizon:   3
+        summary_freq:   10000
+        threaded:       False
+        self_play:      None
+        behavioral_cloning:     None
+[INFO] stupidDriveCar. Step: 10000. Time Elapsed: 95.324 s. Mean Reward: -435.591. Std of Reward: 45.352. Training.
+[INFO] stupidDriveCar. Step: 20000. Time Elapsed: 167.729 s. Mean Reward: -451.817. Std of Reward: 29.673. Training.
+[INFO] stupidDriveCar. Step: 30000. Time Elapsed: 239.382 s. Mean Reward: -451.974. Std of Reward: 29.901. Training.
+[INFO] stupidDriveCar. Step: 40000. Time Elapsed: 311.513 s. Mean Reward: -450.833. Std of Reward: 32.541. Training.
+[INFO] stupidDriveCar. Step: 50000. Time Elapsed: 382.750 s. Mean Reward: -452.211. Std of Reward: 33.593. Training.
+[INFO] stupidDriveCar. Step: 60000. Time Elapsed: 454.310 s. Mean Reward: -451.767. Std of Reward: 35.224. Training.
+[INFO] stupidDriveCar. Step: 70000. Time Elapsed: 525.668 s. Mean Reward: -453.224. Std of Reward: 36.998. Training.
+[INFO] stupidDriveCar. Step: 80000. Time Elapsed: 597.023 s. Mean Reward: -458.988. Std of Reward: 38.046. Training.
+[INFO] stupidDriveCar. Step: 90000. Time Elapsed: 668.774 s. Mean Reward: -462.092. Std of Reward: 39.466. Training.
+[INFO] stupidDriveCar. Step: 100000. Time Elapsed: 740.449 s. Mean Reward: -457.458. Std of Reward: 33.913. Training.
+[INFO] stupidDriveCar. Step: 110000. Time Elapsed: 811.972 s. Mean Reward: -457.328. Std of Reward: 42.588. Training.
+[INFO] stupidDriveCar. Step: 120000. Time Elapsed: 883.249 s. Mean Reward: -457.534. Std of Reward: 34.189. Training.
+[INFO] stupidDriveCar. Step: 130000. Time Elapsed: 954.525 s. Mean Reward: -453.690. Std of Reward: 31.860. Training.
+[INFO] stupidDriveCar. Step: 140000. Time Elapsed: 1026.157 s. Mean Reward: -450.028. Std of Reward: 40.883. Training.
+[INFO] stupidDriveCar. Step: 150000. Time Elapsed: 1097.771 s. Mean Reward: -459.309. Std of Reward: 81.278. Training.
+[INFO] stupidDriveCar. Step: 160000. Time Elapsed: 1169.854 s. Mean Reward: -458.553. Std of Reward: 56.561. Training.
+[INFO] stupidDriveCar. Step: 170000. Time Elapsed: 1241.682 s. Mean Reward: -453.336. Std of Reward: 33.464. Training.
+[INFO] stupidDriveCar. Step: 180000. Time Elapsed: 1313.564 s. Mean Reward: -451.898. Std of Reward: 38.299. Training.
+[INFO] stupidDriveCar. Step: 190000. Time Elapsed: 1385.516 s. Mean Reward: -459.491. Std of Reward: 54.834. Training.
+[INFO] stupidDriveCar. Step: 200000. Time Elapsed: 1458.197 s. Mean Reward: -450.858. Std of Reward: 40.681. Training.
+[INFO] stupidDriveCar. Step: 210000. Time Elapsed: 1530.341 s. Mean Reward: -444.066. Std of Reward: 42.525. Training.
+[INFO] stupidDriveCar. Step: 220000. Time Elapsed: 1602.635 s. Mean Reward: -445.719. Std of Reward: 42.407. Training.
+[INFO] stupidDriveCar. Step: 230000. Time Elapsed: 1675.634 s. Mean Reward: -435.406. Std of Reward: 43.468. Training.
+[INFO] stupidDriveCar. Step: 240000. Time Elapsed: 1747.669 s. Mean Reward: -437.154. Std of Reward: 36.326. Training.
+[INFO] stupidDriveCar. Step: 250000. Time Elapsed: 1819.982 s. Mean Reward: -444.713. Std of Reward: 41.768. Training.
+[INFO] stupidDriveCar. Step: 260000. Time Elapsed: 1891.816 s. Mean Reward: -444.420. Std of Reward: 78.566. Training.
+[INFO] stupidDriveCar. Step: 270000. Time Elapsed: 1964.679 s. Mean Reward: -425.366. Std of Reward: 50.062. Training.
+[INFO] stupidDriveCar. Step: 280000. Time Elapsed: 2037.418 s. Mean Reward: -423.069. Std of Reward: 40.991. Training.
+[INFO] stupidDriveCar. Step: 290000. Time Elapsed: 2109.888 s. Mean Reward: -411.326. Std of Reward: 61.406. Training.
+[INFO] stupidDriveCar. Step: 300000. Time Elapsed: 2182.811 s. Mean Reward: -389.743. Std of Reward: 67.181. Training.
+[INFO] stupidDriveCar. Step: 310000. Time Elapsed: 2255.383 s. Mean Reward: -399.125. Std of Reward: 60.653. Training.
+[INFO] stupidDriveCar. Step: 320000. Time Elapsed: 2328.115 s. Mean Reward: -403.779. Std of Reward: 65.339. Training.
+[INFO] stupidDriveCar. Step: 330000. Time Elapsed: 2399.830 s. Mean Reward: -385.038. Std of Reward: 67.538. Training.
+[INFO] stupidDriveCar. Step: 340000. Time Elapsed: 2471.439 s. Mean Reward: -377.741. Std of Reward: 67.050. Training.
+[INFO] stupidDriveCar. Step: 350000. Time Elapsed: 2543.635 s. Mean Reward: -370.844. Std of Reward: 62.702. Training.
+[INFO] stupidDriveCar. Step: 360000. Time Elapsed: 2616.541 s. Mean Reward: -369.850. Std of Reward: 76.013. Training.
+[INFO] stupidDriveCar. Step: 370000. Time Elapsed: 2688.318 s. Mean Reward: -389.774. Std of Reward: 56.550. Training.
+[INFO] stupidDriveCar. Step: 380000. Time Elapsed: 2760.107 s. Mean Reward: -382.748. Std of Reward: 69.655. Training.
+[INFO] stupidDriveCar. Step: 390000. Time Elapsed: 2832.096 s. Mean Reward: -388.319. Std of Reward: 69.770. Training.
+[INFO] stupidDriveCar. Step: 400000. Time Elapsed: 2905.602 s. Mean Reward: -371.184. Std of Reward: 72.585. Training.
+[INFO] stupidDriveCar. Step: 410000. Time Elapsed: 2978.088 s. Mean Reward: -343.145. Std of Reward: 84.364. Training.
+[INFO] stupidDriveCar. Step: 420000. Time Elapsed: 3051.056 s. Mean Reward: -343.364. Std of Reward: 89.925. Training.
+[INFO] stupidDriveCar. Step: 430000. Time Elapsed: 3122.986 s. Mean Reward: -346.895. Std of Reward: 92.965. Training.
+[INFO] stupidDriveCar. Step: 440000. Time Elapsed: 3195.336 s. Mean Reward: -345.278. Std of Reward: 93.595. Training.
+[INFO] stupidDriveCar. Step: 450000. Time Elapsed: 3267.413 s. Mean Reward: -359.736. Std of Reward: 88.150. Training.
+[INFO] stupidDriveCar. Step: 460000. Time Elapsed: 3339.379 s. Mean Reward: -346.132. Std of Reward: 100.427. Training.
+[INFO] stupidDriveCar. Step: 470000. Time Elapsed: 3412.267 s. Mean Reward: -362.943. Std of Reward: 100.382. Training.
+[INFO] stupidDriveCar. Step: 480000. Time Elapsed: 3485.661 s. Mean Reward: -342.266. Std of Reward: 81.839. Training.
+[INFO] stupidDriveCar. Step: 490000. Time Elapsed: 3558.018 s. Mean Reward: -363.708. Std of Reward: 129.308. Training.
+[INFO] stupidDriveCar. Step: 500000. Time Elapsed: 3631.176 s. Mean Reward: -343.849. Std of Reward: 86.346. Training.
+[INFO] Exported results\testPPO\stupidDriveCar\stupidDriveCar-499998.onnx
+[INFO] stupidDriveCar. Step: 510000. Time Elapsed: 3703.187 s. Mean Reward: -343.489. Std of Reward: 110.773. Training.
+[INFO] stupidDriveCar. Step: 520000. Time Elapsed: 3775.406 s. Mean Reward: -350.709. Std of Reward: 113.875. Training.
+[INFO] stupidDriveCar. Step: 530000. Time Elapsed: 3847.504 s. Mean Reward: -346.636. Std of Reward: 111.741. Training.
+[INFO] stupidDriveCar. Step: 540000. Time Elapsed: 3919.413 s. Mean Reward: -326.680. Std of Reward: 95.345. Training.
+[INFO] stupidDriveCar. Step: 550000. Time Elapsed: 3992.038 s. Mean Reward: -334.872. Std of Reward: 112.666. Training.
+[INFO] stupidDriveCar. Step: 560000. Time Elapsed: 4064.286 s. Mean Reward: -356.687. Std of Reward: 80.492. Training.
+[INFO] stupidDriveCar. Step: 570000. Time Elapsed: 4136.459 s. Mean Reward: -341.517. Std of Reward: 89.576. Training.
+[INFO] stupidDriveCar. Step: 580000. Time Elapsed: 4208.631 s. Mean Reward: -319.674. Std of Reward: 114.700. Training.
+[INFO] stupidDriveCar. Step: 590000. Time Elapsed: 4280.541 s. Mean Reward: -327.148. Std of Reward: 99.987. Training.
+[INFO] stupidDriveCar. Step: 600000. Time Elapsed: 4353.017 s. Mean Reward: -320.407. Std of Reward: 134.597. Training.
+[INFO] stupidDriveCar. Step: 610000. Time Elapsed: 4425.401 s. Mean Reward: -340.671. Std of Reward: 93.796. Training.
+[INFO] stupidDriveCar. Step: 620000. Time Elapsed: 4497.551 s. Mean Reward: -308.561. Std of Reward: 124.058. Training.
+[INFO] stupidDriveCar. Step: 630000. Time Elapsed: 4569.211 s. Mean Reward: -325.702. Std of Reward: 102.497. Training.
+[INFO] stupidDriveCar. Step: 640000. Time Elapsed: 4641.385 s. Mean Reward: -329.445. Std of Reward: 97.032. Training.
+[INFO] stupidDriveCar. Step: 650000. Time Elapsed: 4713.340 s. Mean Reward: -310.583. Std of Reward: 104.686. Training.
+[INFO] stupidDriveCar. Step: 660000. Time Elapsed: 4785.351 s. Mean Reward: -338.951. Std of Reward: 90.548. Training.
+[INFO] stupidDriveCar. Step: 670000. Time Elapsed: 4857.229 s. Mean Reward: -329.298. Std of Reward: 132.007. Training.
+[INFO] stupidDriveCar. Step: 680000. Time Elapsed: 4929.164 s. Mean Reward: -308.429. Std of Reward: 138.588. Training.
+[INFO] stupidDriveCar. Step: 690000. Time Elapsed: 5002.181 s. Mean Reward: -320.250. Std of Reward: 133.846. Training.
+[INFO] stupidDriveCar. Step: 700000. Time Elapsed: 5074.573 s. Mean Reward: -321.719. Std of Reward: 215.855. Training.
+[INFO] stupidDriveCar. Step: 710000. Time Elapsed: 5147.699 s. Mean Reward: -332.924. Std of Reward: 171.906. Training.
+[INFO] stupidDriveCar. Step: 720000. Time Elapsed: 5219.788 s. Mean Reward: -288.772. Std of Reward: 321.507. Training.
+[INFO] stupidDriveCar. Step: 730000. Time Elapsed: 5293.386 s. Mean Reward: -314.134. Std of Reward: 102.689. Training.
+[INFO] stupidDriveCar. Step: 740000. Time Elapsed: 5366.516 s. Mean Reward: -331.811. Std of Reward: 113.094. Training.
+[INFO] stupidDriveCar. Step: 750000. Time Elapsed: 5439.671 s. Mean Reward: -318.867. Std of Reward: 128.769. Training.
+[INFO] stupidDriveCar. Step: 760000. Time Elapsed: 5511.809 s. Mean Reward: -322.719. Std of Reward: 127.714. Training.
+[INFO] stupidDriveCar. Step: 770000. Time Elapsed: 5584.354 s. Mean Reward: -311.614. Std of Reward: 213.096. Training.
+[INFO] stupidDriveCar. Step: 780000. Time Elapsed: 5657.778 s. Mean Reward: -319.502. Std of Reward: 320.623. Training.
+[INFO] stupidDriveCar. Step: 790000. Time Elapsed: 5730.712 s. Mean Reward: -323.332. Std of Reward: 129.624. Training.
+[INFO] stupidDriveCar. Step: 800000. Time Elapsed: 5803.704 s. Mean Reward: -344.856. Std of Reward: 151.330. Training.
+[INFO] stupidDriveCar. Step: 810000. Time Elapsed: 5876.136 s. Mean Reward: -282.068. Std of Reward: 144.609. Training.
+[INFO] stupidDriveCar. Step: 820000. Time Elapsed: 5948.330 s. Mean Reward: -284.479. Std of Reward: 266.477. Training.
+[INFO] stupidDriveCar. Step: 830000. Time Elapsed: 6020.586 s. Mean Reward: -295.834. Std of Reward: 112.325. Training.
+[INFO] stupidDriveCar. Step: 840000. Time Elapsed: 6092.824 s. Mean Reward: -297.288. Std of Reward: 105.620. Training.
+[INFO] stupidDriveCar. Step: 850000. Time Elapsed: 6165.289 s. Mean Reward: -315.953. Std of Reward: 133.159. Training.
+[INFO] stupidDriveCar. Step: 860000. Time Elapsed: 6237.742 s. Mean Reward: -303.522. Std of Reward: 121.277. Training.
+[INFO] stupidDriveCar. Step: 870000. Time Elapsed: 6309.884 s. Mean Reward: -301.778. Std of Reward: 127.661. Training.
+[INFO] stupidDriveCar. Step: 880000. Time Elapsed: 6381.873 s. Mean Reward: -303.687. Std of Reward: 297.482. Training.
+[INFO] stupidDriveCar. Step: 890000. Time Elapsed: 6454.512 s. Mean Reward: -270.634. Std of Reward: 366.299. Training.
+[INFO] stupidDriveCar. Step: 900000. Time Elapsed: 6526.899 s. Mean Reward: -318.441. Std of Reward: 214.111. Training.
+[INFO] stupidDriveCar. Step: 910000. Time Elapsed: 6599.198 s. Mean Reward: -306.076. Std of Reward: 97.166. Training.
+[INFO] stupidDriveCar. Step: 920000. Time Elapsed: 6671.429 s. Mean Reward: -299.027. Std of Reward: 286.158. Training.
+[INFO] stupidDriveCar. Step: 930000. Time Elapsed: 6743.647 s. Mean Reward: -283.698. Std of Reward: 331.104. Training.
+[INFO] stupidDriveCar. Step: 940000. Time Elapsed: 6816.806 s. Mean Reward: -291.757. Std of Reward: 218.931. Training.
+[INFO] stupidDriveCar. Step: 950000. Time Elapsed: 6889.187 s. Mean Reward: -250.948. Std of Reward: 299.411. Training.
+[INFO] stupidDriveCar. Step: 960000. Time Elapsed: 6961.345 s. Mean Reward: -298.006. Std of Reward: 218.436. Training.
+[INFO] stupidDriveCar. Step: 970000. Time Elapsed: 7034.904 s. Mean Reward: -285.158. Std of Reward: 351.410. Training.
+[INFO] stupidDriveCar. Step: 980000. Time Elapsed: 7107.223 s. Mean Reward: -279.024. Std of Reward: 243.689. Training.
+[INFO] stupidDriveCar. Step: 990000. Time Elapsed: 7179.492 s. Mean Reward: -258.896. Std of Reward: 222.049. Training.
+[INFO] stupidDriveCar. Step: 1000000. Time Elapsed: 7251.761 s. Mean Reward: -325.460. Std of Reward: 228.888. Training.
+[INFO] Exported results\testPPO\stupidDriveCar\stupidDriveCar-999999.onnx
+[INFO] stupidDriveCar. Step: 1010000. Time Elapsed: 7323.806 s. Mean Reward: -315.939. Std of Reward: 309.984. Training.
+[INFO] stupidDriveCar. Step: 1020000. Time Elapsed: 7396.103 s. Mean Reward: -317.941. Std of Reward: 145.446. Training.
+[INFO] stupidDriveCar. Step: 1030000. Time Elapsed: 7468.303 s. Mean Reward: -342.573. Std of Reward: 124.272. Training.
+[INFO] stupidDriveCar. Step: 1040000. Time Elapsed: 7540.639 s. Mean Reward: -297.842. Std of Reward: 234.245. Training.
+[INFO] stupidDriveCar. Step: 1050000. Time Elapsed: 7613.095 s. Mean Reward: -265.933. Std of Reward: 363.901. Training.
+[INFO] stupidDriveCar. Step: 1060000. Time Elapsed: 7685.201 s. Mean Reward: -302.716. Std of Reward: 286.950. Training.
+[INFO] stupidDriveCar. Step: 1070000. Time Elapsed: 7757.550 s. Mean Reward: -302.327. Std of Reward: 107.439. Training.
+[INFO] stupidDriveCar. Step: 1080000. Time Elapsed: 7830.624 s. Mean Reward: -316.630. Std of Reward: 128.354. Training.
+[INFO] stupidDriveCar. Step: 1090000. Time Elapsed: 7903.303 s. Mean Reward: -307.285. Std of Reward: 96.278. Training.
+[INFO] stupidDriveCar. Step: 1100000. Time Elapsed: 7976.656 s. Mean Reward: -301.420. Std of Reward: 105.910. Training.
+[INFO] stupidDriveCar. Step: 1110000. Time Elapsed: 8049.572 s. Mean Reward: -316.212. Std of Reward: 101.096. Training.
+[INFO] stupidDriveCar. Step: 1120000. Time Elapsed: 8121.449 s. Mean Reward: -308.873. Std of Reward: 134.213. Training.
+[INFO] stupidDriveCar. Step: 1130000. Time Elapsed: 8194.299 s. Mean Reward: -294.063. Std of Reward: 117.576. Training.
+[INFO] stupidDriveCar. Step: 1140000. Time Elapsed: 8266.509 s. Mean Reward: -261.985. Std of Reward: 436.646. Training.
+[INFO] stupidDriveCar. Step: 1150000. Time Elapsed: 8338.649 s. Mean Reward: -310.587. Std of Reward: 146.208. Training.
+[INFO] stupidDriveCar. Step: 1160000. Time Elapsed: 8410.555 s. Mean Reward: -265.586. Std of Reward: 331.766. Training.
+[INFO] stupidDriveCar. Step: 1170000. Time Elapsed: 8483.742 s. Mean Reward: -291.550. Std of Reward: 276.399. Training.
+[INFO] stupidDriveCar. Step: 1180000. Time Elapsed: 8556.257 s. Mean Reward: -324.553. Std of Reward: 220.730. Training.
+[INFO] stupidDriveCar. Step: 1190000. Time Elapsed: 8629.493 s. Mean Reward: -297.065. Std of Reward: 254.148. Training.
+[INFO] stupidDriveCar. Step: 1200000. Time Elapsed: 8701.766 s. Mean Reward: -298.109. Std of Reward: 189.610. Training.
+[INFO] stupidDriveCar. Step: 1210000. Time Elapsed: 8775.119 s. Mean Reward: -298.783. Std of Reward: 198.811. Training.
+[INFO] stupidDriveCar. Step: 1220000. Time Elapsed: 8847.234 s. Mean Reward: -258.341. Std of Reward: 372.403. Training.
+[INFO] stupidDriveCar. Step: 1230000. Time Elapsed: 8919.384 s. Mean Reward: -297.399. Std of Reward: 135.176. Training.
+[INFO] stupidDriveCar. Step: 1240000. Time Elapsed: 8996.774 s. Mean Reward: -318.378. Std of Reward: 150.612. Training.
+[INFO] stupidDriveCar. Step: 1250000. Time Elapsed: 10839.074 s. Mean Reward: -264.256. Std of Reward: 461.493. Training.
+[INFO] stupidDriveCar. Step: 1260000. Time Elapsed: 10909.862 s. Mean Reward: -255.723. Std of Reward: 390.239. Training.
+[INFO] stupidDriveCar. Step: 1270000. Time Elapsed: 10981.439 s. Mean Reward: -302.628. Std of Reward: 185.811. Training.
+[INFO] stupidDriveCar. Step: 1280000. Time Elapsed: 11053.371 s. Mean Reward: -289.879. Std of Reward: 155.670. Training.
+[INFO] stupidDriveCar. Step: 1290000. Time Elapsed: 11125.486 s. Mean Reward: -249.743. Std of Reward: 334.381. Training.
+[INFO] stupidDriveCar. Step: 1300000. Time Elapsed: 11196.987 s. Mean Reward: -255.118. Std of Reward: 235.625. Training.
+[INFO] stupidDriveCar. Step: 1310000. Time Elapsed: 11268.326 s. Mean Reward: -272.445. Std of Reward: 325.227. Training.
+[INFO] stupidDriveCar. Step: 1320000. Time Elapsed: 11339.734 s. Mean Reward: -225.052. Std of Reward: 435.822. Training.
+[INFO] stupidDriveCar. Step: 1330000. Time Elapsed: 11411.245 s. Mean Reward: -241.190. Std of Reward: 400.502. Training.
+[INFO] stupidDriveCar. Step: 1340000. Time Elapsed: 11482.839 s. Mean Reward: -294.724. Std of Reward: 176.939. Training.
+[INFO] stupidDriveCar. Step: 1350000. Time Elapsed: 11554.497 s. Mean Reward: -269.867. Std of Reward: 326.236. Training.
+[INFO] stupidDriveCar. Step: 1360000. Time Elapsed: 11626.226 s. Mean Reward: -227.907. Std of Reward: 365.779. Training.
+[INFO] stupidDriveCar. Step: 1370000. Time Elapsed: 11698.301 s. Mean Reward: -252.198. Std of Reward: 307.625. Training.
+[INFO] stupidDriveCar. Step: 1380000. Time Elapsed: 11769.964 s. Mean Reward: -214.026. Std of Reward: 531.673. Training.
+[INFO] stupidDriveCar. Step: 1390000. Time Elapsed: 11841.752 s. Mean Reward: -264.479. Std of Reward: 290.149. Training.
+[INFO] stupidDriveCar. Step: 1400000. Time Elapsed: 11913.701 s. Mean Reward: -247.428. Std of Reward: 451.271. Training.
+[INFO] stupidDriveCar. Step: 1410000. Time Elapsed: 11985.839 s. Mean Reward: -206.110. Std of Reward: 568.180. Training.
+[INFO] stupidDriveCar. Step: 1420000. Time Elapsed: 12058.049 s. Mean Reward: -244.560. Std of Reward: 397.616. Training.
+[INFO] stupidDriveCar. Step: 1430000. Time Elapsed: 12129.812 s. Mean Reward: -271.352. Std of Reward: 268.900. Training.
+[INFO] stupidDriveCar. Step: 1440000. Time Elapsed: 12201.678 s. Mean Reward: -286.625. Std of Reward: 279.314. Training.
+[INFO] stupidDriveCar. Step: 1450000. Time Elapsed: 12274.140 s. Mean Reward: -281.722. Std of Reward: 137.365. Training.
+[INFO] stupidDriveCar. Step: 1460000. Time Elapsed: 12346.169 s. Mean Reward: -277.112. Std of Reward: 124.970. Training.
+[INFO] stupidDriveCar. Step: 1470000. Time Elapsed: 12418.084 s. Mean Reward: -267.681. Std of Reward: 282.410. Training.
+[INFO] stupidDriveCar. Step: 1480000. Time Elapsed: 12490.136 s. Mean Reward: -304.036. Std of Reward: 389.909. Training.
+[INFO] stupidDriveCar. Step: 1490000. Time Elapsed: 12562.442 s. Mean Reward: -251.961. Std of Reward: 362.431. Training.
+[WARNING] Restarting worker[0] after 'Communicator has exited.'
+C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub\venv\lib\site-packages\torch\__init__.py:690: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\tensor\python_tensor.cpp:453.)
+  _C._set_default_tensor_type(t)
+[INFO] Listening on port 5004. Start training by pressing the Play button in the Unity Editor.
+[INFO] Connected to Unity environment with package version 2.0.1 and communication version 1.5.0
+[INFO] Connected new brain: stupidDriveCar?team=0
+[INFO] stupidDriveCar. Step: 1500000. Time Elapsed: 12650.500 s. Mean Reward: -293.759. Std of Reward: 304.095. Training.
+[INFO] Exported results\testPPO\stupidDriveCar\stupidDriveCar-1499999.onnx
+[INFO] Exported results\testPPO\stupidDriveCar\stupidDriveCar-1500002.onnx
+[INFO] Copied results\testPPO\stupidDriveCar\stupidDriveCar-1500002.onnx to results\testPPO\stupidDriveCar.onnx.
+
+(venv) C:\Users\arvid.kagedal\Documents\GitHub\AIBilSpelRep\AiBilspelGithub>
