@@ -5,7 +5,9 @@ using System.Runtime.CompilerServices;
 using System.Diagnostics;
 using System.IO;
 
-
+/// <summary>
+/// Logic for controlling car
+/// </summary>
 public class CarController2 : MonoBehaviour
 {
 
@@ -79,19 +81,12 @@ public class CarController2 : MonoBehaviour
         SkidMarks();
     }
 
-    public void MoveInput(float input)
-    {
-        moveInput = input;
-    }
-
-    public void SteerInput(float input)
-    {
-        steerInput = input;
-    }
-
+    /// <summary>
+    /// Get input from mlagents or user
+    /// </summary>
     void GetInputs()
     {
-
+        //Car controlled by person or mlagent
         if (manualDrive == true)
         {
             if (control == ControlMode.Keyboard)
@@ -102,15 +97,15 @@ public class CarController2 : MonoBehaviour
         }
         else
         {
+            //Get steering from mlagent
             steerInput = gameObject.GetComponent<AgentScript>().steering;
-            //moveInput = gameObject.GetComponent<AgentScript>().gas;
+            //Always accelerates when controlled by mlagent
             moveInput = 1;
-            //ge mer intiativ för den att accelerera själv, annars kommer den väldigt sällan gasa
-            //isBreaking = Input.GetKey(KeyCode.Space);
-            //Let the car modify horizontal and vertical input to steer car(-1 < steering < 1)
         }
     }
-
+    /// <summary>
+    /// Accelerates all wheels
+    /// </summary>
     void Move()
     {
         foreach (var wheel in wheels)
@@ -118,7 +113,9 @@ public class CarController2 : MonoBehaviour
             wheel.wheelCollider.motorTorque = moveInput * 12000 * maxAcceleration * Time.deltaTime;
         }
     }
-
+    /// <summary>
+    /// Rotates wheels to steer
+    /// </summary>
     void Steer()
     {
         foreach (var wheel in wheels)
@@ -131,7 +128,9 @@ public class CarController2 : MonoBehaviour
             }
         }
     }
-
+    /// <summary>
+    /// Applies brake torque if braking 
+    /// </summary>
     void Brake()
     {
         if (Input.GetKey(KeyCode.Space) || moveInput < 0)
@@ -151,7 +150,9 @@ public class CarController2 : MonoBehaviour
 
         }
     }
-
+    /// <summary>
+    /// Animates rotation of wheels
+    /// </summary>
     void AnimateWheels()
     {
         foreach (var wheel in wheels)
@@ -163,7 +164,9 @@ public class CarController2 : MonoBehaviour
             wheel.wheelModel.transform.rotation = rot;
         }
     }
-
+    /// <summary>
+    /// Creates skid marks if wheels are slipping
+    /// </summary>
     void SkidMarks()
     {
         WheelHit hit;
@@ -182,25 +185,10 @@ public class CarController2 : MonoBehaviour
             }
         }
     }
-
-    /*void OnCollisionEnter(Collision target)
-    {
-        if (target.gameObject.tag.Equals("Finish") == true)
-        {
-            timer.Stop();
-            string time = timer.Elapsed.Minutes.ToString() + " : " + timer.Elapsed.Seconds.ToString() + " : " + timer.Elapsed.Milliseconds.ToString();
-            UnityEngine.Debug.Log(time);
-
-            string path = Application.dataPath + "/timeLog.txt";
-            //UnityEngine.Debug.Log(path);
-            //Write some text to the test.txt file
-            StreamWriter writer = new StreamWriter(path, true);
-            writer.WriteLine(time);
-            writer.Close();
-        }
-    }*/
-
-
+    /// <summary>
+    /// Respawns car when goal or wall is touched and resets checkpoint colliders
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         // add checkpoints with time based reward

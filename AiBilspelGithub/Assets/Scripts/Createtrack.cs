@@ -39,11 +39,15 @@ public class Createtrack : MonoBehaviour
         StartCoroutine(delay());
 
     }
-    
+    /// <summary>
+    /// Creates custom or random track
+    /// </summary>
+    /// <returns>null</returns>
     IEnumerator delay()
     {
         for (int i = 0; i < trackLength; i++)
         {
+            //Decides what track piesce to spawn, randomly or using array
             if (customTrack)
             {
                 blockIndex = trackorder[i];
@@ -52,6 +56,7 @@ public class Createtrack : MonoBehaviour
             {
                 blockIndex = UnityEngine.Random.Range(0, trackPieces.Length);
             }
+            //Spawns, moves and rotates new block
             spawnedObject = trackPieces[blockIndex];
             endPoint = lastObject.transform.Find("EndPoint");
             spawned = Instantiate(spawnedObject, new UnityEngine.Vector3(0, -100, 0), UnityEngine.Quaternion.Euler(0, spawnedObject.transform.localEulerAngles.y + driveDirection, 0));
@@ -60,17 +65,19 @@ public class Createtrack : MonoBehaviour
             spawnZ = Convert.ToSingle(endPoint.position.z - startPoint.position.z);
 
             spawned.transform.position = new UnityEngine.Vector3(spawnX, 0, spawnZ);
+
+            //Checks for overlapping tracks
             if (customTrack == false)
             {
                 colliderPoint = spawned.transform.Find("Collider");
                 colliderBlock.transform.position = new Vector3(colliderPoint.transform.position.x, 0, colliderPoint.transform.position.z);
             }
             lastObject = spawned;
-            //Debug.Log(spawned.ToString());
+            
 
             switch (spawnedObject.tag)
             {
-                //Updates the rotatin of future objects to be spawned using tags of spawned objects
+                //Updates the rotation of future objects to be spawned using tags of spawned objects
                 case "Turn90":
                     driveDirection = driveDirection + 90;
                     break;
@@ -93,6 +100,7 @@ public class Createtrack : MonoBehaviour
 
             yield return null;
         }
+        //Prepares for spawning next block
         Destroy(colliderBlock);
         spawnedObject = endBlock;
         endPoint = lastObject.transform.Find("EndPoint");

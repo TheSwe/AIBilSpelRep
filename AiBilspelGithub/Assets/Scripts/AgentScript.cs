@@ -67,22 +67,13 @@ public class AgentScript : Agent
         //Debug.Log(Input.GetAxis("Horizontal"));
         
     }
-
+    /// <summary>
+    /// Sends info to sensor if using position test
+    /// </summary>
+    /// <param name="sensor">Sensor saved to</param>
     public override void CollectObservations(VectorSensor sensor)
     {
         //Make these local to each instance
-        /*
-        sensor.AddObservation(gameObject.GetComponent<castRay>().distAhead);
-        sensor.AddObservation(gameObject.GetComponent<castRay>().distAhead30deg);
-        sensor.AddObservation(gameObject.GetComponent<castRay>().distAhead60deg);
-        sensor.AddObservation(gameObject.GetComponent<castRay>().distAheadm30deg);
-        sensor.AddObservation(gameObject.GetComponent<castRay>().distAheadm60deg);
-        sensor.AddObservation(gameObject.GetComponent<carSpeed>().currentSpeed);
-        sensor.AddObservation(target.localPosition);
-
-        - Useless due to new sensor
-
-        */ 
         if (test2Settings == true)
         {
             sensor.AddObservation(transform.localPosition);
